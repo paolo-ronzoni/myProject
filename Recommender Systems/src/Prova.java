@@ -8,7 +8,7 @@
  */
 public class Prova {
 
-
+	/* Questo e' un commento */
 	public static void main(String[] args) {
 		String[] values = {"11", "", "34", "22", ""};
 		
