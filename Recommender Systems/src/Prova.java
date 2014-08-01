@@ -3,7 +3,7 @@
  */
 
 /**
- * @author Paolo
+ * @author Paolo Ronzoni non e' un provolone
  *
  */
 public class Prova {
