@@ -4,6 +4,8 @@ import java.util.Scanner;
 
 public class CvsAnalyser {
 	// sbiricuda
+	// non e' la vita
+	// this is a new methods
 	/**
 	 * @param filePath location of the .cvs path
 	 * @return number of rows in a .cvs file
