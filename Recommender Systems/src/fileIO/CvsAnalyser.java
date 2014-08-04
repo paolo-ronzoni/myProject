@@ -5,6 +5,9 @@ import java.util.Scanner;
 
 public class CvsAnalyser {
 	
+	// this is a comment
+	// this is a second comment
+	
 	/**
 	 * @param filePath location of the .cvs path
 	 * @return number of rows in a .cvs file
