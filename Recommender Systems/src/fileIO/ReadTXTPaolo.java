@@ -8,7 +8,8 @@ import java.io.IOException;
 import java.util.Scanner;
 
 public class ReadTXTPaolo {
-	static String path1 = "DataStore\\prova.txt";
+	static String path1 = "DataStore\\u.txt";
+	
 	public static void main(String[] args) {
 	
 		
