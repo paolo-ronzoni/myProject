@@ -10,6 +10,8 @@ import java.util.Scanner;
 public class ReadTXTPaolo {
 	static String path1 = "DataStore\\u1.txt";
 	public static void main(String[] args) {
+	
+		
 		try {
 			File file = new File(path1);
 			FileReader fileReader = new FileReader(file);
