@@ -8,7 +8,7 @@ import java.io.IOException;
 import java.util.Scanner;
 
 public class ReadTXTPaolo {
-	static String path1 = "DataStore\\u1.txt";
+	static String path1 = "DataStore\\prova.txt";
 	public static void main(String[] args) {
 	
 		
@@ -58,4 +58,31 @@ public class ReadTXTPaolo {
 		 
 		 return numRow;
 	 } // end method rowCounter
-}
+	
+	/**
+	 * @param filePath location of the .txt file
+	 * @return number of column in a .txt file
+	 */
+	public static int columnCounter(String filePath)
+	 {
+		 int numColumn = 0;
+		 File afile = new File(filePath);
+		 Scanner inputStream;
+		 try 
+		 {
+			 inputStream = new Scanner(afile);
+			 String data = inputStream.nextLine();   
+			 String[] values = data.split("\\s+");
+			 numColumn = values.length;
+			 inputStream.close(); 
+		 }
+		 catch (FileNotFoundException e) 
+		 {
+			  e.printStackTrace();
+			 
+		 }
+		 
+		 return numColumn;
+	 } // end method columnCounter
+	
+} //end class ReadTXTPaolo
