@@ -61,9 +61,10 @@ public class ReadTXTPaolo {
 	
 	/**
 	 * @param filePath location of the .txt file
+	 * @param splitExpression "expression" that split the table
 	 * @return number of column in a .txt file
 	 */
-	public static int columnCounter(String filePath)
+	public static int columnCounter(String filePath, String splitExpression)
 	 {
 		 int numColumn = 0;
 		 File afile = new File(filePath);
@@ -72,7 +73,7 @@ public class ReadTXTPaolo {
 		 {
 			 inputStream = new Scanner(afile);
 			 String data = inputStream.nextLine();   
-			 String[] values = data.split("\\s+");
+			 String[] values = data.split(splitExpression); // expression for space "\\s+"
 			 numColumn = values.length;
 			 inputStream.close(); 
 		 }
