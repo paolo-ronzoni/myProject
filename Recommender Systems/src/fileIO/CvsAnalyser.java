@@ -64,7 +64,7 @@ public class CvsAnalyser {
 
 	/**
 	 * 
-	 * @param filePath location of the .cvs path
+	 * @param filePath location of the .txt file
 	 * @param nRows number of rows in the cvs file
 	 * @param nColumns number of columns int the .cvs file
 	 * @return number of column in a .cvs file

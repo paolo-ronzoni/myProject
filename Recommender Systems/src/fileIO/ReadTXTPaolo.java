@@ -85,4 +85,40 @@ public class ReadTXTPaolo {
 		 return numColumn;
 	 } // end method columnCounter
 	
+	/**
+	 * 
+	 * @param filePath location of the .txt file
+	 * @param nRows number of rows in the .txt file
+	 * @param nColumns number of columns int the .cvs file
+	 * @return number of column in a .cvs file
+	 */
+	public static String[][] txtMatrix(String filePath, int nRows, int nColumns)
+	 {
+		File afile = new File(filePath);
+		 Scanner inputStream;
+		 String[][] txtMatrix = new String[nRows ][nColumns];
+		try {
+			  inputStream = new Scanner(afile);
+			  String data;
+			  String[] values;
+				   for (int row = 0; row < nRows ; row++)
+				   {
+					    data = inputStream.nextLine();//gets a whole line
+					    values = data.split("\\s+");
+					    for (int column = 0; column < values.length; column++)
+					    {
+					    		txtMatrix[row][column] = values[column] ;
+					    }
+				   }
+				   inputStream.close(); 
+			}
+				    catch (FileNotFoundException e) 
+					 {
+						  e.printStackTrace();
+						 
+					 }
+					 
+					 return txtMatrix;
+				 } // end method txtMatrix
+	
 } //end class ReadTXTPaolo
