@@ -126,4 +126,22 @@ public class ReadTXTPaolo {
 					 return txtMatrix;
 				 } // end method txtMatrix
 	
+	public static void txtMatrixTest(String filePath, String splitExpression) {
+	
+	int nRows = rowCounter(filePath);
+	int nColumns = columnCounter(filePath, splitExpression);	
+	String[][] stringMatrix = txtMatrix(filePath, splitExpression);
+	System.out.println("Number of rows: " + nRows);
+	System.out.println("Number of columns " + nColumns);
+	System.out.println("The stringMatrix is: ");
+	for (int i = 0; i < nRows; i++)  {
+		//System.out.print((i + 1) + ": ");
+		for (int j = 0; j < nColumns; j++)
+		{
+			System.out.printf("%4s\t", stringMatrix[i][j]);
+		}
+		System.out.println();
+	}
+	} // end method txtMatrixTest
+	
 } //end class ReadTXTPaolo
