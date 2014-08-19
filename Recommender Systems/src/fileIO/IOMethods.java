@@ -7,7 +7,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.Scanner;
 
-public class IOMethods {
+public class IOMethods<T> {
 
 	
 	/**
@@ -127,10 +127,33 @@ public class IOMethods {
 
 	/**
 	 * by Paolo Ronzoni
-	 * @param an input Matrix
-	 * @return Print the input Matrix
+	 * @param an input Matrix of String element
+	 * @return print the input Matrix
 	 */
-	public static void matrixPrint(String[][] inputMatrix) {
+	public static  void matrixPrint(String[][] inputMatrix) {
+	
+	int nRows = inputMatrix.length;
+	int nColumns = inputMatrix[0].length;
+	
+	System.out.println("The matrix is: ");
+	for (int i = 0; i < nRows; i++)  {
+		//System.out.print((i + 1) + ": ");
+		for (int j = 0; j < nColumns; j++)
+		{
+			System.out.printf("%4s\t", inputMatrix[i][j]);
+		}
+		System.out.println();
+	}// end for
+	System.out.println("Number of rows: " + nRows);
+	System.out.println("Number of columns " + nColumns);
+	} // end method matrixPrint
+	
+	/**
+	 * by Paolo Ronzoni
+	 * @param an input Matrix of String element
+	 * @return print the input Matrix
+	 */
+	public static  void matrixPrint(int[][] inputMatrix) {
 	
 	int nRows = inputMatrix.length;
 	int nColumns = inputMatrix[0].length;

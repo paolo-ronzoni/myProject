@@ -11,7 +11,7 @@ public class TestClass {
 	String[][] myMatrix = IOMethods.txtMatrix(path1, splitExpression);
 	IOMethods.matrixPrint(myMatrix);
 	int[][] integerMatrix = IOMethods.matrixConversion(myMatrix);
-		
+	IOMethods.matrixPrint(integerMatrix);	
 	
 	}// end main
 			
