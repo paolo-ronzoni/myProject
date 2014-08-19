@@ -123,6 +123,28 @@ public class IOMethods {
 		return outputMatrix;
 	 } // end method matrixConversion
 	
+	
+	/**
+	 * by Paolo Ronzoni
+	 * @param inputMatrix an input matrix of type String[][]
+	 * @return outputMatrix a matrix of type double
+	 */
+	public static double[][] matrixConversionDouble(String[][] inputMatrix)
+	 {
+		int nRows = inputMatrix.length;
+		int nColumns = inputMatrix[0].length;
+		double[][] outputMatrix = new double[nRows ][nColumns];
+		for (int row = 0; row < nRows; row++)
+		{
+		    for (int column = 0; column < nColumns; column++)
+		    {
+		     outputMatrix[row][column] = Double.parseDouble(inputMatrix[row][column]);
+		    }
+		} 			 
+		return outputMatrix;
+	 } // end method matrixConversion
+	
+	
 
 	/**
 	 * by Paolo Ronzoni
@@ -265,15 +287,12 @@ public class IOMethods {
 	 * @param columnNumber the number of the column
 	 * @return outputArray an array of the column extracts
 	 */
-	public static double[] columnExtractor(double[][] inputMatrix, int columnNumber)
-	 {
+	public static double[] columnExtractor(double[][] inputMatrix, int columnNumber) {
 		int nRows = inputMatrix.length;
 		double[] outputArray = new double[nRows ];
 		for (int row = 0; row < nRows; row++)
 		{
-		    
-		    outputArray[row] = inputMatrix[row][columnNumber];
-		    
+		    outputArray[row] = inputMatrix[row][columnNumber];		    
 		} 			 
 		return outputArray;
 	 } // end method columnExtractor
