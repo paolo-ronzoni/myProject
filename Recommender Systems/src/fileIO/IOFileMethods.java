@@ -7,7 +7,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.Scanner;
 
-public class IOTextFiles {
+public class IOFileMethods {
 
 	
 	/**
@@ -131,23 +131,22 @@ public class IOTextFiles {
 	 * @param splitExpression the characters used to separate sigle elements in a row
 	 * @return Print a matrix of type String element
 	 */
-	public static void matrixPrint(String filePath, String splitExpression) {
+	public static void matrixPrint(String[][] inputMatrix) {
 	
-	int nRows = rowCounter(filePath);
-	int nColumns = columnCounter(filePath, splitExpression);	
-	String[][] stringMatrix = txtMatrix(filePath, splitExpression);
+	int nRows = inputMatrix.length;
+	int nColumns = inputMatrix[0].length;
 	
-	System.out.println("The stringMatrix is: ");
+	System.out.println("The matrix is: ");
 	for (int i = 0; i < nRows; i++)  {
 		//System.out.print((i + 1) + ": ");
 		for (int j = 0; j < nColumns; j++)
 		{
-			System.out.printf("%4s\t", stringMatrix[i][j]);
+			System.out.printf("%4s\t", inputMatrix[i][j]);
 		}
 		System.out.println();
 	}// end for
 	System.out.println("Number of rows: " + nRows);
 	System.out.println("Number of columns " + nColumns);
-	} // end method txtMatrixPrint
+	} // end method MatrixPrint
 	
 } //end class ReadTXTPaolo

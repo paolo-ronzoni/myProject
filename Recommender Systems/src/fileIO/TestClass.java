@@ -1,15 +1,16 @@
 package fileIO;
 
-import fileIO.IOTextFiles;
+import fileIO.IOFileMethods;
 
 public class TestClass {
 	static String path1 = "DataStore\\prova.txt";
+	static String path2 = "DataStore\\u1.txt";
 	static String splitExpression = "\\s+";
 	public static void main(String[] args) {
           
-		String[][] myMatrix = IOTextFiles.txtMatrix(path1, splitExpression);
-		IOTextFiles.matrixPrint(path1, splitExpression);
-		int[][] integerMatrix = IOTextFiles.matrixConversion(myMatrix);
+	String[][] myMatrix = IOFileMethods.txtMatrix(path1, splitExpression);
+	IOFileMethods.matrixPrint(myMatrix);
+	int[][] integerMatrix = IOFileMethods.matrixConversion(myMatrix);
 		
 	
 	}// end main
