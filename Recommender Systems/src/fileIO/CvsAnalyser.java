@@ -130,7 +130,7 @@ public class CvsAnalyser {
 		{
 		    for (String[] column: stringMatrix)
 		    {
-		     doubleMatrix[row][column] = Double.parseDouble(stringMatrix[row][column]);
+		     //doubleMatrix[row][column] = Double.parseDouble(stringMatrix[row][column]);
 		    }
 		} 			 
 		return doubleMatrix;

@@ -68,9 +68,8 @@ public class IOMethods<T> {
 	/**
 	 * by Paolo Ronzoni
 	 * @param filePath location of the .txt file
-	 * @param nRows number of rows in the .txt file
 	 * @param nColumns number of columns int the .cvs file
-	 * @return A String matrix
+	 * @return A matrix of type String[][]
 	 */
 	public static String[][] txtMatrix(String filePath, String splitExpression)
 	 {
@@ -106,7 +105,7 @@ public class IOMethods<T> {
 	
 	/**
 	 * by Paolo Ronzoni
-	 * @param stringMatrix A bi-dimensinal string matrix.
+	 * @param stringMatrix A matrix of type String[][]
 	 * @return a bi-dimensional integer matrix.
 	 */
 	public static int[][] matrixConversion(String[][] stringMatrix)
@@ -127,48 +126,74 @@ public class IOMethods<T> {
 
 	/**
 	 * by Paolo Ronzoni
-	 * @param an input Matrix of String element
+	 * @param an input Matrix of type String[][]
 	 * @return print the input Matrix
 	 */
-	public static  void matrixPrint(String[][] inputMatrix) {
-	
-	int nRows = inputMatrix.length;
-	int nColumns = inputMatrix[0].length;
-	
-	System.out.println("The matrix is: ");
-	for (int i = 0; i < nRows; i++)  {
-		//System.out.print((i + 1) + ": ");
-		for (int j = 0; j < nColumns; j++)
+	public static  void printMatrix(String[][] inputMatrix, String printLayout) {
+		int nRows = inputMatrix.length;
+		int nColumns = inputMatrix[0].length;
+		
+		System.out.println("The matrix is: ");
+		for (String[] row: inputMatrix)  
 		{
-			System.out.printf("%4s\t", inputMatrix[i][j]);
-		}
-		System.out.println();
-	}// end for
-	System.out.println("Number of rows: " + nRows);
-	System.out.println("Number of columns " + nColumns);
+			for (String column: row)
+			{
+				System.out.printf(printLayout, column);
+			}
+			System.out.println();
+		}// end enanched loop
+		
+		System.out.println("Number of rows: " + nRows);
+		System.out.println("Number of columns " + nColumns);
 	} // end method matrixPrint
 	
-	/**
+	
+	/** Overloads printMatrix
 	 * by Paolo Ronzoni
-	 * @param an input Matrix of String element
-	 * @return print the input Matrix
+	 * @param an input Matrix of type int[][]
+	 * @return print out the input Matrix
 	 */
-	public static  void matrixPrint(int[][] inputMatrix) {
+	public static void printMatrix(int[][] inputMatrix, String printLayout) {
 	
-	int nRows = inputMatrix.length;
-	int nColumns = inputMatrix[0].length;
-	
-	System.out.println("The matrix is: ");
-	for (int i = 0; i < nRows; i++)  {
-		//System.out.print((i + 1) + ": ");
-		for (int j = 0; j < nColumns; j++)
+		int nRows = inputMatrix.length;
+		int nColumns = inputMatrix[0].length;
+		
+		System.out.println("The matrix is: ");
+		for (int[] row: inputMatrix)  
 		{
-			System.out.printf("%4s\t", inputMatrix[i][j]);
-		}
-		System.out.println();
-	}// end for
-	System.out.println("Number of rows: " + nRows);
-	System.out.println("Number of columns " + nColumns);
-	} // end method matrixPrint
+			for (int column: row) 
+			{
+				System.out.printf(printLayout, column);
+			}
+			System.out.println();
+		}// end enanched loop
+		
+		System.out.println("Number of rows: " + nRows);
+		System.out.println("Number of columns " + nColumns);
+	} // end method matrixPrint int[][]
 	
-} //end class ReadTXTPaolo
+	/** Overloads printMatrix
+	 * by Paolo Ronzoni
+	 * @param an input Matrix of type double[][]
+	 * @return print out the input Matrix
+	 */
+	public static void printMatrix(double[][] inputMatrix, String printLayout) {
+	
+		int nRows = inputMatrix.length;
+		int nColumns = inputMatrix[0].length;
+		
+		System.out.println("The matrix is: ");
+		for (double[] row: inputMatrix)  
+		{
+			for (double column: row) 
+			{
+				System.out.printf(printLayout, column);
+			}
+			System.out.println();
+		}// end enanched loop
+		
+		System.out.println("Number of rows: " + nRows);
+		System.out.println("Number of columns " + nColumns);
+	} // end method matrixPrint double[][]
+	
+} //end Class IOMethods
