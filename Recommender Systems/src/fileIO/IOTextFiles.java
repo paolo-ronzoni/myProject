@@ -131,7 +131,7 @@ public class IOTextFiles {
 	 * @param splitExpression the characters used to separate sigle elements in a row
 	 * @return Print a matrix of type String element
 	 */
-	public static void txtMatrixPrint(String filePath, String splitExpression) {
+	public static void matrixPrint(String filePath, String splitExpression) {
 	
 	int nRows = rowCounter(filePath);
 	int nColumns = columnCounter(filePath, splitExpression);	
@@ -148,6 +148,6 @@ public class IOTextFiles {
 	}// end for
 	System.out.println("Number of rows: " + nRows);
 	System.out.println("Number of columns " + nColumns);
-	} // end method txtMatrixTest
+	} // end method txtMatrixPrint
 	
 } //end class ReadTXTPaolo
