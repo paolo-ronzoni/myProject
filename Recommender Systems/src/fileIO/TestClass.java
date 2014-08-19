@@ -1,7 +1,7 @@
 package fileIO;
 
 public class TestClass {
-	static String path1 = "DataStore\\prova.txt";
+	static String path1 = "DataStore\\u.txt";
 	static String splitExpression = "\\s+";
 	public static void main(String[] args) {
           

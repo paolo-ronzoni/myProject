@@ -126,13 +126,19 @@ public class ReadTXTPaolo {
 					 return txtMatrix;
 				 } // end method txtMatrix
 	
+
+	/**
+	 * by Paolo Ronzoni
+	 * @param filePath location of the .txt file
+	 * @param splitExpression the characters used to separate sigle elements in a row
+	 * @return Print a matrix of type String element
+	 */
 	public static void txtMatrixTest(String filePath, String splitExpression) {
 	
 	int nRows = rowCounter(filePath);
 	int nColumns = columnCounter(filePath, splitExpression);	
 	String[][] stringMatrix = txtMatrix(filePath, splitExpression);
-	System.out.println("Number of rows: " + nRows);
-	System.out.println("Number of columns " + nColumns);
+	
 	System.out.println("The stringMatrix is: ");
 	for (int i = 0; i < nRows; i++)  {
 		//System.out.print((i + 1) + ": ");
@@ -141,7 +147,9 @@ public class ReadTXTPaolo {
 			System.out.printf("%4s\t", stringMatrix[i][j]);
 		}
 		System.out.println();
-	}
+	}// end for
+	System.out.println("Number of rows: " + nRows);
+	System.out.println("Number of columns " + nColumns);
 	} // end method txtMatrixTest
 	
 } //end class ReadTXTPaolo
