@@ -1,6 +1,6 @@
 package fileIO;
 
-import fileIO.IOFileMethods;
+import fileIO.IOMethods;
 
 public class TestClass {
 	static String path1 = "DataStore\\prova.txt";
@@ -8,9 +8,9 @@ public class TestClass {
 	static String splitExpression = "\\s+";
 	public static void main(String[] args) {
           
-	String[][] myMatrix = IOFileMethods.txtMatrix(path1, splitExpression);
-	IOFileMethods.matrixPrint(myMatrix);
-	int[][] integerMatrix = IOFileMethods.matrixConversion(myMatrix);
+	String[][] myMatrix = IOMethods.txtMatrix(path1, splitExpression);
+	IOMethods.matrixPrint(myMatrix);
+	int[][] integerMatrix = IOMethods.matrixConversion(myMatrix);
 		
 	
 	}// end main

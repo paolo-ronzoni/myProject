@@ -7,7 +7,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.Scanner;
 
-public class IOFileMethods {
+public class IOMethods {
 
 	
 	/**
@@ -147,6 +147,6 @@ public class IOFileMethods {
 	}// end for
 	System.out.println("Number of rows: " + nRows);
 	System.out.println("Number of columns " + nColumns);
-	} // end method MatrixPrint
+	} // end method matrixPrint
 	
 } //end class ReadTXTPaolo
