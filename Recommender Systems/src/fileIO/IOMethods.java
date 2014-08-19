@@ -7,7 +7,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.Scanner;
 
-public class IOMethods<T> {
+public class IOMethods {
 
 	
 	/**
@@ -105,22 +105,23 @@ public class IOMethods<T> {
 	
 	/**
 	 * by Paolo Ronzoni
-	 * @param stringMatrix A matrix of type String[][]
+	 * 
+	 * @param inputMatrix A matrix of type String[][]
 	 * @return a bi-dimensional integer matrix.
 	 */
-	public static int[][] matrixConversion(String[][] stringMatrix)
+	public static int[][] matrixConversion(String[][] inputMatrix)
 	 {
-		int nRows = stringMatrix.length;
-		int nColumns = stringMatrix[0].length;
-		int[][] integerMatrix = new int[nRows ][nColumns];
+		int nRows = inputMatrix.length;
+		int nColumns = inputMatrix[0].length;
+		int[][] outputMatrix = new int[nRows ][nColumns];
 		for (int row = 0; row < nRows; row++)
 		{
 		    for (int column = 0; column < nColumns; column++)
 		    {
-		     integerMatrix[row][column] = Integer.parseInt(stringMatrix[row][column]);
+		     outputMatrix[row][column] = Integer.parseInt(inputMatrix[row][column]);
 		    }
 		} 			 
-					 return integerMatrix;
+		return outputMatrix;
 	 } // end method matrixConversion
 	
 

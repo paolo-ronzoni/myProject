@@ -10,7 +10,7 @@ public class TestClass {
 	static String splitExpression = "\\s+";
 	public static void main(String[] args) {
           
-	String[][] myMatrix = IOMethods.txtMatrix(path2, splitExpression);
+	String[][] myMatrix = IOMethods.txtMatrix(path1, splitExpression);
 	IOMethods.printMatrix(myMatrix, "%4s\t");
 	int[][] integerMatrix = IOMethods.matrixConversion(myMatrix);
 	IOMethods.printMatrix(integerMatrix, "%4s\t");
