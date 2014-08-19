@@ -127,9 +127,8 @@ public class IOMethods {
 
 	/**
 	 * by Paolo Ronzoni
-	 * @param filePath location of the .txt file
-	 * @param splitExpression the characters used to separate sigle elements in a row
-	 * @return Print a matrix of type String element
+	 * @param an input Matrix
+	 * @return Print the input Matrix
 	 */
 	public static void matrixPrint(String[][] inputMatrix) {
 	
