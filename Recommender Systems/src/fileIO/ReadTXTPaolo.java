@@ -8,7 +8,7 @@ import java.io.IOException;
 import java.util.Scanner;
 
 public class ReadTXTPaolo {
-	static String path1 = "DataStore\\u.txt";
+	static String path1 = "DataStore\\prova.txt";
 	
 	public static void main(String[] args) {
 	
@@ -92,10 +92,13 @@ public class ReadTXTPaolo {
 	 * @param filePath location of the .txt file
 	 * @param nRows number of rows in the .txt file
 	 * @param nColumns number of columns int the .cvs file
-	 * @return number of column in a .cvs file
+	 * @return A String matrix
 	 */
-	public static String[][] txtMatrix(String filePath, int nRows, int nColumns)
+	public static String[][] txtMatrix(String filePath, String splitExpression)
 	 {
+		int nRows = rowCounter(filePath);
+		int nColumns = columnCounter(filePath, splitExpression);
+		
 		File afile = new File(filePath);
 		 Scanner inputStream;
 		 String[][] txtMatrix = new String[nRows ][nColumns];
@@ -106,7 +109,7 @@ public class ReadTXTPaolo {
 				   for (int row = 0; row < nRows ; row++)
 				   {
 					    data = inputStream.nextLine();//gets a whole line
-					    values = data.split("\\s+");
+					    values = data.split(splitExpression);
 					    for (int column = 0; column < values.length; column++)
 					    {
 					    		txtMatrix[row][column] = values[column] ;
