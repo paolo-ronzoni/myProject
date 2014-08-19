@@ -105,9 +105,8 @@ public class IOMethods {
 	
 	/**
 	 * by Paolo Ronzoni
-	 * 
-	 * @param inputMatrix A matrix of type String[][]
-	 * @return a bi-dimensional integer matrix.
+	 * @param inputMatrix an input matrix of type String[][]
+	 * @return outputMatrix a matrix of type integer
 	 */
 	public static int[][] matrixConversion(String[][] inputMatrix)
 	 {
@@ -175,6 +174,50 @@ public class IOMethods {
 	
 	/** Overloads printMatrix
 	 * by Paolo Ronzoni
+	 * @param an input columMatrix of type int[]
+	 * @return print out the column values
+	 */
+	public static void printMatrix(int[] inputMatrix, String printLayout) {
+	
+		int nRows = inputMatrix.length;
+		
+		System.out.println("The column matrix is: ");
+		for (int row: inputMatrix)  
+		{
+			System.out.printf(printLayout, row);
+			System.out.println();
+		}// end enanched loop
+		
+		System.out.println("Number of rows: " + nRows);
+		
+	} // end method printMatrix int[][]
+	
+	
+	/** Overloads printMatrix
+	 * by Paolo Ronzoni
+	 * @param an input columMatrix of type double[]
+	 * @return print out the column values
+	 */
+	public static void printMatrix(double[] inputMatrix, String printLayout) {
+	
+		int nRows = inputMatrix.length;
+		
+		System.out.println("The column matrix is: ");
+		for (double row: inputMatrix)  
+		{
+			System.out.printf(printLayout, row);
+			System.out.println();
+		}// end enanched loop
+		
+		System.out.println("Number of rows: " + nRows);
+		
+	} // end method printMatrix int[][]
+	
+	
+	
+	
+	/** Overloads printMatrix
+	 * by Paolo Ronzoni
 	 * @param an input Matrix of type double[][]
 	 * @return print out the input Matrix
 	 */
@@ -196,5 +239,43 @@ public class IOMethods {
 		System.out.println("Number of rows: " + nRows);
 		System.out.println("Number of columns " + nColumns);
 	} // end method matrixPrint double[][]
+	
+	/**
+	 * by Paolo Ronzoni
+	 * @param inputMatrix an input matrix of type int[][]
+	 * @param columnNumber the number of the column
+	 * @return outputArray an array of the column extracts
+	 */
+	public static int[] columnExtractor(int[][] inputMatrix, int columnNumber)
+	 {
+		int nRows = inputMatrix.length;
+		int[] outputArray = new int[nRows ];
+		for (int row = 0; row < nRows; row++)
+		{
+		    
+		    outputArray[row] = inputMatrix[row][columnNumber];
+		    
+		} 			 
+		return outputArray;
+	 } // end method columnExtractor
+	
+	/** Overloads columnExtractor
+	 * by Paolo Ronzoni
+	 * @param inputMatrix an input matrix of type double[][]
+	 * @param columnNumber the number of the column
+	 * @return outputArray an array of the column extracts
+	 */
+	public static double[] columnExtractor(double[][] inputMatrix, int columnNumber)
+	 {
+		int nRows = inputMatrix.length;
+		double[] outputArray = new double[nRows ];
+		for (int row = 0; row < nRows; row++)
+		{
+		    
+		    outputArray[row] = inputMatrix[row][columnNumber];
+		    
+		} 			 
+		return outputArray;
+	 } // end method columnExtractor
 	
 } //end Class IOMethods
