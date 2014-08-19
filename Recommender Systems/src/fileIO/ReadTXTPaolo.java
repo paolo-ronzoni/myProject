@@ -66,7 +66,7 @@ public class ReadTXTPaolo {
 	 } // end method columnCounter
 	
 	/**
-	 * 
+	 * by Paolo Ronzoni
 	 * @param filePath location of the .txt file
 	 * @param nRows number of rows in the .txt file
 	 * @param nColumns number of columns int the .cvs file
@@ -104,6 +104,26 @@ public class ReadTXTPaolo {
 					 return txtMatrix;
 				 } // end method txtMatrix
 	
+	/**
+	 * by Paolo Ronzoni
+	 * @param stringMatrix A bi-dimensinal string matrix.
+	 * @return a bi-dimensional integer matrix.
+	 */
+	public static int[][] matrixConversion(String[][] stringMatrix)
+	 {
+		int nRows = stringMatrix.length;
+		int nColumns = stringMatrix[0].length;
+		int[][] integerMatrix = new int[nRows ][nColumns];
+		for (int row = 0; row < nRows; row++)
+		{
+		    for (int column = 0; column < nColumns; column++)
+		    {
+		     integerMatrix[row][column] = Integer.parseInt(stringMatrix[row][column]);
+		    }
+		} 			 
+					 return doubleMatrix;
+	 } // end method matrixConversion
+	
 
 	/**
 	 * by Paolo Ronzoni
@@ -111,7 +131,7 @@ public class ReadTXTPaolo {
 	 * @param splitExpression the characters used to separate sigle elements in a row
 	 * @return Print a matrix of type String element
 	 */
-	public static void txtMatrixTest(String filePath, String splitExpression) {
+	public static void txtMatrixPrint(String filePath, String splitExpression) {
 	
 	int nRows = rowCounter(filePath);
 	int nColumns = columnCounter(filePath, splitExpression);	

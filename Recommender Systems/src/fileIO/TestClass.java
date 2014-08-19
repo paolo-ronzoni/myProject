@@ -5,7 +5,7 @@ public class TestClass {
 	static String splitExpression = "\\s+";
 	public static void main(String[] args) {
           
-		ReadTXTPaolo.txtMatrixTest(path1, splitExpression);
+		ReadTXTPaolo.txtMatrixPrint(path1, splitExpression);
 		
 		 
 		}// end main
