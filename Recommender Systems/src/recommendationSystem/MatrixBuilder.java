@@ -45,7 +45,7 @@ public class MatrixBuilder {
 		    	outputMatrix[row][2] = inputMatrix[row][2];
 		    	
 		    }
-		    //}
+		    
 		} 			 
 		return outputMatrix;
 	 } // end method userIdChoices
