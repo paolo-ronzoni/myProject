@@ -20,9 +20,10 @@ int[][] secondMatrix = IOMethods.matrixConversion(myMatrix);
 // int[] matrix1 = IOMethods.columnExtractor(secondMatrix, 0);
 // IOMethods.printMatrix(secondMatrix, "%4s\t");
 
-int elementFounded = MatrixBuilder.numberOfElement(secondMatrix, 0, 1);
+//int elementFounded = MatrixBuilder.numberOfElement(secondMatrix, 0, 1);
+//System.out.println("element founded: " + elementFounded);
 
-System.out.println("element founded: " + elementFounded);
+System.out.println("Fatto!!!");
 	} // end main
 
 } // end class
