@@ -1,4 +1,4 @@
-package fileIO;
+package oldStuff;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
