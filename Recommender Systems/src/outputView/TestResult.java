@@ -1,6 +1,6 @@
 package outputView;
 
-import recommendationSystem.MatrixBuilder;
+import recommendationSystem.*;
 import fileIO.IOMethods;
 
 
@@ -8,7 +8,7 @@ public class TestResult {
 
 	static double[][] doubleMatrix = {{23.2, 11.5, 18.23}, 
 		  {7.89, 56.1, 1.00}};
-static String path1 = "DataStore\\u.txt";
+static String path1 = "DataStore\\u1.txt";
 static String path2 = "DataStore\\doubleNumbers.txt";
 static String splitExpression = "\\s+";
 	
@@ -23,10 +23,11 @@ public static void main(String[] args) {
 	// IOMethods.printMatrix(secondMatrix, "%4s\t");
 
 
-int elementFounded = MatrixBuilder.numberOfElement(secondMatrix, 0, 1);
+int elementFounded = MatrixBuilder.numberOfElement(secondMatrix, 0, 186);
 System.out.println("element founded: " + elementFounded);
-
-System.out.println("Fatto!!!");
+System.out.println("matrix length: " + secondMatrix.length);
+int [][] finalMatrix = MatrixBuilder.userIDchoices(secondMatrix, 0, 3);
+IOMethods.printMatrix(finalMatrix, "%4s\t");
 	} // end main
 
 } // end class
