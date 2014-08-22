@@ -79,7 +79,7 @@ public class MatrixBuilder {
 		int secondUserRows = secondUserMatrix.length;
 		int matchedUserRows = (firstUserRows >= secondUserRows)? secondUserRows: firstUserRows;
 		int itemPosition = 1;
-		int[][] outputMatrix = new int[matchedUserRows][3];
+		int[][] outputMatrix = new int[(int)Math.min(firstUserRows, secondUserRows)][3];
 		int userRow = 0;
 		for (int i = 0; i < firstUserRows; i++)
 		{
