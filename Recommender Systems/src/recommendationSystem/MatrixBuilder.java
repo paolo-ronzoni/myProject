@@ -24,11 +24,12 @@ public class MatrixBuilder {
 	
 	
 	/** 
-	 * by Paolo Ronzoni
+	 * 
 	 * @param inputMatrix an input matrix of type int
 	 * @param columnNumber position of the column where to search
 	 * @param elementSearched the integer searched
-	 * @return a three column matrix with the choice of a specific client
+	 * @return a three column matrix with the choices of an user
+	 * @author Paolo Ronzoni
 	 */
 	public static int[][] userIDchoices(int[][] inputMatrix, int columnNumber, int elementSearched) {
 		int nRows = inputMatrix.length;
