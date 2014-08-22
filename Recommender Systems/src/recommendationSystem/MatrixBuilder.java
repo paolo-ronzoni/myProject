@@ -58,20 +58,7 @@ public class MatrixBuilder {
 	 * @return a three column matrix with the common choices of the tow users
 	 * @author Paolo Ronzoni
 	 */
-	public static int[][] matchIDchoices(int[][] inputMatrix, int columnNumber, int firstElementSearched, int secondElementSearched) {
-//		  int a[] = {3, 10, 4, 2, 8};
-//        int[] b = {10, 4, 12, 3, 23, 1, 8};
-//        int[] c = new int[(int)Math.min(a.length, b.length)];
-//        int i=0;
-//         for(int f=0;f<a.length;f++){
-//              for(int k=0;k<b.length;k++){
-//                    if(a[f]==b[k]){
-//                    c[i] = a[f];
-//                    i++;
-//            }
-//          }
-//        }	
-		
+	public static int[][] matchIDchoices(int[][] inputMatrix, int columnNumber, int firstElementSearched, int secondElementSearched) {		
 		
 		int[][] firstUserMatrix = userIDchoices(inputMatrix, columnNumber, firstElementSearched);
 		int[][] secondUserMatrix = userIDchoices(inputMatrix, columnNumber, secondElementSearched);
