@@ -59,39 +59,41 @@ public class MatrixBuilder {
 	 * @author Paolo Ronzoni
 	 */
 	public static int[][] matchIDchoices(int[][] inputMatrix, int columnNumber, int firstElementSearched, int secondElementSearched) {
-		int a[] = {3, 10, 4, 2, 8};
-        int[] b = {10, 4, 12, 3, 23, 1, 8};
-        int[] c = new int[(int)Math.min(a.length, b.length)];
-        int i=0;
-         for(int f=0;f<a.length;f++){
-              for(int k=0;k<b.length;k++){
-                    if(a[f]==b[k]){
-                    c[i] = a[f];
-                    i++;
-            }
-          }
-        }	
-		//-------------------------------------------------
+//		  int a[] = {3, 10, 4, 2, 8};
+//        int[] b = {10, 4, 12, 3, 23, 1, 8};
+//        int[] c = new int[(int)Math.min(a.length, b.length)];
+//        int i=0;
+//         for(int f=0;f<a.length;f++){
+//              for(int k=0;k<b.length;k++){
+//                    if(a[f]==b[k]){
+//                    c[i] = a[f];
+//                    i++;
+//            }
+//          }
+//        }	
+		
 		
 		int[][] firstUserMatrix = userIDchoices(inputMatrix, columnNumber, firstElementSearched);
 		int[][] secondUserMatrix = userIDchoices(inputMatrix, columnNumber, secondElementSearched);
 		int firstUserRows = firstUserMatrix.length;
 		int secondUserRows = secondUserMatrix.length;
 		int matchedUserRows = (firstUserRows >= secondUserRows)? secondUserRows: firstUserRows;
-		
+		int itemPosition = 1;
 		int[][] outputMatrix = new int[matchedUserRows][3];
 		int userRow = 0;
-		for (int row = 0; row < matchedUserRows; row++)
+		for (int i = 0; i < firstUserRows; i++)
 		{
-		    if (inputMatrix[row][columnNumber] == elementSearched) 
-		    {
-		    	for (int column = 0; column < 3; column++) {
-		    	outputMatrix[userRow][column] = inputMatrix[row][column];
-		    	}
-		    	userRow++;
-		    }
-		    
-		} 			 
+			for (int j = 0; j < secondUserRows; j++) 
+			{
+		    if (firstUserMatrix[i][itemPosition] == secondUserMatrix[j][itemPosition]) 
+			    {
+			    	outputMatrix[userRow][0] = firstUserMatrix[i][1];
+			    	outputMatrix[userRow][1] = firstUserMatrix[i][2];
+			    	outputMatrix[userRow][2] = secondUserMatrix[i][2];
+			    	userRow++;
+			    }
+			}// end inner for
+		} // end outer for 			 
 		return outputMatrix;
 	 } // end method userIdChoices
 	
