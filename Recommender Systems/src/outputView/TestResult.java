@@ -26,7 +26,7 @@ public static void main(String[] args) {
 //	int elementFounded = MatrixBuilder.numberOfElement(secondMatrix, 0, 186);
 //	System.out.println("element founded: " + elementFounded);
 //	System.out.println("matrix length: " + secondMatrix.length);
-	int [][] solutionMatrix = MatrixBuilder.matchIDchoices(secondMatrix, 0, 1, 8);
+	int [][] solutionMatrix = MatrixBuilder.matchIDchoices(secondMatrix, 0, 8, 1);
  IOMethods.printMatrix(solutionMatrix, "%4s\t");
  int check = solutionMatrix[0][0];
  System.out.println("The value is: " + check);

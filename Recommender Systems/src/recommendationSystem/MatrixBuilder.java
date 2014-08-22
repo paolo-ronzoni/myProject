@@ -55,7 +55,7 @@ public class MatrixBuilder {
 	 * @param columnNumber position of the column where to search
 	 * @param firstelementSearched the first user searched
 	 * @param secondelementSearched the second user searched
-	 * @return a three column matrix with the common choices of the tow users
+	 * @return a three column matrix with the common choices of the two users
 	 * @author Paolo Ronzoni
 	 */
 	public static int[][] matchIDchoices(int[][] inputMatrix, int columnNumber, int firstElementSearched, int secondElementSearched) {		
@@ -94,7 +94,7 @@ public class MatrixBuilder {
 		
 		
 		return finalMatrix;
-	 } // end method userIdChoices
+	 } // end method matchIdChoices
 	
 	
 
