@@ -28,7 +28,7 @@ public class MatrixBuilder {
 	 * @param inputMatrix an input matrix of type int
 	 * @param columnNumber position of the column where to search
 	 * @param elementSearched the integer searched
-	 * @return number of integer founded in the column
+	 * @return a three column matrix with the choice of a specific client
 	 */
 	public static int[][] userIDchoices(int[][] inputMatrix, int columnNumber, int elementSearched) {
 		int nRows = inputMatrix.length;
