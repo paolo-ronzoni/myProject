@@ -67,24 +67,37 @@ public class MatrixBuilder {
 		int itemPosition = 1;
 		int[][] outputMatrix = new int[(int)Math.min(firstUserRows, secondUserRows)][3];
 		int userRow = 0;
-		here:
+		int outPutRow = 0;
+			
 		for (int i = 0; i < firstUserRows  ; i++)
 		{
 			for (int j = 0; j < secondUserRows; j++) 
 			{
-		    if (firstUserMatrix[i][itemPosition] == secondUserMatrix[j][itemPosition]) 
+		    if (firstUserMatrix[i][itemPosition] == secondUserMatrix[j][itemPosition] ) 
 			    {
 		    	    
 			    	outputMatrix[userRow][0] = secondUserMatrix[j][1];
 			    	outputMatrix[userRow][1] = firstUserMatrix[i][2];
 			    	outputMatrix[userRow][2] = secondUserMatrix[j][2];
+			    	if (outputMatrix[userRow][0] != 0) outPutRow++;
 			    	userRow++;
+			    	
 			    }
 			}// end inner for
 		} // end outer for 	
 		
-		return outputMatrix;
+		int[][] finalMatrix = new int[outPutRow][3];
+		for (int k = 0; k < outPutRow; k++) {
+			for (int column  = 0; column < 3; column++)
+			finalMatrix[k][column] = outputMatrix[k][column];
+		}
+		
+		
+		return finalMatrix;
 	 } // end method userIdChoices
+	
+	
+
 	
 
 }
