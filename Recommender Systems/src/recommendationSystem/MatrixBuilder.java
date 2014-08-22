@@ -80,19 +80,22 @@ public class MatrixBuilder {
 		int itemPosition = 1;
 		int[][] outputMatrix = new int[(int)Math.min(firstUserRows, secondUserRows)][3];
 		int userRow = 0;
+		here:
 		for (int i = 0; i < firstUserRows  ; i++)
 		{
 			for (int j = 0; j < secondUserRows; j++) 
 			{
 		    if (firstUserMatrix[i][itemPosition] == secondUserMatrix[j][itemPosition]) 
 			    {
+		    	    
 			    	outputMatrix[userRow][0] = secondUserMatrix[j][1];
 			    	outputMatrix[userRow][1] = firstUserMatrix[i][2];
 			    	outputMatrix[userRow][2] = secondUserMatrix[j][2];
 			    	userRow++;
 			    }
 			}// end inner for
-		} // end outer for 			 
+		} // end outer for 	
+		
 		return outputMatrix;
 	 } // end method userIdChoices
 	
