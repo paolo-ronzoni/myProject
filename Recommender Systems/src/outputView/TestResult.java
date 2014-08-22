@@ -9,7 +9,7 @@ public class TestResult {
 	static double[][] doubleMatrix = {{23.2, 11.5, 18.23}, 
 		  {7.89, 56.1, 1.00}};
 static String path1 = "DataStore\\u1.txt";
-static String path2 = "DataStore\\provaFinale.txt";
+static String path2 = "DataStore\\u1.txt";
 static String splitExpression = "\\s+";
 	
 		
@@ -26,11 +26,12 @@ public static void main(String[] args) {
 //	int elementFounded = MatrixBuilder.numberOfElement(secondMatrix, 0, 186);
 //	System.out.println("element founded: " + elementFounded);
 //	System.out.println("matrix length: " + secondMatrix.length);
-	int [][] solutionMatrix = MatrixBuilder.matchIDchoices(secondMatrix, 0, 1, 2);
+	int [][] solutionMatrix = MatrixBuilder.matchIDchoices(secondMatrix, 0, 1, 8);
  IOMethods.printMatrix(solutionMatrix, "%4s\t");
  int check = solutionMatrix[0][0];
  System.out.println("The value is: " + check);
      System.out.println("fatto!");
+
 	} // end main
 
 } // end class
