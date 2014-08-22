@@ -4,11 +4,11 @@ public class MatrixBuilder {
 
 	
 	/** 
-	 * by Paolo Ronzoni
 	 * @param inputMatrix an input matrix of type int
 	 * @param columnNumber position of the column where to search
 	 * @param elementSearched the integer searched
 	 * @return number of integer founded in the column
+	 * @author Paolo Ronzoni
 	 */
 	public static int numberOfElement(int[][] inputMatrix, int columnNumber, int elementSearched) {
 		int nRows = inputMatrix.length;
@@ -24,7 +24,6 @@ public class MatrixBuilder {
 	
 	
 	/** 
-	 * 
 	 * @param inputMatrix an input matrix of type int
 	 * @param columnNumber position of the column where to search
 	 * @param elementSearched the integer searched
@@ -52,7 +51,6 @@ public class MatrixBuilder {
 	
 	
 	/** 
-	 * 
 	 * @param inputMatrix an input matrix of type int
 	 * @param columnNumber position of the column where to search
 	 * @param firstelementSearched the first user searched
@@ -62,11 +60,15 @@ public class MatrixBuilder {
 	 */
 	public static int[][] matchIDchoices(int[][] inputMatrix, int columnNumber, int firstElementSearched, int secondElementSearched) {
 		
-		int[][] firstUser = userIDchoices(inputMatrix, columnNumber, firstElementSearched);
-		int[][] secondUser = userIDchoices(inputMatrix, columnNumber, secondElementSearched);
+		int[][] firstUserMatrix = userIDchoices(inputMatrix, columnNumber, firstElementSearched);
+		int[][] secondUserMatrix = userIDchoices(inputMatrix, columnNumber, secondElementSearched);
+		int firstUserRows = firstUserMatrix.length;
+		int secondUserRows = secondUserMatrix.length;
+		int matchedUserRows = (firstUserRows >= secondUserRows)? secondUserRows: firstUserRows;
 		
+		int[][] outputMatrix = new int[matchedUserRows][3];
 		int userRow = 0;
-		for (int row = 0; row < nRows; row++)
+		for (int row = 0; row < matchedUserRows; row++)
 		{
 		    if (inputMatrix[row][columnNumber] == elementSearched) 
 		    {
