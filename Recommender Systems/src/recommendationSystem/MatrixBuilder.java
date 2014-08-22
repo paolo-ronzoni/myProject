@@ -77,19 +77,18 @@ public class MatrixBuilder {
 		int[][] secondUserMatrix = userIDchoices(inputMatrix, columnNumber, secondElementSearched);
 		int firstUserRows = firstUserMatrix.length;
 		int secondUserRows = secondUserMatrix.length;
-		int matchedUserRows = (firstUserRows >= secondUserRows)? secondUserRows: firstUserRows;
 		int itemPosition = 1;
 		int[][] outputMatrix = new int[(int)Math.min(firstUserRows, secondUserRows)][3];
 		int userRow = 0;
-		for (int i = 0; i < firstUserRows; i++)
+		for (int i = 0; i < firstUserRows  ; i++)
 		{
 			for (int j = 0; j < secondUserRows; j++) 
 			{
 		    if (firstUserMatrix[i][itemPosition] == secondUserMatrix[j][itemPosition]) 
 			    {
-			    	outputMatrix[userRow][0] = firstUserMatrix[i][1];
+			    	outputMatrix[userRow][0] = secondUserMatrix[j][1];
 			    	outputMatrix[userRow][1] = firstUserMatrix[i][2];
-			    	outputMatrix[userRow][2] = secondUserMatrix[i][2];
+			    	outputMatrix[userRow][2] = secondUserMatrix[j][2];
 			    	userRow++;
 			    }
 			}// end inner for
