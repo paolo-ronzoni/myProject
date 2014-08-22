@@ -8,8 +8,8 @@ public class TestResult {
 
 	static double[][] doubleMatrix = {{23.2, 11.5, 18.23}, 
 		  {7.89, 56.1, 1.00}};
-static String path1 = "DataStore\\u.txt";
-static String path2 = "DataStore\\doubleNumbers.txt";
+static String path1 = "DataStore\\provaFinale.txt";
+static String path2 = "DataStore\\provaFinale.txt";
 static String splitExpression = "\\s+";
 	
 		
@@ -26,8 +26,10 @@ public static void main(String[] args) {
 //	int elementFounded = MatrixBuilder.numberOfElement(secondMatrix, 0, 186);
 //	System.out.println("element founded: " + elementFounded);
 //	System.out.println("matrix length: " + secondMatrix.length);
-	int [][] finalMatrix = MatrixBuilder.userIDchoices(secondMatrix, 0, 943);
+	int [][] finalMatrix = MatrixBuilder.matchIDchoices(secondMatrix, 0, 1, 2);
  IOMethods.printMatrix(finalMatrix, "%4s\t");
+ int check = finalMatrix[3][1];
+ System.out.println("The value is: " + check);
      System.out.println("fatto!");
 	} // end main
 
