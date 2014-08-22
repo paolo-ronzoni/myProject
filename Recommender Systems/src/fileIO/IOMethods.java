@@ -13,6 +13,7 @@ public class IOMethods {
 	/**
 	 * @param filePath location of the .txt file
 	 * @return number of rows in the .txt file
+	 * @author Paolo Ronzoni
 	 */
 	public static int rowCounter(String filePath)
 	 {
@@ -42,6 +43,7 @@ public class IOMethods {
 	 * @param filePath location of the .txt file
 	 * @param splitExpression "expression" that split the table
 	 * @return number of column in a .txt file
+	 * @author Paolo Ronzoni
 	 */
 	public static int columnCounter(String filePath, String splitExpression)
 	 {
@@ -66,10 +68,10 @@ public class IOMethods {
 	 } // end method columnCounter
 	
 	/**
-	 * by Paolo Ronzoni
 	 * @param filePath location of the .txt file
 	 * @param nColumns number of columns int the .cvs file
 	 * @return A matrix of type String[][]
+	 * @author Paolo Ronzoni
 	 */
 	public static String[][] txtMatrix(String filePath, String splitExpression)
 	 {
@@ -104,9 +106,10 @@ public class IOMethods {
 				 } // end method txtMatrix
 	
 	/**
-	 * by Paolo Ronzoni
+	 * 
 	 * @param inputMatrix an input matrix of type String[][]
 	 * @return outputMatrix a matrix of type integer
+	 * @author Paolo Ronzoni
 	 */
 	public static int[][] matrixConversion(String[][] inputMatrix)
 	 {
@@ -125,9 +128,10 @@ public class IOMethods {
 	
 	
 	/**
-	 * by Paolo Ronzoni
+	 * 
 	 * @param inputMatrix an input matrix of type String[][]
 	 * @return outputMatrix a matrix of type double
+	 * @author Paolo Ronzoni
 	 */
 	public static double[][] matrixConversionDouble(String[][] inputMatrix)
 	 {
@@ -150,6 +154,7 @@ public class IOMethods {
 	 * by Paolo Ronzoni
 	 * @param an input Matrix of type String[][]
 	 * @return print the input Matrix
+	 * @author Paolo Ronzoni
 	 */
 	public static  void printMatrix(String[][] inputMatrix, String printLayout) {
 		int nRows = inputMatrix.length;
@@ -171,9 +176,9 @@ public class IOMethods {
 	
 	
 	/** Overloads printMatrix
-	 * by Paolo Ronzoni
 	 * @param an input Matrix of type int[][]
 	 * @return print out the input Matrix
+	 * @author Paolo Ronzoni
 	 */
 	public static void printMatrix(int[][] inputMatrix, String printLayout) {
 	
@@ -195,9 +200,10 @@ public class IOMethods {
 	} // end method matrixPrint int[][]
 	
 	/** Overloads printMatrix
-	 * by Paolo Ronzoni
+	 * 
 	 * @param an input columMatrix of type int[]
 	 * @return print out the column values
+	 * @author Paolo Ronzoni
 	 */
 	public static void printMatrix(int[] inputMatrix, String printLayout) {
 	
@@ -216,9 +222,10 @@ public class IOMethods {
 	
 	
 	/** Overloads printMatrix
-	 * by Paolo Ronzoni
+	 * 
 	 * @param an input columMatrix of type double[]
 	 * @return print out the column values
+	 * @author Paolo Ronzoni
 	 */
 	public static void printMatrix(double[] inputMatrix, String printLayout) {
 	
@@ -239,9 +246,10 @@ public class IOMethods {
 	
 	
 	/** Overloads printMatrix
-	 * by Paolo Ronzoni
+	 * 
 	 * @param an input Matrix of type double[][]
 	 * @return print out the input Matrix
+	 * @author Paolo Ronzoni
 	 */
 	public static void printMatrix(double[][] inputMatrix, String printLayout) {
 	
@@ -263,10 +271,11 @@ public class IOMethods {
 	} // end method matrixPrint double[][]
 	
 	/**
-	 * by Paolo Ronzoni
+	 *
 	 * @param inputMatrix an input matrix of type int[][]
 	 * @param columnNumber the number of the column
 	 * @return outputArray an array of the column extracts
+	 * @author Paolo Ronzoni
 	 */
 	public static int[] columnExtractor(int[][] inputMatrix, int columnNumber)
 	 {
@@ -282,10 +291,11 @@ public class IOMethods {
 	 } // end method columnExtractor
 	
 	/** Overloads columnExtractor
-	 * by Paolo Ronzoni
+	 * 
 	 * @param inputMatrix an input matrix of type double[][]
 	 * @param columnNumber the number of the column
 	 * @return outputArray an array of the column extracts
+	 * @author Paolo Ronzoni
 	 */
 	public static double[] columnExtractor(double[][] inputMatrix, int columnNumber) {
 		int nRows = inputMatrix.length;
