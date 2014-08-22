@@ -34,16 +34,15 @@ public class MatrixBuilder {
 		int nRows = inputMatrix.length;
 		int nRowsUser = numberOfElement(inputMatrix, columnNumber, elementSearched);
 		int[][] outputMatrix = new int[nRowsUser][3];
-		
+		int userRow = 0;
 		for (int row = 0; row < nRows; row++)
 		{
 		    if (inputMatrix[row][columnNumber] == elementSearched) 
 		    {
-		    	// for (int column = 0; column < 3; column++) {
-		    	outputMatrix[row][0] = inputMatrix[row][0];
-		    	outputMatrix[row][1] = inputMatrix[row][1];
-		    	outputMatrix[row][2] = inputMatrix[row][2];
-		    	
+		    	for (int column = 0; column < 3; column++) {
+		    	outputMatrix[userRow][column] = inputMatrix[row][column];
+		    	}
+		    	userRow++;
 		    }
 		    
 		} 			 
