@@ -50,5 +50,35 @@ public class MatrixBuilder {
 		return outputMatrix;
 	 } // end method userIdChoices
 	
+	
+	/** 
+	 * 
+	 * @param inputMatrix an input matrix of type int
+	 * @param columnNumber position of the column where to search
+	 * @param firstelementSearched the first user searched
+	 * @param secondelementSearched the second user searched
+	 * @return a three column matrix with the common choices of the tow users
+	 * @author Paolo Ronzoni
+	 */
+	public static int[][] matchIDchoices(int[][] inputMatrix, int columnNumber, int firstElementSearched, int secondElementSearched) {
+		
+		int[][] firstUser = userIDchoices(inputMatrix, columnNumber, firstElementSearched);
+		int[][] secondUser = userIDchoices(inputMatrix, columnNumber, secondElementSearched);
+		
+		int userRow = 0;
+		for (int row = 0; row < nRows; row++)
+		{
+		    if (inputMatrix[row][columnNumber] == elementSearched) 
+		    {
+		    	for (int column = 0; column < 3; column++) {
+		    	outputMatrix[userRow][column] = inputMatrix[row][column];
+		    	}
+		    	userRow++;
+		    }
+		    
+		} 			 
+		return outputMatrix;
+	 } // end method userIdChoices
+	
 
 }
