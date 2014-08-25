@@ -18,27 +18,27 @@ public class NearestNeighborValue {
 		
 		int user1columnScores = 1;
 		int user2columnScores = 2;
-		int numRows = inputMatrix.length;
+		int numRows = intermediateMatrix.length;
 		double numerator = 0;
 		double denominator1 = 0;
 		double denominator2 = 0;
 		double finalValue = 0;
 		
 		// calculates the averages of the columns' users scores 
-		double User1Average = StatAndMathTools.matrixColumnAverage(inputMatrix, user1columnScores);
-		double User2Average = StatAndMathTools.matrixColumnAverage(inputMatrix, user2columnScores);
+		double user1Average = StatAndMathTools.matrixColumnAverage(intermediateMatrix, user1columnScores);
+		double user2Average = StatAndMathTools.matrixColumnAverage(intermediateMatrix, user2columnScores);
 		
 		
 		for (int row = 0; row < numRows  ; row++)
 		{
-		numerator += (intermediateMatrix[row][user1columnScores] - User1Average) * (intermediateMatrix[row][user2columnScores] - User2Average);
+		numerator += ((intermediateMatrix[row][user1columnScores] - user1Average) * (intermediateMatrix[row][user2columnScores] - user2Average));
 		
-		denominator1 = Math.pow((intermediateMatrix[row][user1columnScores] - User1Average),2);
-		denominator2 = Math.pow((intermediateMatrix[row][user2columnScores] - User2Average),2);
+		denominator1 = Math.pow((intermediateMatrix[row][user1columnScores] - user1Average),2);
+		denominator2 = Math.pow((intermediateMatrix[row][user2columnScores] - user2Average),2);
 			    	
-		} // end outer for 	
+		} // end for loop
 		
 		
-		return numerator / (Math.sqrt(denominator1 * denominator2));
+		return (numerator / (Math.sqrt(denominator1 * denominator2)));
 	 } // end method matchIdChoices
 }
