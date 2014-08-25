@@ -1,7 +1,6 @@
 package recommendationSystem;
 
-public class UserBasedNearestNeighbor {
-
+public class ItemBasedNearestNeighbor {
 	
 	/** 
 	 * @param inputMatrix an input matrix of type int
@@ -40,5 +39,5 @@ public class UserBasedNearestNeighbor {
 		
 		return (numerator / (Math.sqrt(denominator1 * denominator2)));
 	 } // end method userNearestNeighborValue
-	
-} // end class
+
+}
