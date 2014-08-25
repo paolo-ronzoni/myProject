@@ -26,12 +26,20 @@ public static void main(String[] args) {
 //	int elementFounded = MatrixBuilder.numberOfElement(secondMatrix, 0, 186);
 //	System.out.println("element founded: " + elementFounded);
 //	System.out.println("matrix length: " + secondMatrix.length);
-	int [][] solutionMatrix = MatrixBuilder.matchIDchoices(secondMatrix, 0, 8, 1);
+	int [][] solutionMatrix = MatrixBuilder.matchIDchoices(secondMatrix, 0, 1, 858);
  IOMethods.printMatrix(solutionMatrix, "%4s\t");
- double nearestValue = NearestNeighborValue.nearestNeigborValue(secondMatrix, 0, 1, 45);
- int check = solutionMatrix[0][0];
- System.out.println("The nearestValue is: " + nearestValue);
-     System.out.println("fatto!");
+ double nearestValue = 0;
+ for (int k = 1; k <= 943; k++ ) {
+ nearestValue = UserBasedNearestNeighbor.userNearestNeighborValue(secondMatrix, 0, 1, k);
+ if (Double.isNaN(nearestValue)) {
+ System.out.println("value(1," + k + "): " + nearestValue);}
+ 
+ 
+ } //end for
+ 
+ nearestValue = UserBasedNearestNeighbor.userNearestNeighborValue(secondMatrix, 0, 1, 685);
+ 
+     System.out.println("fatto! and nearest:" + nearestValue);
 
 	} // end main
 
