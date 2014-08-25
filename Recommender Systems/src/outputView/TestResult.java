@@ -28,8 +28,9 @@ public static void main(String[] args) {
 //	System.out.println("matrix length: " + secondMatrix.length);
 	int [][] solutionMatrix = MatrixBuilder.matchIDchoices(secondMatrix, 0, 8, 1);
  IOMethods.printMatrix(solutionMatrix, "%4s\t");
+ double nearestValue = NearestNeighborValue.nearestNeigborValue(secondMatrix, 0, 1, 1);
  int check = solutionMatrix[0][0];
- System.out.println("The value is: " + check);
+ System.out.println("The nearestValue is: " + nearestValue);
      System.out.println("fatto!");
 
 	} // end main

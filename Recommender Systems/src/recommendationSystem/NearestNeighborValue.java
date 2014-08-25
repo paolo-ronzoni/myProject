@@ -33,8 +33,8 @@ public class NearestNeighborValue {
 		{
 		numerator += ((intermediateMatrix[row][user1columnScores] - user1Average) * (intermediateMatrix[row][user2columnScores] - user2Average));
 		
-		denominator1 = Math.pow((intermediateMatrix[row][user1columnScores] - user1Average),2);
-		denominator2 = Math.pow((intermediateMatrix[row][user2columnScores] - user2Average),2);
+		denominator1 += Math.pow((intermediateMatrix[row][user1columnScores] - user1Average),2);
+		denominator2 += Math.pow((intermediateMatrix[row][user2columnScores] - user2Average),2);
 			    	
 		} // end for loop
 		
