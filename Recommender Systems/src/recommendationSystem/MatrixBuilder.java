@@ -54,27 +54,28 @@ public class MatrixBuilder {
 	 * @param inputMatrix an input matrix of type int
 	 * @param columnNumber position of the column where to search
 	 * @param elementSearched the integer searched
-	 * @return a three column matrix with the choices of one users
+	 * @return a three column matrix with userID, ItemId, rating
 	 * @author Paolo Ronzoni
 	 */
 	public static int[][] singleUserIDchoices(int[][] inputMatrix, int columnNumber, int elementSearched) {
 		int nRows = inputMatrix.length;
 		int nRowsUser = numberOfElement(inputMatrix, columnNumber, elementSearched);
-		int[][] outputMatrix = new int[nRowsUser][3];
+		int[][] intermediateMatrix = new int[nRowsUser][3];
 		int userRow = 0;
+		//int outPutRow = 0;
 		for (int row = 0; row < nRows; row++)
 		{
 		    if (inputMatrix[row][columnNumber] == elementSearched) 
 		    {
 		    	for (int column = 0; column < 3; column++) {
-		    	outputMatrix[userRow][column] = inputMatrix[row][column];
+		    	intermediateMatrix[userRow][column] = inputMatrix[row][column];
 		    	}
 		    	userRow++;
 		    }
 		    
 		} 			 
-		return outputMatrix;
-	 } // end method userIdChoices
+		return intermediateMatrix;
+	 } // end method singleUserIdChoices
 	
 	
 	/** 
