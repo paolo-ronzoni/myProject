@@ -4,7 +4,7 @@ import recommendationSystem.*;
 import fileIO.IOMethods;
 
 
-public class TestResult {
+public class UserBasedTestResult {
 
 	static double[][] doubleMatrix = {{23.2, 11.5, 18.23}, 
 		  {7.89, 56.1, 1.00}};
@@ -26,18 +26,18 @@ public static void main(String[] args) {
 //	int elementFounded = MatrixBuilder.numberOfElement(secondMatrix, 0, 186);
 //	System.out.println("element founded: " + elementFounded);
 //	System.out.println("matrix length: " + secondMatrix.length);
-	int [][] solutionMatrix = MatrixBuilder.matchIDchoices(secondMatrix, 0, 1, 858);
+	int [][] solutionMatrix = MatrixBuilder.matchIDchoices(secondMatrix, 0, 2, 358);
  IOMethods.printMatrix(solutionMatrix, "%4s\t");
  double nearestValue = 0;
- for (int k = 1; k <= 943; k++ ) {
- nearestValue = UserBasedNearestNeighbor.userNearestNeighborValue(secondMatrix, 0, 1, k);
- if (Double.isNaN(nearestValue)) {
- System.out.println("value(1," + k + "): " + nearestValue);}
- 
- 
+ for (int k = 1; k <= 943; k++ ) 
+ {
+	 nearestValue = UserBasedNearestNeighbor.userNearestNeighborValue(secondMatrix, 0, 2, k);
+	 // if (Double.isNaN(nearestValue)) {
+	 System.out.println("value(2," + k + "): " + nearestValue);
+	 //}
  } //end for
  
- nearestValue = UserBasedNearestNeighbor.userNearestNeighborValue(secondMatrix, 0, 1, 685);
+ nearestValue = UserBasedNearestNeighbor.userNearestNeighborValue(secondMatrix, 0, 2, 358);
  
      System.out.println("fatto! and nearest:" + nearestValue);
 
