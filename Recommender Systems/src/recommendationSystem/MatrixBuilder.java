@@ -2,7 +2,7 @@ package recommendationSystem;
 
 public class MatrixBuilder {
 
-	//Paolo sei grande!!!!!!!!!!!!!!!
+	
 	/** 
 	 * @param inputMatrix an input matrix of type int
 	 * @param columnNumber position of the column where to search
