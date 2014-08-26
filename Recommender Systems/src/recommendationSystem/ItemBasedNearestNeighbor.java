@@ -1,6 +1,10 @@
 package recommendationSystem;
 
+import fileIO.IOMethods;
+
 public class ItemBasedNearestNeighbor {
+	
+	
 	
 	/** 
 	 * @param inputMatrix an input matrix of type int
@@ -10,7 +14,7 @@ public class ItemBasedNearestNeighbor {
 	 * @return 
 	 * @author Paolo Ronzoni
 	 */
-	public static double userNearestNeighborValue(int[][] inputMatrix, int columnNumber, int firstElementSearched, int secondElementSearched) {		
+	public static double itemBasedNearestNeighborValue(int[][] inputMatrix, int columnNumber, int firstElementSearched, int secondElementSearched) {		
 		
 		// create a matrix of three column: items, user1scores, user2scores
 		int[][] intermediateMatrix = MatrixBuilder.matchIDchoices(inputMatrix, columnNumber,firstElementSearched, secondElementSearched);
@@ -38,6 +42,6 @@ public class ItemBasedNearestNeighbor {
 		
 		
 		return (numerator / (Math.sqrt(denominator1 * denominator2)));
-	 } // end method userNearestNeighborValue
+	 } // end method itemBasedNearestNeighborValue
 
-}
+}// end class
