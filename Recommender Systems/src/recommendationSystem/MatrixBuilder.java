@@ -62,7 +62,6 @@ public class MatrixBuilder {
 		int nRowsUser = numberOfElement(inputMatrix, columnNumber, elementSearched);
 		int[][] intermediateMatrix = new int[nRowsUser][3];
 		int userRow = 0;
-		//int outPutRow = 0;
 		for (int row = 0; row < nRows; row++)
 		{
 		    if (inputMatrix[row][columnNumber] == elementSearched) 
