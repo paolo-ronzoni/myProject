@@ -25,10 +25,8 @@ public static void main(String[] args) {
 	double [][] solutionMatrix = MatrixBuilder.doubleItemRatingMatrix(secondMatrix, 0, 4, 23);
 IOMethods.printMatrix(solutionMatrix, "%4s\t");
 
-//		int[] users = MatrixBuilder.findAllUsers(secondMatrix, 0);
-//		for (int element: users) {
-//			System.out.println(element + " ");
-//			} // end for
+		double  itemBasedValue = ItemBasedNearestNeighbor.itemBasedNearestNeighborValue(secondMatrix, 0, 1, 18);
+		System.out.println("ItemBasedValue: " + itemBasedValue);
 
 
 	} // end main
