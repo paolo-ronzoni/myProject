@@ -206,9 +206,10 @@ public class MatrixBuilder {
 	 * @return fianlMatrix a three column matrix userID ratingOfFirstElementSearched ratingOfSecondElementSearched
 	 * @author Paolo Ronzoni
 	 */
-	public static int[][] doubleItemRatingMatrix(int[][] inputMatrix, int columnNumber, int firstElementSearched, int secondElementSearched) {		
+	public static double[][] doubleItemRatingMatrix(int[][] inputMatrix, int columnNumber, int firstElementSearched, int secondElementSearched) {		
 		int usersColumn = 0;
 		int itemColumn = 1;
+		int ratingColumn = 2;
 		int[] usersArray = findAllUsers(inputMatrix, usersColumn);
 		int usersNumber = usersArray.length;
 		
@@ -216,6 +217,7 @@ public class MatrixBuilder {
 		ArrayList<Integer> usersInFinalMatrix = new ArrayList<>();
 		ArrayList<Integer> firstElementRating = new ArrayList<>();
 		ArrayList<Integer> secondElementRating = new ArrayList<>();
+		ArrayList<Double> averageOfAllRating = new ArrayList<>();
 		
 		for (int row = 0; row < usersNumber; row++) {
 		intermediateMatrix = userIDchoices(inputMatrix, columnNumber, usersArray[row]);
@@ -223,6 +225,7 @@ public class MatrixBuilder {
 			firstElementRating.add(getItem(intermediateMatrix, itemColumn, firstElementSearched, 2));
 			secondElementRating.add(getItem(intermediateMatrix, itemColumn, secondElementSearched, 2));
 			usersInFinalMatrix.add(usersArray[row]);
+			averageOfAllRating.add(StatAndMathTools.matrixColumnAverage(intermediateMatrix, ratingColumn));
 			
 		} // end if
 			
@@ -231,12 +234,14 @@ public class MatrixBuilder {
 		Integer[] firstRatingArray = firstElementRating.toArray(new Integer[0]);
 		Integer[] secondRatingArray = secondElementRating.toArray(new Integer[0]);
 		Integer[] finalUsers = usersInFinalMatrix.toArray(new Integer[0]);
+		Double[] allRatingAverages = averageOfAllRating.toArray(new Double[0]);
 		int ratingLength = firstRatingArray.length;
-		int[][] finalMatrix = new int[ratingLength][3];
+		double[][] finalMatrix = new double[ratingLength][4];
 		for (int n = 0; n < ratingLength; n++) {
 				finalMatrix[n][0] = finalUsers[n];
 				finalMatrix[n][1] = firstRatingArray[n];
 				finalMatrix[n][2] = secondRatingArray[n];
+				finalMatrix[n][3] = allRatingAverages[n];
 				
 			} // end for
 		
