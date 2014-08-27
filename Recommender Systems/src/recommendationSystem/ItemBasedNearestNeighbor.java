@@ -8,17 +8,6 @@ import fileIO.IOMethods;
 
 public class ItemBasedNearestNeighbor {
 	
-
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	/** 
 	 * @param inputMatrix an input matrix of type int
 	 * @param columnNumber the position of the column where to search
@@ -32,24 +21,24 @@ public class ItemBasedNearestNeighbor {
 		// create a matrix of three column: items, user1scores, user2scores
 		double[][] intermediateMatrix = MatrixBuilder.doubleItemRatingMatrix(inputMatrix, columnNumber,firstElementSearched, secondElementSearched);
 		
-		int user1columnScores = 1;
-		int user2columnScores = 2;
 		int numRows = intermediateMatrix.length;
+		
+		int item1columnScores = 1;
+		int item2columnScores = 2;
+		int averagecolumnScores = 3;
+		
 		double numerator = 0;
 		double denominator1 = 0;
 		double denominator2 = 0;
-		
-		// calculates the averages of the columns' users scores 
-		double user1Average = StatAndMathTools.matrixColumnAverage(intermediateMatrix, user1columnScores);
-		double user2Average = StatAndMathTools.matrixColumnAverage(intermediateMatrix, user2columnScores);
+
 		
 		
 		for (int row = 0; row < numRows  ; row++)
 		{
-		numerator += ((intermediateMatrix[row][user1columnScores] - user1Average) * (intermediateMatrix[row][user2columnScores] - user2Average));
+		numerator += ((intermediateMatrix[row][item1columnScores] - intermediateMatrix[row][averagecolumnScores]) * (intermediateMatrix[row][item2columnScores] - intermediateMatrix[row][averagecolumnScores]));
 		
-		denominator1 += Math.pow((intermediateMatrix[row][user1columnScores] - user1Average),2);
-		denominator2 += Math.pow((intermediateMatrix[row][user2columnScores] - user2Average),2);
+		denominator1 += Math.pow((intermediateMatrix[row][item1columnScores] - intermediateMatrix[row][averagecolumnScores]),2);
+		denominator2 += Math.pow((intermediateMatrix[row][item2columnScores] - intermediateMatrix[row][averagecolumnScores]),2);
 			    	
 		} // end for loop
 		
