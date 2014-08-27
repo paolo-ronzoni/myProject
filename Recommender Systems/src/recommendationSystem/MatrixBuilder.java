@@ -3,6 +3,8 @@ package recommendationSystem;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
+import java.util.ArrayList;
+import java.util.List;
 
 public class MatrixBuilder {
 
@@ -153,6 +155,57 @@ public class MatrixBuilder {
 		return finalList;
 	 } // end method findAllUsers
 
+	/** 
+	 * @param inputMatrix an input matrix of type int
+	 * @param columnNumber position of the column where to search
+	 * @param firstelementSearched the first element searched
+	 * @param secondelementSearched the second element searched
+	 * @return fianlMatrix a three column matrix userID ratingOfFirstElementSearched ratingOfSecondElementSearched
+	 * @author Paolo Ronzoni
+	 */
+	public static int[][] doubleItemRatingMatrix(int[][] inputMatrix, int columnNumber, int firstElementSearched, int secondElementSearched) {		
+		int usersColumn = 0;
+		int[] usersArray = findAllUsers(inputMatrix, usersColumn);
+		int usersNumber = usersArray.length;
+		
+		for (int row = 0; row < usersNumber; row++) {
+			
+		}
+		int[][] firstUserMatrix = userIDchoices(inputMatrix, columnNumber, firstElementSearched);
+		int[][] secondUserMatrix = userIDchoices(inputMatrix, columnNumber, secondElementSearched);
+		int firstUserRows = firstUserMatrix.length;
+		int secondUserRows = secondUserMatrix.length;
+		int itemPosition = 1;
+		int[][] outputMatrix = new int[(int)Math.min(firstUserRows, secondUserRows)][3];
+		int userRow = 0;
+		int outPutRow = 0;
+			
+		for (int i = 0; i < firstUserRows  ; i++)
+		{
+			for (int j = 0; j < secondUserRows; j++) 
+			{
+		    if (firstUserMatrix[i][itemPosition] == secondUserMatrix[j][itemPosition] ) 
+			    {
+		    	    
+			    	outputMatrix[userRow][0] = secondUserMatrix[j][1];
+			    	outputMatrix[userRow][1] = firstUserMatrix[i][2];
+			    	outputMatrix[userRow][2] = secondUserMatrix[j][2];
+			    	if (outputMatrix[userRow][0] != 0) outPutRow++;
+			    	userRow++;
+			    	
+			    }
+			}// end inner for
+		} // end outer for 	
+		
+		int[][] finalMatrix = new int[outPutRow][3];
+		for (int k = 0; k < outPutRow; k++) {
+			for (int column  = 0; column < 3; column++)
+			finalMatrix[k][column] = outputMatrix[k][column];
+		}
+		
+		
+		return finalMatrix;
+	 } // end method matchIdChoices
 	
 
 } // end class
