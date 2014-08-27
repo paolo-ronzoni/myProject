@@ -56,31 +56,31 @@ public class MatrixBuilder {
 	 } // end method userIdChoices
 	
 	
-	/** 
-	 * @param inputMatrix an input matrix of type int
-	 * @param columnNumber position of the column where to search
-	 * @param elementSearched the integer searched
-	 * @return a three column matrix with userID, ItemId, rating
-	 * @author Paolo Ronzoni
-	 */
-	public static int[][] singleUserIDchoices(int[][] inputMatrix, int columnNumber, int elementSearched) {
-		int nRows = inputMatrix.length;
-		int nRowsUser = numberOfElement(inputMatrix, columnNumber, elementSearched);
-		int[][] finalMatrix = new int[nRowsUser][3];
-		int userRow = 0;
-		for (int row = 0; row < nRows; row++)
-		{
-		    if (inputMatrix[row][columnNumber] == elementSearched) 
-		    {
-		    	for (int column = 0; column < 3; column++) {
-		    	finalMatrix[userRow][column] = inputMatrix[row][column];
-		    	}
-		    	userRow++;
-		    }
-		    
-		} 			 
-		return finalMatrix;
-	 } // end method singleUserIdChoices
+//	/** 
+//	 * @param inputMatrix an input matrix of type int
+//	 * @param columnNumber position of the column where to search
+//	 * @param elementSearched the integer searched
+//	 * @return a three column matrix with userID, ItemId, rating
+//	 * @author Paolo Ronzoni
+//	 */
+//	public static int[][] singleUserIDchoices(int[][] inputMatrix, int columnNumber, int elementSearched) {
+//		int nRows = inputMatrix.length;
+//		int nRowsUser = numberOfElement(inputMatrix, columnNumber, elementSearched);
+//		int[][] finalMatrix = new int[nRowsUser][3];
+//		int userRow = 0;
+//		for (int row = 0; row < nRows; row++)
+//		{
+//		    if (inputMatrix[row][columnNumber] == elementSearched) 
+//		    {
+//		    	for (int column = 0; column < 3; column++) {
+//		    	finalMatrix[userRow][column] = inputMatrix[row][column];
+//		    	}
+//		    	userRow++;
+//		    }
+//		    
+//		} 			 
+//		return finalMatrix;
+//	 } // end method singleUserIdChoices
 	
 	
 	/** 
@@ -154,6 +154,49 @@ public class MatrixBuilder {
 			 
 		return finalList;
 	 } // end method findAllUsers
+	
+	
+	/** 
+	 * @param inputMatrix an input matrix of type int
+	 * @param columnNumber position of the column where to search
+	 * @param elementSearched the integer searched
+	 * @return boolean true if there is the item in the column
+	 * @author Paolo Ronzoni
+	 */
+	public static boolean findItem(int[][] inputMatrix, int columnNumber, int elementSearched) {
+		int nRows = inputMatrix.length;
+		boolean result = false;
+		for (int row = 0; row < nRows; row++)
+		{
+		    if (inputMatrix[row][columnNumber] == elementSearched){
+		    result = true;
+		    break;
+		    }
+		} 			 
+		return result;
+	 } // end method userIdChoices
+	
+	
+	/** 
+	 * @param inputMatrix an input matrix of type int
+	 * @param columnNumber position of the column where to search
+	 * @param elementSearched the integer searched
+	 * @return boolean true if there is the item in the column
+	 * @author Paolo Ronzoni
+	 */
+	public static int getItem(int[][] inputMatrix, int columnNumber, int elementSearched, int outputColumn) {
+		int nRows = inputMatrix.length;
+		int itemSearched = 0;
+		for (int row = 0; row < nRows; row++)
+		{
+		    if (inputMatrix[row][columnNumber] == elementSearched){
+		    itemSearched = inputMatrix[row][outputColumn];
+		    }
+		} 			 
+		return itemSearched;
+	 } // end method userIdChoices
+	
+	
 
 	/** 
 	 * @param inputMatrix an input matrix of type int
@@ -168,10 +211,7 @@ public class MatrixBuilder {
 		int[] usersArray = findAllUsers(inputMatrix, usersColumn);
 		int usersNumber = usersArray.length;
 		
-		for (int row = 0; row < usersNumber; row++) {
-			
-		}
-		int[][] firstUserMatrix = userIDchoices(inputMatrix, columnNumber, firstElementSearched);
+		int[][] intermediateMatrix = userIDchoices(inputMatrix, columnNumber, firstElementSearched);
 		int[][] secondUserMatrix = userIDchoices(inputMatrix, columnNumber, secondElementSearched);
 		int firstUserRows = firstUserMatrix.length;
 		int secondUserRows = secondUserMatrix.length;
@@ -179,6 +219,11 @@ public class MatrixBuilder {
 		int[][] outputMatrix = new int[(int)Math.min(firstUserRows, secondUserRows)][3];
 		int userRow = 0;
 		int outPutRow = 0;
+		
+		for (int row = 0; row < usersNumber; row++) {
+			
+		}
+		
 			
 		for (int i = 0; i < firstUserRows  ; i++)
 		{
