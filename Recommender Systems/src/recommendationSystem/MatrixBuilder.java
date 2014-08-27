@@ -208,42 +208,32 @@ public class MatrixBuilder {
 	 */
 	public static int[][] doubleItemRatingMatrix(int[][] inputMatrix, int columnNumber, int firstElementSearched, int secondElementSearched) {		
 		int usersColumn = 0;
+		int itemColumn = 1;
 		int[] usersArray = findAllUsers(inputMatrix, usersColumn);
 		int usersNumber = usersArray.length;
 		
-		int[][] intermediateMatrix = userIDchoices(inputMatrix, columnNumber, firstElementSearched);
-	
+		int[][] intermediateMatrix; userIDchoices(inputMatrix, columnNumber, firstElementSearched);
+		ArrayList<Integer> firstElementRating = new ArrayList<>();
+		ArrayList<Integer> secondElementRating = new ArrayList<>();
 		
 		for (int row = 0; row < usersNumber; row++) {
+		intermediateMatrix = userIDchoices(inputMatrix, columnNumber, usersArray[row]);
+		if ( isThereItem(inputMatrix, itemColumn, firstElementSearched) == true && isThereItem(inputMatrix, itemColumn, secondElementSearched) == true ) {
+			firstElementRating.add(getItem(inputMatrix, columnNumber, firstElementSearched, itemColumn));
+			secondElementRating.add(getItem(inputMatrix, columnNumber, secondElementSearched, itemColumn));
 			
-		}
-		
+		} // end if
 			
-//		for (int i = 0; i < firstUserRows  ; i++)
-//		{
-//			for (int j = 0; j < secondUserRows; j++) 
-//			{
-//		    if (firstUserMatrix[i][itemPosition] == secondUserMatrix[j][itemPosition] ) 
-//			    {
-//		    	    
-//			    	outputMatrix[userRow][0] = secondUserMatrix[j][1];
-//			    	outputMatrix[userRow][1] = firstUserMatrix[i][2];
-//			    	outputMatrix[userRow][2] = secondUserMatrix[j][2];
-//			    	if (outputMatrix[userRow][0] != 0) outPutRow++;
-//			    	userRow++;
-//			    	
-//			    }
-//			}// end inner for
-//		} // end outer for 	
+		} // end for
 		
-//		int[][] finalMatrix = new int[outPutRow][3];
-//		for (int k = 0; k < outPutRow; k++) {
-//			for (int column  = 0; column < 3; column++)
-//			finalMatrix[k][column] = outputMatrix[k][column];
-//		}
+		Integer[] firstRatingArray = firstElementRating.toArray(new Integer[0]);
+		Integer[] secondRatingArray = secondElementRating.toArray(new Integer[0]);
+		int[][] finalMatrix = { firstRatingArray, secondRatingArray };
+			
+
 		
 		
-		return intermediateMatrix;
+		return final matrixMatrix;
 	 } // end method matchIdChoices
 	
 
