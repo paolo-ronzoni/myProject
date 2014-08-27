@@ -213,14 +213,16 @@ public class MatrixBuilder {
 		int usersNumber = usersArray.length;
 		
 		int[][] intermediateMatrix; 
+		ArrayList<Integer> usersInFinalMatrix = new ArrayList<>();
 		ArrayList<Integer> firstElementRating = new ArrayList<>();
 		ArrayList<Integer> secondElementRating = new ArrayList<>();
 		
 		for (int row = 0; row < usersNumber; row++) {
 		intermediateMatrix = userIDchoices(inputMatrix, columnNumber, usersArray[row]);
-		if ( isThereItem(inputMatrix, itemColumn, firstElementSearched) == true && isThereItem(inputMatrix, itemColumn, secondElementSearched) == true ) {
-			firstElementRating.add(getItem(inputMatrix, columnNumber, firstElementSearched, itemColumn));
-			secondElementRating.add(getItem(inputMatrix, columnNumber, secondElementSearched, itemColumn));
+		if ( isThereItem(intermediateMatrix, itemColumn, firstElementSearched) == true && isThereItem(intermediateMatrix, itemColumn, secondElementSearched) == true ) {
+			firstElementRating.add(getItem(intermediateMatrix, itemColumn, firstElementSearched, 2));
+			secondElementRating.add(getItem(intermediateMatrix, itemColumn, secondElementSearched, 2));
+			usersInFinalMatrix.add(usersArray[row]);
 			
 		} // end if
 			
@@ -228,10 +230,11 @@ public class MatrixBuilder {
 		
 		Integer[] firstRatingArray = firstElementRating.toArray(new Integer[0]);
 		Integer[] secondRatingArray = secondElementRating.toArray(new Integer[0]);
+		Integer[] finalUsers = usersInFinalMatrix.toArray(new Integer[0]);
 		int ratingLength = firstRatingArray.length;
-		int[][] finalMatrix = new int[ratingLength][2];
+		int[][] finalMatrix = new int[ratingLength][3];
 		for (int n = 0; n < ratingLength; n++) {
-				//finalMatrix[n][0] = usersArray[n];
+				finalMatrix[n][0] = finalUsers[n];
 				finalMatrix[n][1] = firstRatingArray[n];
 				finalMatrix[n][2] = secondRatingArray[n];
 				
