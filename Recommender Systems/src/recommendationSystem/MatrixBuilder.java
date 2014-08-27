@@ -212,7 +212,7 @@ public class MatrixBuilder {
 		int[] usersArray = findAllUsers(inputMatrix, usersColumn);
 		int usersNumber = usersArray.length;
 		
-		int[][] intermediateMatrix; userIDchoices(inputMatrix, columnNumber, firstElementSearched);
+		int[][] intermediateMatrix; 
 		ArrayList<Integer> firstElementRating = new ArrayList<>();
 		ArrayList<Integer> secondElementRating = new ArrayList<>();
 		
@@ -228,12 +228,16 @@ public class MatrixBuilder {
 		
 		Integer[] firstRatingArray = firstElementRating.toArray(new Integer[0]);
 		Integer[] secondRatingArray = secondElementRating.toArray(new Integer[0]);
-		int[][] finalMatrix = { firstRatingArray, secondRatingArray };
-			
-
+		int ratingLength = firstRatingArray.length;
+		int[][] finalMatrix = new int[ratingLength][2];
+		for (int n = 0; n < ratingLength; n++) {
+				//finalMatrix[n][0] = usersArray[n];
+				finalMatrix[n][1] = firstRatingArray[n];
+				finalMatrix[n][2] = secondRatingArray[n];
+				
+			} // end for
 		
-		
-		return final matrixMatrix;
+		return finalMatrix;
 	 } // end method matchIdChoices
 	
 

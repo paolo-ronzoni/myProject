@@ -30,7 +30,7 @@ public class ItemBasedNearestNeighbor {
 	public static double itemBasedNearestNeighborValue(int[][] inputMatrix, int columnNumber, int firstElementSearched, int secondElementSearched) {		
 		
 		// create a matrix of three column: items, user1scores, user2scores
-		int[][] intermediateMatrix = MatrixBuilder.matchIDchoices(inputMatrix, columnNumber,firstElementSearched, secondElementSearched);
+		int[][] intermediateMatrix = MatrixBuilder.doubleItemRatingMatrix(inputMatrix, columnNumber,firstElementSearched, secondElementSearched);
 		
 		int user1columnScores = 1;
 		int user2columnScores = 2;

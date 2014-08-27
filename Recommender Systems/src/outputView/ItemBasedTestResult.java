@@ -22,7 +22,7 @@ public static void main(String[] args) {
 	// IOMethods.printMatrix(myMatrix, "%4s\t");
 	int[][] secondMatrix = IOMethods.matrixConversion(myMatrix);
 	
-	int [][] solutionMatrix = MatrixBuilder.userIDchoices(secondMatrix, 0, 1);
+	int [][] solutionMatrix = MatrixBuilder.doubleItemRatingMatrix(secondMatrix, 0, 4, 23);
 IOMethods.printMatrix(solutionMatrix, "%4s\t");
 
 int[] users = MatrixBuilder.findAllUsers(secondMatrix, 0);
