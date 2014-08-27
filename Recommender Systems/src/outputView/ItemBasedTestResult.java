@@ -1,5 +1,6 @@
 package outputView;
 
+import inProcessing.FormulaBuilding;
 import recommendationSystem.ItemBasedNearestNeighbor;
 import recommendationSystem.MatrixBuilder;
 import recommendationSystem.UserBasedNearestNeighbor;
@@ -21,10 +22,10 @@ public static void main(String[] args) {
 	// IOMethods.printMatrix(myMatrix, "%4s\t");
 	int[][] secondMatrix = IOMethods.matrixConversion(myMatrix);
 	
-	int [][] solutionMatrix = MatrixBuilder.singleUserIDchoices(secondMatrix, 0, 1);
+	int [][] solutionMatrix = MatrixBuilder.userIDchoices(secondMatrix, 0, 1);
 IOMethods.printMatrix(solutionMatrix, "%4s\t");
 
-int[] users = ItemBasedNearestNeighbor.findAllUsers(secondMatrix, 0);
+int[] users = MatrixBuilder.findAllUsers(secondMatrix, 0);
 for (int element: users) {
 	System.out.println(element + " ");
 }

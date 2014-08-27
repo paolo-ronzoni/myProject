@@ -1,5 +1,9 @@
 package recommendationSystem;
 
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
+
 public class MatrixBuilder {
 
 	
@@ -124,7 +128,31 @@ public class MatrixBuilder {
 	 } // end method matchIdChoices
 	
 	
+	/** 
+	 * @param inputMatrix an input matrix of type int
+	 * @param columnNumber position of the column where to search
+	 * @return finalList an Integer array with all element in a column (users) without duplication
+	 * @author Paolo Ronzoni
+	 */
+	public static int[] findAllUsers(int[][] inputMatrix, int columnNumber) {
+		int nRows = inputMatrix.length;
+	
+		Integer[] firstList = new Integer[nRows];
+		for (int row = 0; row < nRows; row++)
+		{  
+		    firstList[row]= inputMatrix[row][columnNumber];
+		}
+		Set<Integer> usersSet = new HashSet<> (Arrays.asList(firstList));
+
+		Integer[] secondList = usersSet.toArray(new Integer[0]);  
+		int[] finalList = new int[secondList.length];
+		for (int k = 0; k < secondList.length; k++) {
+			finalList[k] = secondList[k];
+		}
+			 
+		return finalList;
+	 } // end method findAllUsers
 
 	
 
-}
+} // end class
