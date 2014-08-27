@@ -1,23 +1,26 @@
 package inProcessing;
-import java.util.*;
-
+import java.util.ArrayList;
+import java.util.List;
 
 public class FormulaBuilding {
-
-	public static void main(String args[]) {
-	  
-		int a[] = {3, 10, 4, 2, 8, 1, 9, 13, 34};
-        int[] b = new int[3];
-        b = a;
-        for (int element: b)
-        	System.out.print(element + " ");
-        int[] c = new int[(int)Math.min(a.length, b.length)];
-
+         
+     public static void main(String[] args) {
+        		
+         
+        ArrayList<Integer> s = new ArrayList<>();
+         
+        s.add(4);
+        s.add(56);
+       
+        Integer[] integerArray = s.toArray(new Integer[0]);
+        
+       
+      for (int i=0;i <s.size(); i++) 
+      {
+    	  System.out.println(integerArray[i]);
+      }
 
        
-
-
-       
-	   } // end main
+     } // end main
 
 } // end Class FormulaBuilding
