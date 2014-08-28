@@ -16,7 +16,7 @@ public class ItemBasedNearestNeighbor {
 	 * @return 
 	 * @author Paolo Ronzoni
 	 */
-	public static double itemBasedNearestNeighborValue(int[][] inputMatrix, int columnNumber, int firstElementSearched, int secondElementSearched) {		
+	public static double adjustedCosineMeasure(int[][] inputMatrix, int columnNumber, int firstElementSearched, int secondElementSearched) {		
 		
 		// create a matrix of three column: items, user1scores, user2scores
 		double[][] intermediateMatrix = MatrixBuilder.doubleItemRatingMatrix(inputMatrix, columnNumber,firstElementSearched, secondElementSearched);

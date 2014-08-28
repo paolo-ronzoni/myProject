@@ -10,7 +10,7 @@ public class ItemBasedTestResult {
 
 	static double[][] doubleMatrix = {{23.2, 11.5, 18.23}, 
 		  {7.89, 56.1, 1.00}};
-static String path1 = "DataStore\\u.txt";
+static String path1 = "DataStore\\bookData.txt";
 static String path2 = "DataStore\\provaFinale.txt";
 static String splitExpression = "\\s+";
 	
@@ -22,10 +22,10 @@ public static void main(String[] args) {
 	// IOMethods.printMatrix(myMatrix, "%4s\t");
 	int[][] secondMatrix = IOMethods.matrixConversion(myMatrix);
 	
-	double [][] solutionMatrix = MatrixBuilder.doubleItemRatingMatrix(secondMatrix, 0, 4, 23);
+	double [][] solutionMatrix = MatrixBuilder.doubleItemRatingMatrix(secondMatrix, 0, 1, 5);
 IOMethods.printMatrix(solutionMatrix, "%4s\t");
 
-		double  itemBasedValue = ItemBasedNearestNeighbor.itemBasedNearestNeighborValue(secondMatrix, 0, 1, 18);
+		double  itemBasedValue = ItemBasedNearestNeighbor.adjustedCosineMeasure(secondMatrix, 0, 1, 5);
 		System.out.println("ItemBasedValue: " + itemBasedValue);
 
 

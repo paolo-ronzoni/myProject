@@ -206,7 +206,7 @@ public class MatrixBuilder {
 	 * @return fianlMatrix a four column matrix with userID ratingOfFirstElementSearched ratingOfSecondElementSearched averageOfAllRating columns
 	 * @author Paolo Ronzoni
 	 */
-	public static double[][] doubleItemRatingMatrix(int[][] inputMatrix, int columnNumber, int firstElementSearched, int secondElementSearched) {		
+	public static double[][] simpleDoubleItemRatingMatrix(int[][] inputMatrix, int columnNumber, int firstElementSearched, int secondElementSearched) {		
 		int usersColumn = 0;
 		int itemColumn = 1;
 		int[] usersArray = findAllUsers(inputMatrix, usersColumn);
@@ -249,10 +249,10 @@ public class MatrixBuilder {
 	 * @param columnNumber position of the column where to search
 	 * @param firstelementSearched the first element searched
 	 * @param secondelementSearched the second element searched
-	 * @return fianlMatrix a three column matrix with userID ratingOfFirstElementSearched ratingOfSecondElementSearched columns
+	 * @return fianlMatrix a four column matrix with userID ratingOfFirstElementSearched ratingOfSecondElementSearched averageOfAllRating columns
 	 * @author Paolo Ronzoni
 	 */
-	public static double[][] simpleDoubleItemRatingMatrix(int[][] inputMatrix, int columnNumber, int firstElementSearched, int secondElementSearched) {		
+	public static double[][] doubleItemRatingMatrix(int[][] inputMatrix, int columnNumber, int firstElementSearched, int secondElementSearched) {		
 		int usersColumn = 0;
 		int itemColumn = 1;
 		int ratingColumn = 2;
