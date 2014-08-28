@@ -203,10 +203,56 @@ public class MatrixBuilder {
 	 * @param columnNumber position of the column where to search
 	 * @param firstelementSearched the first element searched
 	 * @param secondelementSearched the second element searched
-	 * @return fianlMatrix a three column matrix userID ratingOfFirstElementSearched ratingOfSecondElementSearched
+	 * @return fianlMatrix a four column matrix with userID ratingOfFirstElementSearched ratingOfSecondElementSearched averageOfAllRating columns
 	 * @author Paolo Ronzoni
 	 */
 	public static double[][] doubleItemRatingMatrix(int[][] inputMatrix, int columnNumber, int firstElementSearched, int secondElementSearched) {		
+		int usersColumn = 0;
+		int itemColumn = 1;
+		int[] usersArray = findAllUsers(inputMatrix, usersColumn);
+		int usersNumber = usersArray.length;
+		
+		int[][] intermediateMatrix; 
+		ArrayList<Integer> usersInFinalMatrix = new ArrayList<>();
+		ArrayList<Integer> firstElementRating = new ArrayList<>();
+		ArrayList<Integer> secondElementRating = new ArrayList<>();
+		
+		for (int row = 0; row < usersNumber; row++) {
+		intermediateMatrix = userIDchoices(inputMatrix, columnNumber, usersArray[row]);
+		if ( isThereItem(intermediateMatrix, itemColumn, firstElementSearched) == true && isThereItem(intermediateMatrix, itemColumn, secondElementSearched) == true ) {
+			firstElementRating.add(getItem(intermediateMatrix, itemColumn, firstElementSearched, 2));
+			secondElementRating.add(getItem(intermediateMatrix, itemColumn, secondElementSearched, 2));
+			usersInFinalMatrix.add(usersArray[row]);
+			
+		} // end if
+			
+		} // end for
+		
+		Integer[] firstRatingArray = firstElementRating.toArray(new Integer[0]);
+		Integer[] secondRatingArray = secondElementRating.toArray(new Integer[0]);
+		Integer[] finalUsers = usersInFinalMatrix.toArray(new Integer[0]);
+		int ratingLength = firstRatingArray.length;
+		double[][] finalMatrix = new double[ratingLength][4];
+		for (int n = 0; n < ratingLength; n++) {
+				finalMatrix[n][0] = finalUsers[n];
+				finalMatrix[n][1] = firstRatingArray[n];
+				finalMatrix[n][2] = secondRatingArray[n];
+				
+			} // end for
+		
+		return finalMatrix;
+	 } // end method doubleItemRatingMatrix
+	
+	
+	/** 
+	 * @param inputMatrix an input matrix of type int
+	 * @param columnNumber position of the column where to search
+	 * @param firstelementSearched the first element searched
+	 * @param secondelementSearched the second element searched
+	 * @return fianlMatrix a three column matrix with userID ratingOfFirstElementSearched ratingOfSecondElementSearched columns
+	 * @author Paolo Ronzoni
+	 */
+	public static double[][] simpleDoubleItemRatingMatrix(int[][] inputMatrix, int columnNumber, int firstElementSearched, int secondElementSearched) {		
 		int usersColumn = 0;
 		int itemColumn = 1;
 		int ratingColumn = 2;
@@ -246,7 +292,7 @@ public class MatrixBuilder {
 			} // end for
 		
 		return finalMatrix;
-	 } // end method matchIdChoices
+	 } // end method simpleDoubleItemRatingMatrix
 	
 
 } // end class
