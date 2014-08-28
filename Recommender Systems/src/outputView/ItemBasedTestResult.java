@@ -25,8 +25,11 @@ public static void main(String[] args) {
 	double [][] solutionMatrix = MatrixBuilder.doubleItemRatingMatrix(secondMatrix, 0, 1, 5);
 IOMethods.printMatrix(solutionMatrix, "%4s\t");
 
-		double  itemBasedValue = ItemBasedNearestNeighbor.adjustedCosineMeasure(secondMatrix, 0, 1, 5);
+		double  itemBasedValue = ItemBasedNearestNeighbor.adjustedCosineSimilarity(secondMatrix, 0, 1, 5);
 		System.out.println("ItemBasedValue: " + itemBasedValue);
+		
+		double  itemBasedValue2 = ItemBasedNearestNeighbor.cosineSimilarity(secondMatrix, 0, 1, 5);
+		System.out.println("ItemBasedValue2: " + itemBasedValue2);
 
 
 	} // end main
