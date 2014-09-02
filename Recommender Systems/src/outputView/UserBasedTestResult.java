@@ -9,7 +9,7 @@ public class UserBasedTestResult {
 	static double[][] doubleMatrix = {{23.2, 11.5, 18.23}, 
 		  {7.89, 56.1, 1.00}};
 static String path1 = "DataStore\\u.txt";
-static String path2 = "DataStore\\u1.txt";
+static String path2 = "DataStore\\bookDataTab2dot1.txt";
 static String splitExpression = "\\s+";
 	
 		
@@ -26,14 +26,14 @@ public static void main(String[] args) {
 //	int elementFounded = MatrixBuilder.numberOfElement(secondMatrix, 0, 186);
 //	System.out.println("element founded: " + elementFounded);
 //	System.out.println("matrix length: " + secondMatrix.length);
-	int [][] solutionMatrix = MatrixBuilder.matchIDchoices(secondMatrix, 0, 2, 358);
+	int [][] solutionMatrix = MatrixBuilder.matchIDchoices(secondMatrix, 0, 1, 244);
  IOMethods.printMatrix(solutionMatrix, "%4s\t");
  double nearestValue = 0;
- for (int k = 1; k <= 943; k++ ) 
+ for (int k = 1; k <= 244; k++ ) 
  {
-	 nearestValue = UserBasedNearestNeighbor.userNearestNeighborValue(secondMatrix, 0, 2, k);
+	 nearestValue = UserBasedNearestNeighbor.userNearestNeighborValue(secondMatrix, 0, 1, k);
 	 // if (Double.isNaN(nearestValue)) {
-	 System.out.println("value(2," + k + "): " + nearestValue);
+	 System.out.println("value(1," + k + "): " + nearestValue);
 	 //}
  } //end for
  
