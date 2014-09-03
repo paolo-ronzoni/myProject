@@ -26,10 +26,10 @@ public static void main(String[] args) {
 //	int elementFounded = MatrixBuilder.numberOfElement(secondMatrix, 0, 186);
 //	System.out.println("element founded: " + elementFounded);
 //	System.out.println("matrix length: " + secondMatrix.length);
-	int [][] solutionMatrix = MatrixBuilder.matchIDchoices(secondMatrix, 0, 1, 244);
+	int [][] solutionMatrix = MatrixBuilder.matchIDchoices(secondMatrix, 0, 1, 5);
  IOMethods.printMatrix(solutionMatrix, "%4s\t");
  double nearestValue = 0;
- for (int k = 1; k <= 244; k++ ) 
+ for (int k = 1; k <= 5; k++ ) 
  {
 	 nearestValue = UserBasedNearestNeighbor.userNearestNeighborValue(secondMatrix, 0, 1, k);
 	 // if (Double.isNaN(nearestValue)) {
@@ -37,9 +37,14 @@ public static void main(String[] args) {
 	 //}
  } //end for
  
- nearestValue = UserBasedNearestNeighbor.userNearestNeighborValue(secondMatrix, 0, 2, 358);
+ nearestValue = UserBasedNearestNeighbor.userNearestNeighborValue(secondMatrix, 0, 2, 1);
  
      System.out.println("fatto! and nearest:" + nearestValue);
+     
+     double[][] predictionMatrix = UserBasedNearestNeighbor.predictionUserBasedValue(secondMatrix, 0, 3, 2, 1);
+     IOMethods.printMatrix(predictionMatrix, "%4s\t");
+     
+     
 
 	} // end main
 

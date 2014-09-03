@@ -51,10 +51,29 @@ public class UserBasedNearestNeighbor {
 	 * @return double the prediction of the rating for the item searched for the specific user
 	 * @author Paolo Ronzoni
 	 */
-	public static double predictionUserBasedValue(int[][] inputMatrix, int userColumnNumber, int firstElementSearched, int secondElementSearched) {		
+	public static double[][] predictionUserBasedValue(int[][] inputMatrix, int userColumnNumber, int userSearched, int itemcolumnNumber, int itemSearched) {		
 		
-		// create a matrix of three column: items, user1scores, user2scores
-		int[][] intermediateMatrix = MatrixBuilder.matchIDchoices(inputMatrix, columnNumber,firstElementSearched, secondElementSearched);
+		// find all users, without duplication, in the inputMatrix
+		int[] usersVector = MatrixBuilder.findAllUsers(inputMatrix, userColumnNumber);
+		
+		// swap the userSearched position at the beginning of the usersVector
+		for ( int i = 0; i < usersVector.length; i++) {
+			if ( usersVector[i] == userSearched) {
+				int tmp = usersVector[0];
+				usersVector[0] = userSearched;
+				usersVector[i] = tmp;				
+			}
+		} // end for s
+		
+		// create a matrix of three column: userSearched, allOtherUsers, userNearestNeighborValue
+		double[][] intermediateMatrix = new double[usersVector.length - 1][3];
+		for (int row = 1; row < usersVector.length -1; row++) {
+			intermediateMatrix[row][0] = userSearched;
+			intermediateMatrix[row][1] = usersVector[row];
+			intermediateMatrix[row][2] = userNearestNeighborValue( inputMatrix, userColumnNumber,  userSearched, usersVector[row]);
+		}
+		
+		
 		
 		int user1columnScores = 1;
 		int user2columnScores = 2;
@@ -78,7 +97,7 @@ public class UserBasedNearestNeighbor {
 		} // end for loop
 		
 		
-		return (numerator / (Math.sqrt(denominator1 * denominator2)));
+		return intermediateMatrix;
 	 } // end method predictionUserBasedValue
 	
 } // end class
