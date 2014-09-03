@@ -1,6 +1,8 @@
 package recommendationSystem;
 
 import fileIO.IOMethods;
+import inProcessing.Algorithms;
+
 import java.util.Arrays;
 
 public class UserBasedNearestNeighbor {
@@ -69,13 +71,14 @@ public class UserBasedNearestNeighbor {
 		} // end for s
 		
 		// create a matrix of three column: userSearched, allOtherUsers, userNearestNeighborValue
-		double[][] intermediateMatrix = new double[usersVector.length - 1][3];
-		for (int row = 1; row < usersVector.length -1; row++) {
+		double[][] intermediateMatrix = new double[usersVector.length][3];
+		for (int row = 1; row < usersVector.length ; row++) {
 			intermediateMatrix[row][0] = userSearched;
 			intermediateMatrix[row][1] = usersVector[row];
 			intermediateMatrix[row][2] = userNearestNeighborValue( inputMatrix, userColumnNumber,  userSearched, usersVector[row]);
 		}
 		
+		double[][] finalMatrix = Algorithms.sortMultidimensionArray(intermediateMatrix, 2);
 		int count = 0;
 		for (int row = 1; row < usersVector.length - 1; row++) {
 			if ( Double.isNaN(intermediateMatrix[row][2])) {
@@ -109,7 +112,7 @@ public class UserBasedNearestNeighbor {
 		} // end for loop
 		
 		
-		return intermediateMatrix;
+		return finalMatrix;
 	 } // end method predictionUserBasedValue
 	
 } // end class

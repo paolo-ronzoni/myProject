@@ -16,7 +16,7 @@ static String splitExpression = "\\s+";
 		
 public static void main(String[] args) {
 
-	String[][] myMatrix = IOMethods.txtMatrix(path1, splitExpression);
+	String[][] myMatrix = IOMethods.txtMatrix(path2, splitExpression);
 	// IOMethods.printMatrix(myMatrix, "%4s\t");
 	int[][] secondMatrix = IOMethods.matrixConversion(myMatrix);
 	// int[] matrix1 = IOMethods.columnExtractor(secondMatrix, 0);
@@ -26,7 +26,7 @@ public static void main(String[] args) {
 //	int elementFounded = MatrixBuilder.numberOfElement(secondMatrix, 0, 186);
 //	System.out.println("element founded: " + elementFounded);
 //	System.out.println("matrix length: " + secondMatrix.length);
-	int [][] solutionMatrix = MatrixBuilder.matchIDchoices(secondMatrix, 0, 1, 5);
+	int [][] solutionMatrix = MatrixBuilder.matchIDchoices(secondMatrix, 0, 1, 3);
  IOMethods.printMatrix(solutionMatrix, "%4s\t");
  double nearestValue = 0;
  for (int k = 1; k <= 5; k++ ) 
@@ -41,7 +41,7 @@ public static void main(String[] args) {
  
      System.out.println("fatto! and nearest:" + nearestValue);
      
-     double[][] predictionMatrix = UserBasedNearestNeighbor.predictionUserBasedValue(secondMatrix, 0, 3, 2, 1);
+     double[][] predictionMatrix = UserBasedNearestNeighbor.predictionUserBasedValue(secondMatrix, 0, 1, 2, 1);
      IOMethods.printMatrix(predictionMatrix, "%4s\t");
      
      
