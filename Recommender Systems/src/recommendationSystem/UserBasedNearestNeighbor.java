@@ -66,16 +66,17 @@ public class UserBasedNearestNeighbor {
 			if ( usersVector[i] == userSearched) {
 				int tmp = usersVector[0];
 				usersVector[0] = userSearched;
-				usersVector[i] = tmp;				
+				usersVector[i] = tmp;
+				break;
 			}
 		} // end for s
 		
 		// create a matrix of three column: userSearched, allOtherUsers, userNearestNeighborValue
-		double[][] intermediateMatrix = new double[usersVector.length][3];
-		for (int row = 1; row < usersVector.length ; row++) {
+		double[][] intermediateMatrix = new double[usersVector.length -1][3];
+		for (int row = 0; row < usersVector.length -1 ; row++) {
 			intermediateMatrix[row][0] = userSearched;
-			intermediateMatrix[row][1] = usersVector[row];
-			intermediateMatrix[row][2] = userNearestNeighborValue( inputMatrix, userColumnNumber,  userSearched, usersVector[row]);
+			intermediateMatrix[row][1] = usersVector[row + 1];
+			intermediateMatrix[row][2] = userNearestNeighborValue( inputMatrix, userColumnNumber,  userSearched, usersVector[row + 1]);
 		}
 		
 		double[][] finalMatrix = Algorithms.sortMultidimensionArray(intermediateMatrix, 2);

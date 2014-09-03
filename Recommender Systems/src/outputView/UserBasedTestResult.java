@@ -8,7 +8,7 @@ public class UserBasedTestResult {
 
 	static double[][] doubleMatrix = {{23.2, 11.5, 18.23}, 
 		  {7.89, 56.1, 1.00}};
-static String path1 = "DataStore\\u.txt";
+static String path1 = "DataStore\\u1.txt";
 static String path2 = "DataStore\\bookDataTab2dot1.txt";
 static String splitExpression = "\\s+";
 	
