@@ -1,5 +1,8 @@
 package recommendationSystem;
 
+import fileIO.IOMethods;
+import java.util.Arrays;
+
 public class UserBasedNearestNeighbor {
 
 	
@@ -73,7 +76,9 @@ public class UserBasedNearestNeighbor {
 			intermediateMatrix[row][2] = userNearestNeighborValue( inputMatrix, userColumnNumber,  userSearched, usersVector[row]);
 		}
 		
-		
+//		int simColumn = 2;
+//		double[] similarityColumn = IOMethods.columnExtractor(intermediateMatrix, simColumn);
+//		Arrays.sort(similarityColumn);
 		
 		int user1columnScores = 1;
 		int user2columnScores = 2;
