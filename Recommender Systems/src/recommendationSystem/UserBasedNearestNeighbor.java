@@ -76,6 +76,13 @@ public class UserBasedNearestNeighbor {
 			intermediateMatrix[row][2] = userNearestNeighborValue( inputMatrix, userColumnNumber,  userSearched, usersVector[row]);
 		}
 		
+		int count = 0;
+		for (int row = 1; row < usersVector.length - 1; row++) {
+			if ( Double.isNaN(intermediateMatrix[row][2])) {
+				count++;
+				
+			}
+		}
 //		int simColumn = 2;
 //		double[] similarityColumn = IOMethods.columnExtractor(intermediateMatrix, simColumn);
 //		Arrays.sort(similarityColumn);
