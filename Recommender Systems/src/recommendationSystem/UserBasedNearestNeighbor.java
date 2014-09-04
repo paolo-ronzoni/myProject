@@ -82,13 +82,21 @@ public class UserBasedNearestNeighbor {
 		
 		// orders the intermediateMatrix respect to userNearestNeighborValue
 		double[][] finalMatrix = Algorithms.sortMultidimensionArray(intermediateMatrix, 2);
-		int counter = 0;
-		for (int row = 1; row < usersVector.length - 1; row++) {
-			if ( Double.isNaN(intermediateMatrix[row][2])) {
-				count++;
-				
-			}
-		}
+		double[][] lastMatrix = new double[numOfNearestNeighbor][3];
+		int lastRow = finalMatrix.length;
+		
+		for ( int i = 0; i < 2; i++) {
+			 while( Double.isNaN(finalMatrix[lastRow][2])) {
+				lastRow--;
+			} // end while
+			
+			 lastMatrix[lastRow -1][0] = finalMatrix[lastRow -1][0];
+			 lastMatrix[lastRow -1][1] = finalMatrix[lastRow -1][1];
+			 lastMatrix[lastRow -1][2] = finalMatrix[lastRow -1][2];
+			 lastRow--;
+			 
+		} // end for
+		
 		
 //		int simColumn = 2;
 //		double[] similarityColumn = IOMethods.columnExtractor(intermediateMatrix, simColumn);
