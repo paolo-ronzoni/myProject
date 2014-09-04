@@ -83,16 +83,16 @@ public class UserBasedNearestNeighbor {
 		// orders the intermediateMatrix respect to userNearestNeighborValue
 		double[][] finalMatrix = Algorithms.sortMultidimensionArray(intermediateMatrix, 2);
 		double[][] lastMatrix = new double[numOfNearestNeighbor][3];
-		int lastRow = finalMatrix.length;
+		int lastRow = finalMatrix.length - 1;
 		
-		for ( int i = 0; i < 2; i++) {
+		for ( int i = 0; i < numOfNearestNeighbor; i++) {
 			 while( Double.isNaN(finalMatrix[lastRow][2])) {
-				lastRow--;
+				lastRow -= 1;
 			} // end while
 			
-			 lastMatrix[lastRow -1][0] = finalMatrix[lastRow -1][0];
-			 lastMatrix[lastRow -1][1] = finalMatrix[lastRow -1][1];
-			 lastMatrix[lastRow -1][2] = finalMatrix[lastRow -1][2];
+			 lastMatrix[i][0] = finalMatrix[lastRow][0];
+			 lastMatrix[i][1] = finalMatrix[lastRow][1];
+			 lastMatrix[i][2] = finalMatrix[lastRow][2];
 			 lastRow--;
 			 
 		} // end for
@@ -124,7 +124,7 @@ public class UserBasedNearestNeighbor {
 		} // end for loop
 		
 		
-		return finalMatrix;
+		return lastMatrix;
 	 } // end method predictionUserBasedValue
 	
 } // end class
