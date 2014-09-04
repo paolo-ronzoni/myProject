@@ -57,7 +57,7 @@ public class UserBasedNearestNeighbor {
 	 * @return double the prediction of the rating for the item searched for the specific user
 	 * @author Paolo Ronzoni
 	 */
-	public static double[][] predictionUserBasedValue(int[][] inputMatrix, int userColumnNumber, int userSearched, int itemcolumnNumber, int itemSearched) {		
+	public static double[][] predictionUserBasedValue(int[][] inputMatrix, int userColumnNumber, int userSearched, int itemcolumnNumber, int itemSearched, int numOfNearestNeighbor) {		
 		
 		// find all users, without duplication, in the inputMatrix
 		int[] usersVector = MatrixBuilder.findAllUsers(inputMatrix, userColumnNumber);
@@ -80,14 +80,15 @@ public class UserBasedNearestNeighbor {
 			intermediateMatrix[row][2] = userNearestNeighborValue( inputMatrix, userColumnNumber,  userSearched, usersVector[row + 1]);
 		}
 		
+		
 		double[][] finalMatrix = Algorithms.sortMultidimensionArray(intermediateMatrix, 2);
-		int count = 0;
-		for (int row = 1; row < usersVector.length - 1; row++) {
-			if ( Double.isNaN(intermediateMatrix[row][2])) {
-				count++;
-				
-			}
-		}
+		int counter = 0;
+//		for (int row = 1; row < usersVector.length - 1; row++) {
+//			if ( Double.isNaN(intermediateMatrix[row][2])) {
+//				count++;
+//				
+//			}
+//		}
 //		int simColumn = 2;
 //		double[] similarityColumn = IOMethods.columnExtractor(intermediateMatrix, simColumn);
 //		Arrays.sort(similarityColumn);
