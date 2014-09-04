@@ -16,7 +16,7 @@ static String splitExpression = "\\s+";
 		
 public static void main(String[] args) {
 
-	String[][] myMatrix = IOMethods.txtMatrix(path2, splitExpression);
+	String[][] myMatrix = IOMethods.txtMatrix(path1, splitExpression);
 	// IOMethods.printMatrix(myMatrix, "%4s\t");
 	int[][] secondMatrix = IOMethods.matrixConversion(myMatrix);
 	// int[] matrix1 = IOMethods.columnExtractor(secondMatrix, 0);

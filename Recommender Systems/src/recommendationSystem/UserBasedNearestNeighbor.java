@@ -53,6 +53,7 @@ public class UserBasedNearestNeighbor {
 	 * @param firstElementSearched the  user searched
 	 * @param itemcolumnNumber the position of the column where to search the item
 	 * @param itemSearched the item searched
+	 * @param numOfNearestNeighbor the number of 
 	 * @return double the prediction of the rating for the item searched for the specific user
 	 * @author Paolo Ronzoni
 	 */
