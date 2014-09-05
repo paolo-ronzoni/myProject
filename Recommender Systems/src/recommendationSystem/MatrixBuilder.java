@@ -28,6 +28,25 @@ public class MatrixBuilder {
 		return numberOfElement;
 	 } // end method numberOfElement
 	
+	/** 
+	 * @param inputMatrix an input matrix of type int
+	 * @param columnNumber position of the column where to search
+	 * @param elementSearched the integer searched
+	 * @return number of integer founded in the column
+	 * @author Paolo Ronzoni
+	 */
+	public static int numberOfElement(double[][] inputMatrix, int columnNumber, int elementSearched) {
+		int nRows = inputMatrix.length;
+		int numberOfElement = 0;
+		
+		for (int row = 0; row < nRows; row++)
+		{
+		    if (inputMatrix[row][columnNumber] == elementSearched) 
+		    	numberOfElement++;
+		} 			 
+		return numberOfElement;
+	 } // end method numberOfElement
+	
 	
 	/** 
 	 * @param inputMatrix an input matrix of type int
@@ -40,6 +59,32 @@ public class MatrixBuilder {
 		int nRows = inputMatrix.length;
 		int nRowsUser = numberOfElement(inputMatrix, columnNumber, elementSearched);
 		int[][] outputMatrix = new int[nRowsUser][3];
+		int userRow = 0;
+		for (int row = 0; row < nRows; row++)
+		{
+		    if (inputMatrix[row][columnNumber] == elementSearched) 
+		    {
+		    	for (int column = 0; column < 3; column++) {
+		    	outputMatrix[userRow][column] = inputMatrix[row][column];
+		    	}
+		    	userRow++;
+		    }
+		    
+		} 			 
+		return outputMatrix;
+	 } // end method userIdChoices
+	
+	/**@Overloading
+	 * @param inputMatrix an input matrix of type int
+	 * @param columnNumber position of the column where to search
+	 * @param elementSearched the integer searched
+	 * @return outputMatrix a three column matrix with userID, ItemId, rating
+	 * @author Paolo Ronzoni
+	 */
+	public static double[][] userIDchoicesDouble(double[][] inputMatrix, int columnNumber, int elementSearched) {
+		int nRows = inputMatrix.length;
+		int nRowsUser = numberOfElement(inputMatrix, columnNumber, elementSearched);
+		double[][] outputMatrix = new double[nRowsUser][3];
 		int userRow = 0;
 		for (int row = 0; row < nRows; row++)
 		{
