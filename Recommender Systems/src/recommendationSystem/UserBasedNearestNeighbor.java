@@ -94,8 +94,9 @@ public class UserBasedNearestNeighbor {
 			
 			 lastMatrix[i][0] = finalMatrix[lastRow][0]; // the user searched
 			 lastMatrix[i][1] = finalMatrix[lastRow][1]; // an other users
-			 lastMatrix[i][3] = StatAndMathTools.matrixColumnAverage(MatrixBuilder.userIDchoicesDouble(inputMatrix, userColumnNumber,(int) inputMatrix[i][1]),2 );
 			 lastMatrix[i][2] = finalMatrix[lastRow][2];
+			 lastMatrix[i][3] = StatAndMathTools.matrixColumnAverage(MatrixBuilder.userIDchoicesDouble(inputMatrix, userColumnNumber,(int) lastMatrix[i][1]),2 );
+			 ;
 			 lastRow--;
 			 
 		} // end for
