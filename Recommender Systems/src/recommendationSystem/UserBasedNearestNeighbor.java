@@ -83,10 +83,11 @@ public class UserBasedNearestNeighbor {
 		}
 		
 		// orders the intermediateMatrix respect to userNearestNeighborValue
-		int lastMatrixColumn = 4;
+		int lastMatrixColumn = 5;
 		double[][] finalMatrix = StatAndMathTools.sortMultidimensionArray(intermediateMatrix, 2);
 		double[][] lastMatrix = new double[numOfNearestNeighbor][lastMatrixColumn];
 		int lastRow = finalMatrix.length - 1;
+		double[][] forMatrix;
 		for ( int i = 0; i < numOfNearestNeighbor; i++) {
 			 while( Double.isNaN(finalMatrix[lastRow][2])) {
 				lastRow -= 1;
@@ -94,8 +95,11 @@ public class UserBasedNearestNeighbor {
 			
 			 lastMatrix[i][0] = finalMatrix[lastRow][0]; // the user searched
 			 lastMatrix[i][1] = finalMatrix[lastRow][1]; // an other users
-			 lastMatrix[i][2] = finalMatrix[lastRow][2];
-			 lastMatrix[i][3] = StatAndMathTools.matrixColumnAverage(MatrixBuilder.userIDchoicesDouble(inputMatrix, userColumnNumber,(int) lastMatrix[i][1]),2 );
+			 lastMatrix[i][4] = finalMatrix[lastRow][2];
+			 
+			 forMatrix = MatrixBuilder.userIDchoicesDouble(inputMatrix, userColumnNumber,(int) lastMatrix[i][1]);
+			 lastMatrix[i][2] = MatrixBuilder.getItem(forMatrix, 1, itemSearched, 2);
+			 lastMatrix[i][3] = StatAndMathTools.matrixColumnAverage(forMatrix,2 );
 			 ;
 			 lastRow--;
 			 
