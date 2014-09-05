@@ -181,6 +181,7 @@ public class UserBasedNearestNeighbor {
 		int lastRow = finalMatrix.length - 1;
 		double[][] forMatrix;
 		for ( int i = 0; i < numOfNearestNeighbor; i++) {
+			
 			 while( Double.isNaN(finalMatrix[lastRow][2])) {
 				lastRow -= 1;
 			} // end while
@@ -188,7 +189,7 @@ public class UserBasedNearestNeighbor {
 			 // forMatrix is a  matrix of three column userID, itemID, rating
 			 forMatrix = MatrixBuilder.userIDchoicesDouble(inputMatrix, userColumnNumber,(int) finalMatrix[lastRow][1]);
 			
-		     if( MatrixBuilder.isThereItem(forMatrix, 1, itemSearched)) {
+		     // if () {
 			 lastMatrix[i][0] = finalMatrix[lastRow][0]; // the user searched
 			 lastMatrix[i][1] = finalMatrix[lastRow][1]; // an other users
 			 lastMatrix[i][4] = finalMatrix[lastRow][2];
@@ -196,9 +197,9 @@ public class UserBasedNearestNeighbor {
 			 lastMatrix[i][2] = MatrixBuilder.getItem(forMatrix, 1, itemSearched, 2);
 			 lastMatrix[i][3] = StatAndMathTools.matrixColumnAverage(forMatrix,2 );
 			 lastRow--;
-		     } else {
-				lastRow--;
-			  }
+//		     } else {
+//				lastRow--;
+//			  }
 		} // end for
 		
 		
