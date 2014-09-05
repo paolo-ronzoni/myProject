@@ -41,7 +41,7 @@ public static void main(String[] args) {
  
      System.out.println("fatto! and nearest:" + nearestValue);
      
-     double[][] predictionMatrix = UserBasedNearestNeighbor.predictionUserBasedValue(secondMatrix, 0, 1, 2, 1, 2);
+     double[][] predictionMatrix = UserBasedNearestNeighbor.predictionUserBasedValue(secondMatrix, 0, 1, 2, 1, 4);
      IOMethods.printMatrix(predictionMatrix, "%4s\t");
      
      
