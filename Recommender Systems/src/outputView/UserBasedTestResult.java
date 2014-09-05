@@ -8,7 +8,7 @@ public class UserBasedTestResult {
 
 	static double[][] doubleMatrix = {{23.2, 11.5, 18.23}, 
 		  {7.89, 56.1, 1.00}};
-static String path1 = "DataStore\\u1.txt";
+static String path1 = "DataStore\\u.txt";
 static String path2 = "DataStore\\bookDataTab2dot1.txt";
 static String splitExpression = "\\s+";
 	
@@ -40,19 +40,20 @@ public static void main(String[] args) {
  nearestValue = UserBasedNearestNeighbor.userNearestNeighborValue(secondMatrix, 0, 2, 1);
  
      System.out.println("fatto! and nearest:" + nearestValue);
-     int userID = 70;
-     int itemID = 123;
+     int userID = 56;
+     int itemID = 12;
      int neighborNum = 4;
      
      double[][] predictionMatrix;
      
-     for (int i = 1; i < 100; i++) {
-		predictionMatrix = UserBasedNearestNeighbor
-				.TMPpredictionUserBasedValue(secondMatrix, 0, i, 1,
-						itemID, neighborNum);
-		IOMethods.printMatrix(predictionMatrix, "%4s\t"); 
+     for (int i = 1; i <= 943; i++) {
+    	// print the matrix with user and item data
+//		predictionMatrix = UserBasedNearestNeighbor
+//				.TMPpredictionUserBasedValue(secondMatrix, 0, i, 1,
+//						itemID, neighborNum);
+//		IOMethods.printMatrix(predictionMatrix, "%4s\t"); 
 		double predictionValue = UserBasedNearestNeighbor.predictionUserBasedValue(secondMatrix, 0, i, 2, itemID, neighborNum);
-		System.out.println(predictionValue);
+		System.out.println("User: " + i + "value: " + predictionValue);
      
 		//     double predictionMatrixBis; // = UserBasedNearestNeighbor.predictionUserBasedValue(secondMatrix, 0, 1, 2, 5, 2);
 		//     for (int i = 230; i <= 232; i++) {
