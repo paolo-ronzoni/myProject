@@ -94,6 +94,8 @@ public class UserBasedNearestNeighbor {
 			 while( Double.isNaN(finalMatrix[lastRow][2])) {
 				lastRow -= 1;
 			} // end while
+			 
+			 
 			
 			 lastMatrix[i][0] = finalMatrix[lastRow][0]; // the user searched
 			 lastMatrix[i][1] = finalMatrix[lastRow][1]; // an other users
