@@ -85,32 +85,36 @@ public class UserBasedNearestNeighbor {
 		}
 		
 		// orders the intermediateMatrix respect to userNearestNeighborValue
-		int lastMatrixColumn = 5;
-		double[][] finalMatrix = StatAndMathTools.sortMultidimensionArray(intermediateMatrix, 2);
-		double[][] lastMatrix = new double[numOfNearestNeighbor][lastMatrixColumn];
-		int lastRow = finalMatrix.length - 1;
-		double[][] forMatrix;
-		for ( int i = 0; i < numOfNearestNeighbor; i++) {
-			 while( Double.isNaN(finalMatrix[lastRow][2])) {
-				lastRow -= 1;
-			} // end while
-			 
-			 forMatrix = MatrixBuilder.userIDchoicesDouble(inputMatrix, userColumnNumber,(int) finalMatrix[lastRow][1]);
-			
-//		     if( MatrixBuilder.getItem(forMatrix, 1, itemSearched, 1) == itemSearched) {
-			 lastMatrix[i][0] = finalMatrix[lastRow][0]; // the user searched
-			 lastMatrix[i][1] = finalMatrix[lastRow][1]; // an other users
-			 lastMatrix[i][4] = finalMatrix[lastRow][2];
-			 
-//			 forMatrix = MatrixBuilder.userIDchoicesDouble(inputMatrix, userColumnNumber,(int) lastMatrix[i][1]);
-			 lastMatrix[i][2] = MatrixBuilder.getItem(forMatrix, 1, itemSearched, 2);
-			 lastMatrix[i][3] = StatAndMathTools.matrixColumnAverage(forMatrix,2 );
-			 lastRow--;
-//		} else
-//		{
-//			lastRow--;
-//		}
-		} // end for
+				int lastMatrixColumn = 5;
+				double[][] finalMatrix = StatAndMathTools.sortMultidimensionArray(intermediateMatrix, 2);
+				double[][] lastMatrix = new double[numOfNearestNeighbor][lastMatrixColumn];
+				int lastRow = finalMatrix.length - 1;
+				double[][] forMatrix;
+				for ( int i = 0; i < numOfNearestNeighbor; i++) {	 
+					forMatrix = MatrixBuilder.userIDchoicesDouble(inputMatrix, userColumnNumber,(int) finalMatrix[lastRow][1]);
+					 while( Double.isNaN(finalMatrix[lastRow][2]) || 
+							 !MatrixBuilder.isThereItem(forMatrix, 1, 5)) {
+						lastRow -= 1;
+						forMatrix = MatrixBuilder.userIDchoicesDouble(inputMatrix, userColumnNumber,(int) finalMatrix[lastRow][1]);
+					
+					} // end while
+					 
+					// forMatrix is a  matrix of three column userID, itemID, rating
+					 
+
+					 // || !MatrixBuilder.isThereItem(forMatrix, 1, 5)
+				     // if () {
+					 lastMatrix[i][0] = finalMatrix[lastRow][0]; // the user searched
+					 lastMatrix[i][1] = finalMatrix[lastRow][1]; // an other users
+					 lastMatrix[i][4] = finalMatrix[lastRow][2];
+					 
+					 lastMatrix[i][2] = MatrixBuilder.getItem(forMatrix, 1, itemSearched, 2);
+					 lastMatrix[i][3] = StatAndMathTools.matrixColumnAverage(forMatrix,2 );
+					 lastRow--;
+//				     } else {
+//						lastRow--;
+//					  }
+				} // end forr
 		
 		
 		
