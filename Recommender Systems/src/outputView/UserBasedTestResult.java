@@ -16,7 +16,7 @@ static String splitExpression = "\\s+";
 		
 public static void main(String[] args) {
 
-	String[][] myMatrix = IOMethods.txtMatrix(path2, splitExpression);
+	String[][] myMatrix = IOMethods.txtMatrix(path1, splitExpression);
 	// IOMethods.printMatrix(myMatrix, "%4s\t");
 	int[][] secondMatrix = IOMethods.matrixConversion(myMatrix);
 	// int[] matrix1 = IOMethods.columnExtractor(secondMatrix, 0);
@@ -40,9 +40,26 @@ public static void main(String[] args) {
  nearestValue = UserBasedNearestNeighbor.userNearestNeighborValue(secondMatrix, 0, 2, 1);
  
      System.out.println("fatto! and nearest:" + nearestValue);
+     int userID = 70;
+     int itemID = 123;
+     int neighborNum = 4;
      
-     double[][] predictionMatrix = UserBasedNearestNeighbor.predictionUserBasedValue(secondMatrix, 0, 1, 2, 1, 4);
-     IOMethods.printMatrix(predictionMatrix, "%4s\t");
+     double[][] predictionMatrix;
+     
+     for (int i = 1; i < 100; i++) {
+		predictionMatrix = UserBasedNearestNeighbor
+				.TMPpredictionUserBasedValue(secondMatrix, 0, i, 1,
+						itemID, neighborNum);
+		IOMethods.printMatrix(predictionMatrix, "%4s\t"); 
+		double predictionValue = UserBasedNearestNeighbor.predictionUserBasedValue(secondMatrix, 0, i, 2, itemID, neighborNum);
+		System.out.println(predictionValue);
+     
+		//     double predictionMatrixBis; // = UserBasedNearestNeighbor.predictionUserBasedValue(secondMatrix, 0, 1, 2, 5, 2);
+		//     for (int i = 230; i <= 232; i++) {
+		//     predictionMatrixBis = UserBasedNearestNeighbor.predictionUserBasedValue(secondMatrix, 0, userID, 2, i, neighborNum);
+		//     System.out.println(predictionMatrixBis);}
+	}
+     
      
      
 

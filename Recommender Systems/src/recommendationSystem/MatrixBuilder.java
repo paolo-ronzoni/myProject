@@ -100,6 +100,32 @@ public class MatrixBuilder {
 		return outputMatrix;
 	 } // end method userIdChoices
 	
+	/**@Overloading
+	 * @param inputMatrix an input matrix of type int
+	 * @param columnNumber position of the column where to search
+	 * @param elementSearched the integer searched
+	 * @return outputMatrix a three column matrix with userID, ItemId, rating
+	 * @author Paolo Ronzoni
+	 */
+	public static double[][] userIDchoicesDouble(int[][] inputMatrix, int columnNumber, int elementSearched) {
+		int nRows = inputMatrix.length;
+		int nRowsUser = numberOfElement(inputMatrix, columnNumber, elementSearched);
+		double[][] outputMatrix = new double[nRowsUser][3];
+		int userRow = 0;
+		for (int row = 0; row < nRows; row++)
+		{
+		    if (inputMatrix[row][columnNumber] == elementSearched) 
+		    {
+		    	for (int column = 0; column < 3; column++) {
+		    	outputMatrix[userRow][column] = inputMatrix[row][column];
+		    	}
+		    	userRow++;
+		    }
+		    
+		} 			 
+		return outputMatrix;
+	 } // end method userIdChoices
+	
 	
 	
 	/** 
@@ -195,6 +221,26 @@ public class MatrixBuilder {
 		return result;
 	 } // end method userIdChoices
 	
+	/**@overloading
+	 * @param inputMatrix an input matrix of type int
+	 * @param columnNumber position of the column where to search
+	 * @param elementSearched the integer searched
+	 * @return boolean true if there is the item in the column
+	 * @author Paolo Ronzoni
+	 */
+	public static boolean isThereItem(double[][] inputMatrix, int columnNumber, int elementSearched) {
+		int nRows = inputMatrix.length;
+		boolean result = false;
+		for (int row = 0; row < nRows; row++)
+		{
+		    if (inputMatrix[row][columnNumber] == elementSearched){
+		    result = true;
+		    break;
+		    }
+		} 			 
+		return result;
+	 } // end method userIdChoices
+	
 	
 	/** 
 	 * @param inputMatrix an input matrix of type int
@@ -213,6 +259,25 @@ public class MatrixBuilder {
 		    }
 		} 			 
 		return itemSearched;
+	 } // end method userIdChoices
+	
+	/**@overlading
+	 * @param inputMatrix an input matrix of type int
+	 * @param columnNumber position of the column where to search
+	 * @param elementSearched the integer searched
+	 * @return boolean true if there is the item in the column
+	 * @author Paolo Ronzoni
+	 */
+	public static int getItem(double[][] inputMatrix, int columnNumber, int elementSearched, int outputColumn) {
+		int nRows = inputMatrix.length;
+		double itemSearched = 0;
+		for (int row = 0; row < nRows; row++)
+		{
+		    if (inputMatrix[row][columnNumber] == elementSearched){
+		    itemSearched = inputMatrix[row][outputColumn];
+		    }
+		} 			 
+		return (int) itemSearched;
 	 } // end method userIdChoices
 	
 	

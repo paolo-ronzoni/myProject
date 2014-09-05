@@ -93,7 +93,7 @@ public class UserBasedNearestNeighbor {
 				for ( int i = 0; i < numOfNearestNeighbor; i++) {	 
 					forMatrix = MatrixBuilder.userIDchoicesDouble(inputMatrix, userColumnNumber,(int) finalMatrix[lastRow][1]);
 					 while( Double.isNaN(finalMatrix[lastRow][2]) || 
-							 !MatrixBuilder.isThereItem(forMatrix, 1, 5)) {
+							 !MatrixBuilder.isThereItem(forMatrix, 1, itemSearched)) {
 						lastRow -= 1;
 						forMatrix = MatrixBuilder.userIDchoicesDouble(inputMatrix, userColumnNumber,(int) finalMatrix[lastRow][1]);
 					
@@ -187,7 +187,7 @@ public class UserBasedNearestNeighbor {
 		for ( int i = 0; i < numOfNearestNeighbor; i++) {	 
 			forMatrix = MatrixBuilder.userIDchoicesDouble(inputMatrix, userColumnNumber,(int) finalMatrix[lastRow][1]);
 			 while( Double.isNaN(finalMatrix[lastRow][2]) || 
-					 !MatrixBuilder.isThereItem(forMatrix, 1, 5)) {
+					 !MatrixBuilder.isThereItem(forMatrix, 1, itemSearched)) {
 				lastRow -= 1;
 				forMatrix = MatrixBuilder.userIDchoicesDouble(inputMatrix, userColumnNumber,(int) finalMatrix[lastRow][1]);
 			
