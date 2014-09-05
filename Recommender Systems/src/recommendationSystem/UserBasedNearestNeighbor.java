@@ -180,15 +180,19 @@ public class UserBasedNearestNeighbor {
 		double[][] lastMatrix = new double[numOfNearestNeighbor][lastMatrixColumn];
 		int lastRow = finalMatrix.length - 1;
 		double[][] forMatrix;
-		for ( int i = 0; i < numOfNearestNeighbor; i++) {
-			
-			 while( Double.isNaN(finalMatrix[lastRow][2])) {
+		for ( int i = 0; i < numOfNearestNeighbor; i++) {	 
+			forMatrix = MatrixBuilder.userIDchoicesDouble(inputMatrix, userColumnNumber,(int) finalMatrix[lastRow][1]);
+			 while( Double.isNaN(finalMatrix[lastRow][2]) || 
+					 !MatrixBuilder.isThereItem(forMatrix, 1, 5)) {
 				lastRow -= 1;
+				forMatrix = MatrixBuilder.userIDchoicesDouble(inputMatrix, userColumnNumber,(int) finalMatrix[lastRow][1]);
+			
 			} // end while
 			 
-			 // forMatrix is a  matrix of three column userID, itemID, rating
-			 forMatrix = MatrixBuilder.userIDchoicesDouble(inputMatrix, userColumnNumber,(int) finalMatrix[lastRow][1]);
-			
+			// forMatrix is a  matrix of three column userID, itemID, rating
+			 
+
+			 // || !MatrixBuilder.isThereItem(forMatrix, 1, 5)
 		     // if () {
 			 lastMatrix[i][0] = finalMatrix[lastRow][0]; // the user searched
 			 lastMatrix[i][1] = finalMatrix[lastRow][1]; // an other users
