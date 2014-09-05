@@ -49,6 +49,8 @@ public class UserBasedNearestNeighbor {
 	 } // end method userNearestNeighborValue
 	
 	
+	
+	
 	/** 
 	 * @param inputMatrix an input matrix of type int
 	 * @param usercolumnNumber the position of the column where to search the user
