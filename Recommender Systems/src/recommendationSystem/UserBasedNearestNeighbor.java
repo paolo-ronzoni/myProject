@@ -5,6 +5,8 @@ import inProcessing.Algorithms;
 
 import java.util.Arrays;
 
+import sun.swing.MenuItemLayoutHelper.ColumnAlignment;
+
 public class UserBasedNearestNeighbor {
 
 	
@@ -81,11 +83,10 @@ public class UserBasedNearestNeighbor {
 		}
 		
 		// orders the intermediateMatrix respect to userNearestNeighborValue
-		int lastMatrixColumn = 3;
+		int lastMatrixColumn = 4;
 		double[][] finalMatrix = StatAndMathTools.sortMultidimensionArray(intermediateMatrix, 2);
 		double[][] lastMatrix = new double[numOfNearestNeighbor][lastMatrixColumn];
 		int lastRow = finalMatrix.length - 1;
-		double[][] user;
 		for ( int i = 0; i < numOfNearestNeighbor; i++) {
 			 while( Double.isNaN(finalMatrix[lastRow][2])) {
 				lastRow -= 1;
@@ -93,8 +94,8 @@ public class UserBasedNearestNeighbor {
 			
 			 lastMatrix[i][0] = finalMatrix[lastRow][0]; // the user searched
 			 lastMatrix[i][1] = finalMatrix[lastRow][1]; // an other users
+			 lastMatrix[i][3] = StatAndMathTools.matrixColumnAverage(MatrixBuilder.userIDchoicesDouble(inputMatrix, userColumnNumber,(int) inputMatrix[i][1]),2 );
 			 lastMatrix[i][2] = finalMatrix[lastRow][2];
-			 user = MatrixBuilder.userIDchoicesDouble(finalMatrix, (int) lastMatrix[i][1],(int) inputMatrix[i][1]);
 			 lastRow--;
 			 
 		} // end for
