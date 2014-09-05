@@ -61,7 +61,7 @@ public class UserBasedNearestNeighbor {
 	 * @return double the prediction of the rating for the item searched for the specific user
 	 * @author Paolo Ronzoni
 	 */
-	public static double[][] predictionUserBasedValue(int[][] inputMatrix, int userColumnNumber, int userSearched, int itemcolumnNumber, int itemSearched, int numOfNearestNeighbor) {		
+	public static double predictionUserBasedValue(int[][] inputMatrix, int userColumnNumber, int userSearched, int itemcolumnNumber, int itemSearched, int numOfNearestNeighbor) {		
 		
 		// find all users, without duplication, in the inputMatrix
 		int[] usersVector = MatrixBuilder.findAllUsers(inputMatrix, userColumnNumber);
@@ -114,29 +114,31 @@ public class UserBasedNearestNeighbor {
 		
 		
 		
-		int user1columnScores = 1;
-		int user2columnScores = 2;
-		int numRows = intermediateMatrix.length;
+		int user1ColumnScores = 2;
+		int numRows = lastMatrix.length;
+		int lastMatrixSimColumn = 4;
+		int lastMatrixScoresColumn = 2;
+		int lastMatrixAveragesColumn = 3;
 		double numerator = 0;
-		double denominator1 = 0;
-		double denominator2 = 0;
+		double denominator = 0;
+	
 		
-		// calculates the averages of the columns' users scores 
-		double user1Average = StatAndMathTools.matrixColumnAverage(intermediateMatrix, user1columnScores);
-		double user2Average = StatAndMathTools.matrixColumnAverage(intermediateMatrix, user2columnScores);
+		// calculates the averages of the firt users
+		double user1Average = StatAndMathTools.matrixColumnAverage(MatrixBuilder.userIDchoicesDouble(inputMatrix, userColumnNumber, userSearched),user1ColumnScores);
+
 		
 		
 		for (int row = 0; row < numRows  ; row++)
 		{
-		numerator += ((intermediateMatrix[row][user1columnScores] - user1Average) * (intermediateMatrix[row][user2columnScores] - user2Average));
+		numerator += lastMatrix[row][lastMatrixSimColumn] * (lastMatrix[row][lastMatrixScoresColumn] - lastMatrix[row][lastMatrixAveragesColumn]);
 		
-		denominator1 += Math.pow((intermediateMatrix[row][user1columnScores] - user1Average),2);
-		denominator2 += Math.pow((intermediateMatrix[row][user2columnScores] - user2Average),2);
+		denominator += lastMatrix[row][lastMatrixSimColumn];
+		
 			    	
 		} // end for loop
 		
-		
-		return lastMatrix;
+		 return user1Average + (numerator / denominator);
+		// return lastMatrix;
 	 } // end method predictionUserBasedValue
 	
 	/** 
@@ -183,21 +185,20 @@ public class UserBasedNearestNeighbor {
 				lastRow -= 1;
 			} // end while
 			 
+			 // forMatrix is a  matrix of three column userID, itemID, rating
 			 forMatrix = MatrixBuilder.userIDchoicesDouble(inputMatrix, userColumnNumber,(int) finalMatrix[lastRow][1]);
 			
-//		     if( MatrixBuilder.getItem(forMatrix, 1, itemSearched, 1) == itemSearched) {
+		     if( MatrixBuilder.isThereItem(forMatrix, 1, itemSearched)) {
 			 lastMatrix[i][0] = finalMatrix[lastRow][0]; // the user searched
 			 lastMatrix[i][1] = finalMatrix[lastRow][1]; // an other users
 			 lastMatrix[i][4] = finalMatrix[lastRow][2];
 			 
-//			 forMatrix = MatrixBuilder.userIDchoicesDouble(inputMatrix, userColumnNumber,(int) lastMatrix[i][1]);
 			 lastMatrix[i][2] = MatrixBuilder.getItem(forMatrix, 1, itemSearched, 2);
 			 lastMatrix[i][3] = StatAndMathTools.matrixColumnAverage(forMatrix,2 );
 			 lastRow--;
-//		} else
-//		{
-//			lastRow--;
-//		}
+		     } else {
+				lastRow--;
+			  }
 		} // end for
 		
 		
