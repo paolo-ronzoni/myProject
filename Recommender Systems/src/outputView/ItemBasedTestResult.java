@@ -10,7 +10,7 @@ public class ItemBasedTestResult {
 
 	static double[][] doubleMatrix = {{23.2, 11.5, 18.23}, 
 		  {7.89, 56.1, 1.00}};
-static String path1 = "DataStore\\bookData.txt";
+static String path1 = "DataStore\\u1.txt";
 static String path2 = "DataStore\\provaFinale.txt";
 static String splitExpression = "\\s+";
 	
@@ -30,8 +30,12 @@ IOMethods.printMatrix(solutionMatrix, "%4s\t");
 		
 		double  itemBasedValue2 = ItemBasedNearestNeighbor.cosineSimilarity(secondMatrix, 0, 1, 5);
 		System.out.println("ItemBasedValue2: " + itemBasedValue2);
-
-
+		
+		double  itemBasedValueBis;
+		for ( int i = 1; i < 34; i++) {
+			itemBasedValueBis = ItemBasedNearestNeighbor.adjustedCosineSimilarity(secondMatrix, 0, 1, i);
+			System.out.println("ItemBasedValue: " + itemBasedValueBis);
+		}
 	} // end main
 
 }// end class
