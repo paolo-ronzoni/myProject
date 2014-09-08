@@ -12,8 +12,8 @@ public class ItemBasedNearestNeighbor {
 	/** 
 	 * @param inputMatrix an input matrix of type int
 	 * @param columnNumber the position of the column where to search
-	 * @param firstElementSearched the first user searched
-	 * @param secondElementSearched the second user searched
+	 * @param firstElementSearched the first element searched
+	 * @param secondElementSearched the second element searched
 	 * @return 
 	 * @author Paolo Ronzoni
 	 */
@@ -97,10 +97,13 @@ public class ItemBasedNearestNeighbor {
 	 * @return double the prediction of the rating for the item searched for the specific user
 	 * @author Paolo Ronzoni
 	 */
-	public static double[][] predictionItemBasedValue(int[][] inputMatrix, int userColumnNumber, int userSearched, int itemcolumnNumber, int itemSearched, int numOfNearestNeighbor) {		
+	public static double[][] predictionItemBasedValue(int[][] inputMatrix, int userColumnNumber, int userSearched, int itemcolumnNumber, int itemSearched) {		
+	
+		// find the users matrtix of three columns userID, ItemID, rating
+		int[][] intermediateMatrix = MatrixBuilder.userIDchoices(inputMatrix, userColumnNumber,itemSearched);
 		
-		// find all users, without duplication, in the inputMatrix
-		int[] usersVector = MatrixBuilder.findAllUsers(inputMatrix, userColumnNumber);
+		// find the intermediate matrix number of row
+		int 
 		
 		// swap the userSearched position at the beginning of the usersVector
 		for ( int i = 0; i < usersVector.length; i++) {
