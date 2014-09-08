@@ -97,13 +97,12 @@ public class ItemBasedNearestNeighbor {
 	 * @return double the prediction of the rating for the item searched for the specific user
 	 * @author Paolo Ronzoni
 	 */
-	public static double[][] predictionItemBasedValue(int[][] inputMatrix, int userColumnNumber, int userSearched, int itemcolumnNumber, int itemSearched) {		
+	public static int[][] predictionItemBasedValue(int[][] inputMatrix, int userColumnNumber, int userSearched, int itemcolumnNumber, int itemSearched) {		
 	
 		// find the users matrtix of three columns userID, ItemID, rating
-		double[][] intermediateMatrix =  MatrixBuilder.userIDchoicesDouble(inputMatrix, userColumnNumber,itemSearched);
+		int[][] intermediateMatrix =  MatrixBuilder.userIDchoices(inputMatrix, userColumnNumber,userSearched);
 		
-		// find the intermediate matrix number of row
-		int numOfRowUserSearched = intermediateMatrix.length;
+		
 		
 //		// swap the userSearched position at the beginning of the usersVector
 //		for ( int i = 0; i < usersVector.length; i++) {
@@ -157,27 +156,26 @@ public class ItemBasedNearestNeighbor {
 //		
 //		
 //		
-//		int user1columnScores = 1;
-//		int user2columnScores = 2;
-//		int numRows = intermediateMatrix.length;
-//		double numerator = 0;
-//		double denominator1 = 0;
-//		double denominator2 = 0;
+		int user1columnScores = 2;
+		int numRows = intermediateMatrix.length;
+		double numerator = 0;
+		double denominator = 0;
+
 		
 //		// calculates the averages of the columns' users scores 
 //		double user1Average = StatAndMathTools.matrixColumnAverage(intermediateMatrix, user1columnScores);
 //		double user2Average = StatAndMathTools.matrixColumnAverage(intermediateMatrix, user2columnScores);
 		
+		for (int row = 0; row < numRows  ; row++)
+		{
+	 
+		numerator += (adjustedCosineSimilarity( intermediateMatrix, userColumnNumber, itemSearched, intermediateMatrix[row][user1columnScores])  * intermediateMatrix[row][user1columnScores] );
 		
-//		for (int row = 0; row < numRows  ; row++)
-//		{
-//		numerator += ((intermediateMatrix[row][user1columnScores] - user1Average) * (intermediateMatrix[row][user2columnScores] - user2Average));
-//		
-//		denominator1 += Math.pow((intermediateMatrix[row][user1columnScores] - user1Average),2);
-//		denominator2 += Math.pow((intermediateMatrix[row][user2columnScores] - user2Average),2);
-//			    	
-//		} // end for loop
-//		
+		denominator += (intermediateMatrix[row][user1columnScores]);
+		
+			    	
+		} // end for loop
+		
 		
 		return intermediateMatrix;
 	 } // end method TMPpredictionUserBasedValue
