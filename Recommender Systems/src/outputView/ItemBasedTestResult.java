@@ -22,7 +22,7 @@ public static void main(String[] args) {
 	// IOMethods.printMatrix(myMatrix, "%4s\t");
 	int[][] secondMatrix = IOMethods.matrixConversion(myMatrix);
 	
-	double [][] solutionMatrix = MatrixBuilder.doubleItemRatingMatrix(secondMatrix, 0, 1, 5);
+	double [][] solutionMatrix = ItemBasedNearestNeighbor.predictionItemBasedValue(secondMatrix, userColumnNumber, userSearched, itemcolumnNumber, itemSearched)(secondMatrix, 0, 1, 5);
 IOMethods.printMatrix(solutionMatrix, "%4s\t");
 
 		double  itemBasedValue = ItemBasedNearestNeighbor.adjustedCosineSimilarity(secondMatrix, 0, 1, 5);
@@ -31,11 +31,13 @@ IOMethods.printMatrix(solutionMatrix, "%4s\t");
 		double  itemBasedValue2 = ItemBasedNearestNeighbor.cosineSimilarity(secondMatrix, 0, 1, 5);
 		System.out.println("ItemBasedValue2: " + itemBasedValue2);
 		
-		double  itemBasedValueBis;
-		for ( int i = 1; i < 34; i++) {
-			itemBasedValueBis = ItemBasedNearestNeighbor.adjustedCosineSimilarity(secondMatrix, 0, 1, i);
-			System.out.println("ItemBasedValue: " + itemBasedValueBis);
-		}
+//		double  itemBasedValueBis;
+//		for ( int i = 1; i < 1682; i++) {
+//			itemBasedValueBis = ItemBasedNearestNeighbor.cosineSimilarity(secondMatrix, 0, 22, i);
+//			System.out.println("ItemBasedValue: " + itemBasedValueBis);
+//		}
+//		
+		
 	} // end main
 
 }// end class
