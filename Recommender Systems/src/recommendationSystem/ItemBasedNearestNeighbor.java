@@ -91,32 +91,34 @@ public class ItemBasedNearestNeighbor {
 	 * @param inputMatrix an input matrix of type int
 	 * @param usercolumnNumber the position of the column where to search the user
 	 * @param userSearched the user that must be searched
-	 * @param itemcolumnNumber the position of the column where to search the item
 	 * @param itemSearched the item searched
 	 * @return double the prediction of the rating for the item searched for the specific user
 	 * @author Paolo Ronzoni
 	 */
-	public static double predictionItemBasedValue(int[][] inputMatrix, int userColumnNumber, int userSearched, int itemcolumnNumber, int itemSearched) {		
+	public static double predictionItemBasedValue(int[][] inputMatrix, int userColumnNumber, int userSearched, int itemSearched) {		
 	
 		// find the users matrtix of three columns userID, ItemID, rating
 		int[][] intermediateMatrix =  MatrixBuilder.userIDchoices(inputMatrix, userColumnNumber,userSearched);
 		
-		int user1columnScores = 2;
+		int elementColumn = 1;
+		int ratingColumnScores = 2;
 		int numRows = intermediateMatrix.length;
 		double numerator = 0;
 		double denominator = 0;
-		
+		double[][] intermediateResult = new double[numRows][2];
 		for (int row = 0; row < numRows  ; row++)
 		{
-	 
-		numerator += (adjustedCosineSimilarity( intermediateMatrix, userColumnNumber, itemSearched, intermediateMatrix[row][user1columnScores])  * intermediateMatrix[row][user1columnScores] );
+			
+		if( Double.isNaN(adjustedCosineSimilarity( intermediateMatrix, userColumnNumber, itemSearched, intermediateMatrix[row][elementColumn])) ) continue;
+		numerator += (adjustedCosineSimilarity( intermediateMatrix, userColumnNumber, itemSearched, intermediateMatrix[row][elementColumn])  * intermediateMatrix[row][ratingColumnScores] );
 		
-		denominator += adjustedCosineSimilarity( intermediateMatrix, userColumnNumber, itemSearched, intermediateMatrix[row][user1columnScores]);
+		denominator += adjustedCosineSimilarity( intermediateMatrix, userColumnNumber, itemSearched, intermediateMatrix[row][elementColumn]);
 		
-			    	
+		intermediateResult[row][0] = numerator;
+		intermediateResult[row][1] = denominator;
 		} // end for loop
 		
-		
+		// 
 		return numerator / denominator;
 	 } // end method TMPpredictionUserBasedValue
 

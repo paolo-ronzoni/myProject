@@ -22,14 +22,23 @@ public static void main(String[] args) {
 	// IOMethods.printMatrix(myMatrix, "%4s\t");
 	int[][] secondMatrix = IOMethods.matrixConversion(myMatrix);
 	
-	double [][] solutionMatrix = ItemBasedNearestNeighbor.predictionItemBasedValue(secondMatrix, userColumnNumber, userSearched, itemcolumnNumber, itemSearched)(secondMatrix, 0, 1, 5);
-IOMethods.printMatrix(solutionMatrix, "%4s\t");
+//	double [][] solutionMatrix = ItemBasedNearestNeighbor.predictionItemBasedValue(secondMatrix, 0, 5, 17);
+//IOMethods.printMatrix(solutionMatrix, "%4s\t");
 
 		double  itemBasedValue = ItemBasedNearestNeighbor.adjustedCosineSimilarity(secondMatrix, 0, 1, 5);
 		System.out.println("ItemBasedValue: " + itemBasedValue);
 		
 		double  itemBasedValue2 = ItemBasedNearestNeighbor.cosineSimilarity(secondMatrix, 0, 1, 5);
 		System.out.println("ItemBasedValue2: " + itemBasedValue2);
+		
+		double result;
+		
+		for (int i = 17; i < 200; i++) {
+			result = ItemBasedNearestNeighbor.predictionItemBasedValue(secondMatrix, 0,
+					5, i);
+			System.out.println(result);
+		}
+		
 		
 //		double  itemBasedValueBis;
 //		for ( int i = 1; i < 1682; i++) {

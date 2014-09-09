@@ -48,12 +48,14 @@ public static void main(String[] args) {
      
      for (int i = 1; i <= 943; i++) {
     	// print the matrix with user and item data
-//		predictionMatrix = UserBasedNearestNeighbor
-//				.TMPpredictionUserBasedValue(secondMatrix, 0, i, 1,
-//						itemID, neighborNum);
-//		IOMethods.printMatrix(predictionMatrix, "%4s\t"); 
-		double predictionValue = UserBasedNearestNeighbor.predictionUserBasedValue(secondMatrix, 0, i, 2, itemID, neighborNum);
-		System.out.println("User: " + i + "value: " + predictionValue);
+		predictionMatrix = UserBasedNearestNeighbor
+				.TMPpredictionUserBasedValue(secondMatrix, 0, i, 1,
+						itemID, neighborNum);
+		IOMethods.printMatrix(predictionMatrix, "%4s\t"); 
+    	 
+    	 // print the prediction value.
+//		double predictionValue = UserBasedNearestNeighbor.predictionUserBasedValue(secondMatrix, 0, i, 2, itemID, neighborNum);
+//		System.out.println("User: " + i + "value: " + predictionValue);
      
 		//     double predictionMatrixBis; // = UserBasedNearestNeighbor.predictionUserBasedValue(secondMatrix, 0, 1, 2, 5, 2);
 		//     for (int i = 230; i <= 232; i++) {
