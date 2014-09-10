@@ -25,11 +25,19 @@ public class AccuracyMetricsTestResult {
 //		int elementFounded = MatrixBuilder.numberOfElement(secondMatrix, 0, 186);
 //		System.out.println("element founded: " + elementFounded);
 //		System.out.println("matrix length: " + secondMatrix.length);
-		int [][] solutionMatrix = MatrixBuilder.matchIDchoices(secondMatrix, 0, 1, 2);
+		int userSearched = 22;
+		int [][] solutionMatrix = MatrixBuilder.userIDchoices(secondMatrix, 0, userSearched);
 	 IOMethods.printMatrix(solutionMatrix, "%4s\t");
 	 
-	 double result = AccuracyMetrics.meanAbsoluteErrorUserBasedOneUser(secondMatrix, 0, 1, 1, 2);
-	 System.out.println("il risultato e': " + result);
+	 double result;
+	 
+	 for (int i = 200; i < 226; i++) {
+		result = AccuracyMetrics.meanAbsoluteErrorUserBasedOneUser(
+				secondMatrix, 0, i, 1, 2);
+		System.out.println("il risultato e': " + result);
+	}
+	System.out.println("End of computation");
+	 
 //	 double nearestValue = 0;
 //	 for (int k = 1; k <= 5; k++ ) 
 //	 {
