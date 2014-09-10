@@ -13,22 +13,23 @@ public class AccuracyMetrics {
  * @return double the weighted average of the differences between the actual scores and the predicted scores
  * @author Paolo Ronzoni
  */	
-public double meanAbsoluteErrorUserBased(int[][] inputMatrix, int userColumnNumber, int itemcolumnNumber,  int numOfNearestNeighbor, int userStart, int userEnd) {
-double prov = 2.3;
+public double meanAbsoluteErrorUserBased(int[][] inputMatrix, int userColumnNumber, int userSearched, int itemcolumnNumber,  int numOfNearestNeighbor, int userStart, int userEnd) {
+
 int totalNumOfRating = 0;
-//int userSearched = 1;
 int itemSearched;
 double numerator = 0;
-double denominator = 0;
+int matchItemWithUsers;
+int[] users = MatrixBuilder.findAllUsers(inputMatrix, userColumnNumber);
 
 for ( int i = userStart; i <= userEnd; i++) {
 itemSearched = 1;
-numerator += UserBasedNearestNeighbor.predictionUserBasedValue(inputMatrix, userColumnNumber,  i, itemcolumnNumber, itemSearched, numOfNearestNeighbor);
+numerator += UserBasedNearestNeighbor.predictionUserBasedValue(inputMatrix, userColumnNumber,  users[i], itemcolumnNumber, itemSearched, numOfNearestNeighbor);
 
+totalNumOfRating++;
 }// end for
 
 
-return prov;
+return numerator / totalNumOfRating;
 }
 
 } // end class AccracyMetrics 
