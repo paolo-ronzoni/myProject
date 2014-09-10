@@ -13,19 +13,19 @@ public class AccuracyMetrics {
  * @return double the weighted average of the differences between the actual scores and the predicted scores
  * @author Paolo Ronzoni
  */	
-public double meanAbsoluteErrorUserBased(int[][] inputMatrix, int userColumnNumber, int userSearched, int itemcolumnNumber,  int numOfNearestNeighbor, int userStart, int userEnd) {
+public double meanAbsoluteErrorUserBased(int[][] inputMatrix, int userColumnNumber, int userSearched, int itemColumnNumber,  int numOfNearestNeighbor, int userStart, int userEnd) {
 
-int totalNumOfRating = 0;
-int itemSearched;
+// a three column matrix which corresponds to the userSearched with userID, ItemId, rating
+int[][] userMatrix = MatrixBuilder.userIDchoices(inputMatrix, userColumnNumber, userSearched);
+
+int totalNumOfRating = userMatrix.length;
+int ratingColumnNumber = 2;
 double numerator = 0;
-int matchItemWithUsers;
-int[] users = MatrixBuilder.findAllUsers(inputMatrix, userColumnNumber);
 
-for ( int i = userStart; i <= userEnd; i++) {
-itemSearched = 1;
-numerator += UserBasedNearestNeighbor.predictionUserBasedValue(inputMatrix, userColumnNumber,  users[i], itemcolumnNumber, itemSearched, numOfNearestNeighbor);
+for ( int row = 0; row <totalNumOfRating; row++) {
+numerator += Math.abs(UserBasedNearestNeighbor.predictionUserBasedValue(inputMatrix, userColumnNumber,  userSearched, itemColumnNumber, userMatrix[row][itemColumnNumber], numOfNearestNeighbor) - userMatrix[row][ratingColumnNumber] );
 
-totalNumOfRating++;
+
 }// end for
 
 
