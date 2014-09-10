@@ -4,11 +4,9 @@ public class AccuracyMetrics {
 	
 
 /** 
- * @param inputMatrix an input matrix of type int
+ * @param inputMatrix an input matrix of type int  with columns for users, products and ratings
  * @param usercolumnNumber the position of the column where to search the user
- * @param userSearched the user that must be searched
  * @param itemcolumnNumber the position of the column where to search the item
- * @param itemSearched the item searched
  * @return double the weighted average of the differences between the actual scores and the predicted scores
  * @author Paolo Ronzoni
  */	
