@@ -378,5 +378,39 @@ public class MatrixBuilder {
 		return finalMatrix;
 	 } // end method simpleDoubleItemRatingMatrix
 	
+	/** 
+ 	 * @param inputMatrix an input matrix of type int
+ 	 * @param columnPosition position of the column where to search
+ 	 * @return columnExtract an array of type double  with all element of the selected column 
+ 	 * @author Paolo Ronzoni
+ 	 */
+ 	public static double[] columnExtractor(int[][] inputMatrix, int columnPosition) {
+ 		int nRows = inputMatrix.length;
+ 	
+ 		double[] columnExtract = new double[nRows];
+ 		for (int row = 0; row < nRows; row++)
+ 		{  
+ 		    columnExtract[row]= inputMatrix[row][columnPosition];
+ 		}	 
+ 		return columnExtract;
+ 	 } // end method columnExtractor
+ 	
+ 	/** 
+ 	 * @param inputMatrix an input matrix of type double
+ 	 * @param columnPosition position of the column where to search
+ 	 * @return columnExtract an array of type double  with all element of the selected column 
+ 	 * @author Paolo Ronzoni
+ 	 */
+ 	public static double[] columnExtractor(double[][] inputMatrix, int columnPosition) {
+ 		int nRows = inputMatrix.length;
+ 	
+ 		double[] columnExtract = new double[nRows];
+ 		for (int row = 0; row < nRows; row++)
+ 		{  
+ 		    columnExtract[row]= inputMatrix[row][columnPosition];
+ 		}		 
+ 		return columnExtract;
+ 	 } // end method columnExtractor
+	
 
 } // end class
