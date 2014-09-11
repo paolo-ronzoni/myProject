@@ -25,13 +25,13 @@ public class AccuracyMetricsTestResult {
 //		int elementFounded = MatrixBuilder.numberOfElement(secondMatrix, 0, 186);
 //		System.out.println("element founded: " + elementFounded);
 //		System.out.println("matrix length: " + secondMatrix.length);
-		int userSearched = 22;
+		int userSearched = 362;
 		int [][] solutionMatrix = MatrixBuilder.userIDchoices(secondMatrix, 0, userSearched);
 	 IOMethods.printMatrix(solutionMatrix, "%4s\t");
 	 
 	 double result;
 	 
-	 for (int i = 200; i < 226; i++) {
+	 for (int i = 362; i < 365; i++) {
 		result = AccuracyMetrics.meanAbsoluteErrorUserBasedOneUser(
 				secondMatrix, 0, i, 1, 2);
 		System.out.println("il risultato e': " + result);
