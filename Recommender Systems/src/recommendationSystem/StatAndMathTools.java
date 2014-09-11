@@ -74,6 +74,20 @@ public class StatAndMathTools {
 	} //end method sortMultidimensionArray
 	
 	
+	/** 
+	 * @param element an array of type int
+	 * @return the maximum value of the array  
+	 * @author Paolo Ronzoni
+	 */
+	private static int maxValue(int[] element) {
+		int max = element[0];
+		for (int ktr = 0; ktr < element.length; ktr++) {
+			if (element[ktr] > max) {
+				max = element[ktr];
+			}
+		}
+		return max;
+	} // end maxValue
 
 }
 
