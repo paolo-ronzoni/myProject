@@ -6,12 +6,11 @@ public class AccuracyMetrics {
 	/**
 	* @param inputMatrix an input matrix of type int with columns for users, products and ratings
 	* @param usercolumnNumber the position of the column where to search the user
+	* @param userSearched the user searched
 	* @param itemcolumnNumber the position of the column where to search the item
 	* @param numOfNearestNeighbor the number of similarity to use to calculate the predictionUserBasedValue
-	* @param userStart the first user where to start the computation of Mean Absolute Error
-	* @param userEnd the last user used in the computation of Mean Absolute Error
 	* @return double the weighted average of the differences between the actual scores and the predicted scores
-	* @author Paolo Ronzoni
+	* 
 	*/	
 public static double meanAbsoluteErrorUserBasedOneUser(int[][] inputMatrix, int userColumnNumber, int userSearched, int itemColumnNumber,  int numOfNearestNeighbor) {
 
@@ -34,10 +33,9 @@ return numerator / totalNumOfRating;
 /**
 * @param inputMatrix an input matrix of type int with columns for users, products and ratings
 * @param usercolumnNumber the position of the column where to search the user
+* @param userSearched the user searched
 * @param itemcolumnNumber the position of the column where to search the item
 * @param numOfNearestNeighbor the number of similarity to use to calculate the predictionUserBasedValue
-* @param userStart the first user where to start the computation of Mean Absolute Error
-* @param userEnd the last user used in the computation of Mean Absolute Error
 * @return double the weighted average of the differences between the actual scores and the predicted scores normalized dividing by (maxRating - minRating)
 * @author Paolo Ronzoni
 */	
@@ -69,10 +67,9 @@ return (numerator / totalNumOfRating)/(rMax - rMin);
 /**
 * @param inputMatrix an input matrix of type int with columns for users, products and ratings
 * @param usercolumnNumber the position of the column where to search the user
+* @param userSearched the user searched
 * @param itemcolumnNumber the position of the column where to search the item
 * @param numOfNearestNeighbor the number of similarity to use to calculate the predictionUserBasedValue
-* @param userStart the first user where to start the computation of Mean Absolute Error
-* @param userEnd the last user used in the computation of Mean Absolute Error
 * @return double the root weighted average of the squares between the difference among actual scores and the predicted scores
 * @author Paolo Ronzoni
 */	
