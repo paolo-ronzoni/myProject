@@ -10,7 +10,7 @@ public class AccuracyMetrics {
 	* @param itemcolumnNumber the position of the column where to search the item
 	* @param numOfNearestNeighbor the number of similarity to use to calculate the predictionUserBasedValue
 	* @return double the weighted average of the differences between the actual scores and the predicted scores
-	* 
+	* @author Paolo Ronzoni
 	*/	
 public static double meanAbsoluteErrorUserBasedOneUser(int[][] inputMatrix, int userColumnNumber, int userSearched, int itemColumnNumber,  int numOfNearestNeighbor) {
 
