@@ -73,7 +73,7 @@ return (numerator / totalNumOfRating)/(rMax - rMin);
 * @param numOfNearestNeighbor the number of similarity to use to calculate the predictionUserBasedValue
 * @param userStart the first user where to start the computation of Mean Absolute Error
 * @param userEnd the last user used in the computation of Mean Absolute Error
-* @return double the root weighted average of the squares between the actual scores and the predicted scores
+* @return double the root weighted average of the squares between the difference among actual scores and the predicted scores
 * @author Paolo Ronzoni
 */	
 public static double rootMeanSquaredErrorUserBasedOneUser(int[][] inputMatrix, int userColumnNumber, int userSearched, int itemColumnNumber,  int numOfNearestNeighbor) {
@@ -86,13 +86,13 @@ int ratingColumnNumber = 2;
 double numerator = 0;
 
 for ( int row = 0; row <totalNumOfRating; row++) {
-numerator += Math.abs(UserBasedNearestNeighbor.predictionUserBasedValue(inputMatrix, userColumnNumber,  userSearched, itemColumnNumber, userMatrix[row][itemColumnNumber], numOfNearestNeighbor) - userMatrix[row][ratingColumnNumber] );
+numerator += Math.pow((UserBasedNearestNeighbor.predictionUserBasedValue(inputMatrix, userColumnNumber,  userSearched, itemColumnNumber, userMatrix[row][itemColumnNumber], numOfNearestNeighbor) - userMatrix[row][ratingColumnNumber]), 2);
 
 
-}// end for meanAbsoluteErrorUserBasedOneUser
+}// end for rootMeanSquaredErrorUserBasedOneUser
 
-return numerator / totalNumOfRating;
-} // end method meanAbsoluteErrorUserBasedOneUser
+return Math.sqrt(numerator / totalNumOfRating);
+} // end method rootMeanSquaredErrorUserBasedOneUser
 
 
 
