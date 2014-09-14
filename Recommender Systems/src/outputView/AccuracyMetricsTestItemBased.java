@@ -1,6 +1,7 @@
 package outputView;
 
-import recommendationSystem.AccuracyMetrics;
+import recommendationSystem.AccuracyMetricsItemBased;
+import recommendationSystem.AccuracyMetricsUserBased;
 import recommendationSystem.MatrixBuilder;
 import recommendationSystem.UserBasedNearestNeighbor;
 import evaluationMetrics.MeanAbsoluteError;
@@ -33,7 +34,7 @@ public class AccuracyMetricsTestItemBased {
 	 
 	 for (int i = 1; i < 300 ; i++) {
 		// meanAbsoluteErrorUserBasedOneUser, normalizedMeanAbsoluteErrorUserBasedOneUser, rootMeanSquaredErrorUserBasedOneUser
-		result = AccuracyMetrics.meanAbsoluteErrorItemBasedOneUser(secondMatrix, 0, i, 1, 5);
+		result = AccuracyMetricsItemBased.meanAbsoluteErrorItemBasedOneUser(secondMatrix, 0, i, 5, 1);
 		System.out.println("il risultato num." + i + " is: " + result);
 	}
 	System.out.println("End of computation");
