@@ -33,7 +33,7 @@ public class AccuracyMetricsTestItemBased {
 	 
 	 for (int i = 1; i < 300 ; i++) {
 		// meanAbsoluteErrorUserBasedOneUser, normalizedMeanAbsoluteErrorUserBasedOneUser, rootMeanSquaredErrorUserBasedOneUser
-		result = AccuracyMetrics.meanAbsoluteErrorUserBasedOneUser(secondMatrix, 0, i, 1, 5);
+		result = AccuracyMetrics.meanAbsoluteErrorItemBasedOneUser(secondMatrix, 0, i, 1, 5);
 		System.out.println("il risultato num." + i + " is: " + result);
 	}
 	System.out.println("End of computation");
