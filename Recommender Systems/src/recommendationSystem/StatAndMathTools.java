@@ -75,19 +75,65 @@ public class StatAndMathTools {
 	
 	
 	/** 
-	 * @param element an array of type int
-	 * @return the maximum value of the array  
-	 * @author Paolo Ronzoni
-	 */
-	private static int maxValue(int[] element) {
-		int max = element[0];
-		for (int ktr = 0; ktr < element.length; ktr++) {
-			if (element[ktr] > max) {
-				max = element[ktr];
-			}
-		}
-		return max;
-	} // end maxValue
+ 	 * @param element an array of type int
+ 	 * @return the maximum value of the array  
+ 	 * 
+ 	 */
+ 	public static double maxValue(int[] element) {
+ 		int max = element[0];
+ 		for (int ktr = 0; ktr < element.length; ktr++) {
+ 			if (element[ktr] > max) {
+ 				max = element[ktr];
+ 			}
+ 		}
+ 		return max;
+ 	} // end method maxValue
+ 	
+ 	/** 
+ 	 * @param element an array of type int
+ 	 * @return the minimum value of the array  
+ 	 * 
+ 	 */
+ 	public static double minValue(int[] element) {
+ 		int min = element[0];
+ 		for (int ktr = 0; ktr < element.length; ktr++) {
+ 			if (element[ktr] < min) {
+ 				min = element[ktr];
+ 			}
+ 		}
+ 		return min;
+ 	} // end method minValue
+ 	
+ 	
+ 	/** 
+ 	 * @param element an array of type double
+ 	 * @return the maximum value of the array  
+ 	 * 
+ 	 */
+ 	public static double maxValue(double[] element) {
+ 		double max = element[0];
+ 		for (int ktr = 0; ktr < element.length; ktr++) {
+ 			if (element[ktr] > max) {
+ 				max = element[ktr];
+ 			}
+ 		}
+ 		return max;
+ 	} // end method maxValue
+ 	
+ 	/** 
+ 	 * @param element an array of type double
+ 	 * @return the minimum value of the array  
+ 	 * 
+ 	 */
+ 	public static double minValue(double[] element) {
+ 		double min = element[0];
+ 		for (int ktr = 0; ktr < element.length; ktr++) {
+ 			if (element[ktr] < min) {
+ 				min = element[ktr];
+ 			}
+ 		}
+ 		return min;
+ 	} // end method minValue
 
 }
 
