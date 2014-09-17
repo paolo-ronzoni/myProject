@@ -120,6 +120,6 @@ public class ItemBasedNearestNeighbor {
 		
 		// 
 		return numerator / denominator;
-	 } //  end method TMPpredictionUserBasedValue
+	 } //  end method predictionItemBasedValue
 
 }// end class
