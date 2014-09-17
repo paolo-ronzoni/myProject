@@ -18,19 +18,25 @@ static String splitExpression = "\\s+";
 		
 public static void main(String[] args) {
 
-	String[][] myMatrix = IOMethods.txtMatrix(path2, splitExpression);
+	String[][] myMatrix = IOMethods.txtMatrix(path1, splitExpression);
 	// IOMethods.printMatrix(myMatrix, "%4s\t");
 	int[][] secondMatrix = IOMethods.matrixConversion(myMatrix);
 	
 //	double [][] solutionMatrix = ItemBasedNearestNeighbor.predictionItemBasedValue(secondMatrix, 0, 5, 17);
 //IOMethods.printMatrix(solutionMatrix, "%4s\t");
 
-		double  itemBasedValue = ItemBasedNearestNeighbor.adjustedCosineSimilarity(secondMatrix, 0, 1, 5);
-		System.out.println("ItemBasedValue: " + itemBasedValue);
+//		double  itemBasedValue = ItemBasedNearestNeighbor.adjustedCosineSimilarity(secondMatrix, 0, 1, 3);
+//		System.out.println("ItemBasedValue: " + itemBasedValue);
 		
-		double  itemBasedValue2 = ItemBasedNearestNeighbor.cosineSimilarity(secondMatrix, 0, 1, 5);
-		System.out.println("ItemBasedValue2: " + itemBasedValue2);
+		double  itemBasedValue2;
+	    
 		
+			for (int i = 2; i < 20; i++) {
+				itemBasedValue2 = ItemBasedNearestNeighbor
+						.predictionItemBasedValue(secondMatrix, 0, 1, 1, i, 3);
+				System.out.println("ItemBasedValue " + i + ": " + itemBasedValue2);
+			}
+	System.out.println("fatto!!!");
 		double result;
 		
 //		for (int i = 17; i < 200; i++) {
