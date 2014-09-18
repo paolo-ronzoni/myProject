@@ -1,8 +1,13 @@
 package outputView;
 
+import java.util.Date;
+
+
+
 import recommendationSystem.AccuracyMetricsItemBased;
 import recommendationSystem.AccuracyMetricsUserBased;
 import recommendationSystem.MatrixBuilder;
+import recommendationSystem.StatAndMathTools;
 import recommendationSystem.UserBasedNearestNeighbor;
 import evaluationMetrics.MeanAbsoluteError;
 import fileIO.IOMethods;
@@ -15,6 +20,8 @@ public class AccuracyMetricsTestItemBased {
 	
 	
 	public static void main(String[] args) {
+		
+		Date date = new Date();
 
 		String[][] myMatrix = IOMethods.txtMatrix(path1, splitExpression);
 		// IOMethods.printMatrix(myMatrix, "%4s\t");
@@ -27,17 +34,20 @@ public class AccuracyMetricsTestItemBased {
 //		System.out.println("element founded: " + elementFounded);
 //		System.out.println("matrix length: " + secondMatrix.length);
 		int userSearched = 2;
-		int [][] solutionMatrix = MatrixBuilder.userIDchoices(secondMatrix, 0, userSearched);
-	 IOMethods.printMatrix(solutionMatrix, "%4s\t");
+//		int [][] solutionMatrix = MatrixBuilder.userIDchoices(secondMatrix, 0, userSearched);
+//	 IOMethods.printMatrix(solutionMatrix, "%4s\t");
 	 
 	 double result;
 	 
-	 for (int i = 1; i < 300 ; i++) {
-		// meanAbsoluteErrorUserBasedOneUser, normalizedMeanAbsoluteErrorUserBasedOneUser, rootMeanSquaredErrorUserBasedOneUser
-		result = AccuracyMetricsItemBased.meanAbsoluteErrorItemBasedOneUser(secondMatrix, 0, i, 5, 1);
+	 // start time
+	 StatAndMathTools.getTime("Start time");
+	 for (int i = 45; i < 46 ; i++) {
+		// meanAbsoluteErrorItemBasedOneUser, normalizedMeanAbsoluteErrorItemBasedOneUser, rootMeanSquaredErrorItemBasedOneUser
+		result = AccuracyMetricsItemBased.meanAbsoluteErrorItemBasedOneUser(secondMatrix, 0, i, 1, 3);
 		System.out.println("il risultato num." + i + " is: " + result);
 	}
-	System.out.println("End of computation");
+	 // end time
+	 StatAndMathTools.getTime("End time");
 	 
 //	 double nearestValue = 0;
 //	 for (int k = 1; k <= 5; k++ ) 
