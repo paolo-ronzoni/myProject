@@ -41,7 +41,7 @@ public class AccuracyMetricsTestItemBased {
 	 
 	 // start time
 	 StatAndMathTools.getTime("Start time");
-	 for (int i = 45; i < 46 ; i++) {
+	 for (int i = 47; i < 48 ; i++) {
 		// meanAbsoluteErrorItemBasedOneUser, normalizedMeanAbsoluteErrorItemBasedOneUser, rootMeanSquaredErrorItemBasedOneUser
 		result = AccuracyMetricsItemBased.meanAbsoluteErrorItemBasedOneUser(secondMatrix, 0, i, 1, 3);
 		System.out.println("il risultato num." + i + " is: " + result);

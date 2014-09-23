@@ -31,7 +31,7 @@ public static void main(String[] args) {
 		double  itemBasedValue2;
 	    
 		
-			for (int i = 2; i < 20; i++) {
+			for (int i = 56; i < 100; i++) {
 				itemBasedValue2 = ItemBasedNearestNeighbor
 						.predictionItemBasedValue(secondMatrix, 0, 1, 1, i, 3);
 				System.out.println("ItemBasedValue " + i + ": " + itemBasedValue2);

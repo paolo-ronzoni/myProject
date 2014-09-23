@@ -1,5 +1,8 @@
 package recommendationSystem;
 
+import java.util.*;
+import java.awt.Toolkit;
+
 public class StatAndMathTools {
 	 
 	
@@ -134,6 +137,13 @@ public class StatAndMathTools {
  		}
  		return min;
  	} // end method minValue
+ 	
+ 	
+ 	public static void getTime(String comment) {
+ 		Toolkit.getDefaultToolkit().beep();
+		Date date = new Date();
+		System.out.println(comment + ": " + date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds() );
+	}
 
-}
+} // end calss StatAndMathTools
 
