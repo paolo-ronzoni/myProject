@@ -22,8 +22,8 @@ public class Test_01_UserBased {
 		String[][] myMatrix = IOMethods.txtMatrix(path1, splitExpression);
 		IOMethods.printMatrix(myMatrix, "%4s\t");
 		int[][] secondMatrix = IOMethods.matrixConversion(myMatrix);
-		// int[] matrix1 = IOMethods.columnExtractor(secondMatrix, 0);
-		// IOMethods.printMatrix(secondMatrix, "%4s\t");
+		 int[] matrix1 = IOMethods.columnExtractor(secondMatrix, 0);
+		 IOMethods.printMatrix(matrix1, "%4s\t");
 
 
 //		int elementFounded = MatrixBuilder.numberOfElement(secondMatrix, 0, 186);
