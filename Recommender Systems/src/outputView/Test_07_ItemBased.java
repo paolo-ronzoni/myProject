@@ -27,14 +27,11 @@ int[][] secondMatrix = IOMethods.matrixConversion(myMatrix);
 int columnOfUsers = 0; // the column, in the rectangular input matrix, with the users number
 int firstItem = 1; // the first user to compute the similarity
 int secondItem = 5;
-int itemColumnNumber = 1;
-int itemSearched = 5;
-int numOfNearestNeighbor = 2;
 double predictedItemBasedValue;
 
-System.out.printf("This section test the formula sim(a,b) against the Table 2.1.  (pag. 16\n from book \"Recommender Systems An Introduction\" by Jannach & al.)\nWhere \'a\' is the firstItem and \'b\' is the secondItem:\n");
+System.out.printf("This section test the formula sim(a,b), called cosine similarity,  against the\n Table 2.1.  (pag. 16 from book \"Recommender Systems An Introduction\" by Jannach & al.). Where \'a\' is the firstItem and \'b\' is the secondItem:\n\n");
 predictedItemBasedValue = ItemBasedNearestNeighbor.cosineSimilarity(secondMatrix, columnOfUsers, firstItem, secondItem);
-	System.out.printf("CosineSimilarity where the firstItem is %s and the secondItem is %s\n : %6.2f\n", firstItem, secondItem, predictedItemBasedValue);
+	System.out.printf("CosineSimilarity, firstItem=%s,secondItem=%s: %6.2f\n", firstItem, secondItem, predictedItemBasedValue);
 
 System.out.println(); // newline
 
