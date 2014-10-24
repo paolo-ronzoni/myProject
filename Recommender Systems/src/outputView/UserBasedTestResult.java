@@ -27,24 +27,24 @@ public static void main(String[] args) {
 //	int elementFounded = MatrixBuilder.numberOfElement(secondMatrix, 0, 186);
 //	System.out.println("element founded: " + elementFounded);
 //	System.out.println("matrix length: " + secondMatrix.length);
-	int [][] solutionMatrix = MatrixBuilder.matchIDchoices(secondMatrix, 0, 1, 3);
- IOMethods.printMatrix(solutionMatrix, "%4s\t");
- double nearestValue = 0;
- for (int k = 2; k <= 5; k++ ) 
- {
-	 nearestValue = UserBasedNearestNeighbor.userNearestNeighborValue(secondMatrix, 0, 1, k);
-	 // if (Double.isNaN(nearestValue)) {
-	 System.out.println("value(1," + k + "): " + nearestValue);
-	 //}
- } //end for
+//	int [][] solutionMatrix = MatrixBuilder.matchIDchoices(secondMatrix, 0, 1, 3);
+// IOMethods.printMatrix(solutionMatrix, "%4s\t");
+// double nearestValue = 0;
+// for (int k = 2; k <= 40; k++ ) 
+// {
+//	 nearestValue = UserBasedNearestNeighbor.userNearestNeighborValue(secondMatrix, 0, 1, k);
+//	 // if (Double.isNaN(nearestValue)) {
+//	 System.out.println("value(1," + k + "): " + nearestValue);
+//	 //}
+// } //end for
  
 // nearestValue = UserBasedNearestNeighbor.userNearestNeighborValue(secondMatrix, 0, 2, 1);
 // 
 //     System.out.println("fatto! and nearest:" + nearestValue);
-//     int userID = 57;
-//     int itemID = 12;
-//     int neighborNum = 10;
-//     
+     int userID = 57;
+     int itemID = 12;
+     int neighborNum = 10;
+     
 //     double[][] predictionMatrix;
 //     // double [][] workingMatrix = MatrixBuilder.userIDchoicesDouble(secondMatrix, 0, userID);
 //     int [][] theSolutionMatrix = MatrixBuilder.userIDchoices(secondMatrix, 0, userID);
@@ -60,7 +60,7 @@ public static void main(String[] args) {
 //		System.out.println("The matrix num: " + i + " product: " + itemsUsed[i] );
 //		IOMethods.printMatrix(predictionMatrix, "%4s\t"); } //end for
     	 
-    	 // print the prediction value.
+//    	 // print the prediction value.
 //		double predictionValue = UserBasedNearestNeighbor.predictionUserBasedValue(secondMatrix, 0, i, 2, itemID, neighborNum);
 //		System.out.println("User: " + i + "value: " + predictionValue);
      
@@ -71,7 +71,7 @@ public static void main(String[] args) {
 //		     for (int i = 1; i < elements.length; i++) {
 //		     predictionValues = UserBasedNearestNeighbor.predictionUserBasedValue(secondMatrix, 0, userID, 1, elements[i], neighborNum);
 //		     System.out.println("user: " + i + " " + predictionValues);}
-	
+//	
      
      
      

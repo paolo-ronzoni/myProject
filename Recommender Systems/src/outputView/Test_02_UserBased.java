@@ -4,6 +4,9 @@ import recommendationSystem.*;
 import fileIO.IOMethods;
 import java.util.Arrays;
 
+/* This class test the matrix Table 2.1. Ratings database for collaborative recommendation (pag. 14 from book "Recommender Systems An Introduction by Jannach & al.)
+ */
+
 public class Test_02_UserBased {
 
 
@@ -17,26 +20,21 @@ public class Test_02_UserBased {
 			
 	public static void main(String[] args) {
 
-		String[][] myMatrix = IOMethods.txtMatrix(path2, splitExpression);
-		// IOMethods.printMatrix(myMatrix, "%4s\t");
-		int[][] secondMatrix = IOMethods.matrixConversion(myMatrix);
-		// int[] matrix1 = IOMethods.columnExtractor(secondMatrix, 0);
-		// IOMethods.printMatrix(secondMatrix, "%4s\t");
+		String[][] myMatrix = IOMethods.txtMatrix(path1, splitExpression);
 
+		
+//---input elements for the formula of userBasedSiamilarity------
 
-//		int elementFounded = MatrixBuilder.numberOfElement(secondMatrix, 0, 186);
-//		System.out.println("element founded: " + elementFounded);
-//		System.out.println("matrix length: " + secondMatrix.length);
-//		int [][] solutionMatrix = MatrixBuilder.matchIDchoices(secondMatrix, 0, 1, 3);
-	// IOMethods.printMatrix(solutionMatrix, "%4s\t");
-	// double nearestValue = 0;
-	// for (int k = 2; k <= 40; k++ ) 
-	// {
-//		 nearestValue = UserBasedNearestNeighbor.userNearestNeighborValue(secondMatrix, 0, 1, k);
-//		 // if (Double.isNaN(nearestValue)) {
-//		 System.out.println("value(1," + k + "): " + nearestValue);
-//		 //}
-	// } //end for
+// the rectangular matrix of user, items and ratings
+int[][] secondMatrix = IOMethods.matrixConversion(myMatrix);
+
+int columnOfUsers = 0; // the column, in the rectangular input matrix with the users
+
+int firstUser = 1; // the first user to compute the similarity
+
+ 
+double nearestValue = UserBasedNearestNeighbor.userNearestNeighborValue(secondMatrix, columnOfUsers, 1, 2);
+	   System.out.println(nearestValue); 
 	 
 	// nearestValue = UserBasedNearestNeighbor.userNearestNeighborValue(secondMatrix, 0, 2, 1);
 	// 
