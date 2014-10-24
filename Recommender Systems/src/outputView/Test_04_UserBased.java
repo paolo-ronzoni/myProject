@@ -38,14 +38,6 @@ predictedUserBasedValue = UserBasedNearestNeighbor.predictionUserBasedValue(seco
 
 System.out.println(); // newline
 
-//// test the case of user1 = user2, the similarity must be equal to 1
-//firstUser = 2;
-//System.out.printf("This section test the case of user1 = user2, the similarity must be equal to 1:\n");
-//for (int secondUser = 1; secondUser <= 5; secondUser++) 
-//{
-//	nearestValue = UserBasedNearestNeighbor.userNearestNeighborValue(secondMatrix, columnOfUsers, firstUser, secondUser);
-//	System.out.printf("Similarity user %s and %s: %6.2f\n", firstUser, secondUser, nearestValue);
-//} // end for
 
 	} // end main
 } // end class Test_02_UserBased
