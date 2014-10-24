@@ -5,7 +5,7 @@ import fileIO.IOMethods;
 import java.util.Arrays;
 
 
-public class Test_03_UserBased {
+public class Test_04_UserBased {
 
 	static double[][] doubleMatrix = {{23.2, 11.5, 18.23}, 
 		  {7.89, 56.1, 1.00}};
