@@ -29,12 +29,12 @@ int itemSearched = 34;
 int numOfNearestNeighbor = 2;
 double predictedUserBasedValue;
 
-System.out.printf("This section test the formula pred(a,p) against the database u.txt\nWhen the user and the numOfNearestNeighbor are constant while the item searched changes:\n");
+System.out.printf("This section test the formula pred(a,p) against the database u.txt\nwhen the user and the numOfNearestNeighbor are constant while the item searched changes:\n\n");
 
 for( itemSearched = 1; itemSearched <= 40; itemSearched++) 
 {
 	predictedUserBasedValue = UserBasedNearestNeighbor.predictionUserBasedValue(secondMatrix, columnOfUsers, firstUser, itemColumnNumber, itemSearched, numOfNearestNeighbor);
-		System.out.printf("PredictionUservalue: user=%s,item=%s,numOfRating=%s: %6.2f\n", firstUser, itemSearched, numOfNearestNeighbor, predictedUserBasedValue);
+		System.out.printf("PredictionUservalue (user=%3d,item=%3d,numOfRating=%s):%6.2f\n", firstUser, itemSearched, numOfNearestNeighbor, predictedUserBasedValue);
 }
 
 System.out.println("\n-----End of computation-----"); // newline
