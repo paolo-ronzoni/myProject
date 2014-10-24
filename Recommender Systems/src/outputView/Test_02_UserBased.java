@@ -37,7 +37,7 @@ for (int secondUser = 2; secondUser <= 5; secondUser++)
 System.out.println(); // newline
 
 // test the case of user1 = user2, the similarity must be equal to 1
-firstUser = 2;
+firstUser = 1;
 System.out.printf("This section test the case of user1 = user2, the similarity must be equal to 1:\n");
 for (int secondUser = 1; secondUser <= 5; secondUser++) 
 {

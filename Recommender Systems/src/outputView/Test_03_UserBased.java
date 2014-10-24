@@ -4,7 +4,7 @@ import recommendationSystem.*;
 import fileIO.IOMethods;
 import java.util.Arrays;
 
-/* This class test the formula sim(a,b) against the recommender systems database u.txt  
+/* This class test the formula sim(a,b) against the recommender systems database u.txt: 100,000 ratings (1-5) from 943 users on 1682 movies. 
  */
 
 public class Test_03_UserBased {
