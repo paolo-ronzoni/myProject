@@ -19,8 +19,7 @@ public static double meanAbsoluteErrorItemBasedOneUser(int[][] inputMatrix, int 
 	int totalNumOfRating = userMatrix.length;
 	int ratingColumnNumber = 2;
 	double numerator = 0;
-// original code: for ( int row = 0; row <totalNumOfRating; row++) {
-	for ( int row = 0; row < 5; row++) {
+	for ( int row = 0; row <totalNumOfRating; row++) {
 	numerator += Math.abs((ItemBasedNearestNeighbor.predictionItemBasedValue(inputMatrix, userColumnNumber,  userSearched, itemColumnNumber, userMatrix[row][itemColumnNumber], numOfNearestNeighbor) - userMatrix[row][ratingColumnNumber]) );
 
 
@@ -51,8 +50,7 @@ int[][] userMatrix = MatrixBuilder.userIDchoices(inputMatrix, userColumnNumber, 
 int totalNumOfRating = userMatrix.length;
 int ratingColumnNumber = 2;
 double numerator = 0;
-// original code: for ( int row = 0; row <totalNumOfRating; row++) 
-for ( int row = 0; row < 1; row++) 
+for ( int row = 0; row <totalNumOfRating; row++) 
 	{
 		numerator += Math.abs(ItemBasedNearestNeighbor.predictionItemBasedValue(inputMatrix, userColumnNumber,  	userSearched, itemColumnNumber, userMatrix[row][itemColumnNumber], numOfNearestNeighbor) - 	userMatrix[row][ratingColumnNumber] );
 	}// end for meanAbsoluteErrorUserBasedOneUser
@@ -85,15 +83,15 @@ int totalNumOfRating = userMatrix.length;
 int ratingColumnNumber = 2;
 double numerator = 0;
 
-// original code: for ( int row = 0; row <totalNumOfRating; row++) {
-for ( int row = 0; row < 1; row++) {
+
+for ( int row = 0; row <totalNumOfRating; row++) {
 numerator += Math.pow((ItemBasedNearestNeighbor.predictionItemBasedValue(inputMatrix, userColumnNumber,  userSearched, itemColumnNumber, userMatrix[row][itemColumnNumber], numOfNearestNeighbor) - userMatrix[row][ratingColumnNumber]), 2);
 
 
 }// end for rootMeanSquaredErrorUserBasedOneUser
 
 return Math.sqrt(numerator / totalNumOfRating);
-} // end method rootMeanSquaredErrorUserBasedOneUser
+} // end method rootMeanSquaredErrorItemBasedOneUser
 	
 	
 	

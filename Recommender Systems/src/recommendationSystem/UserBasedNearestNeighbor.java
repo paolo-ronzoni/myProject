@@ -15,7 +15,7 @@ public class UserBasedNearestNeighbor {
 	 * @param columnNumber the position of the column where to search the user
 	 * @param firstElementSearched the first user searched
 	 * @param secondElementSearched the second user searched
-	 * @return 
+	 * @return the simililarity between the first element searched and the second
 	 * @author Paolo Ronzoni
 	 */
 	public static double userNearestNeighborValue(int[][] inputMatrix, int columnNumber, int firstElementSearched, int secondElementSearched) {		
