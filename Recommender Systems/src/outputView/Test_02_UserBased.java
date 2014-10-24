@@ -44,6 +44,6 @@ for (int secondUser = 1; secondUser <= 5; secondUser++)
 	nearestValue = UserBasedNearestNeighbor.userNearestNeighborValue(secondMatrix, columnOfUsers, firstUser, secondUser);
 	System.out.printf("Similarity user %s and %s: %6.2f\n", firstUser, secondUser, nearestValue);
 } // end for
-
+System.out.println("\n-----End of computation-----"); // newline
 	} // end main
 } // end class Test_02_UserBased

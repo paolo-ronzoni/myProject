@@ -36,7 +36,7 @@ System.out.printf("This section test the formula pred(a,p) against the Table 2.1
 predictedUserBasedValue = UserBasedNearestNeighbor.predictionUserBasedValue(secondMatrix, columnOfUsers, firstUser, itemColumnNumber, itemSearched, numOfNearestNeighbor);
 	System.out.printf("PredictionUserBasedvalue where the user is %s the item searched is %s\n and the neighbor's rating taken into accounts are %s: %6.2f\n", firstUser, itemSearched, numOfNearestNeighbor, predictedUserBasedValue);
 
-System.out.println(); // newline
+System.out.println("\n-----End of computation-----"); // newline
 
 
 	} // end main

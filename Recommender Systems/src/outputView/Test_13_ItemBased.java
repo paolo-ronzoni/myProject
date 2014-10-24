@@ -28,16 +28,16 @@ int columnOfUsers = 0; // the column, in the rectangular input matrix, with the 
 int firstUser = 1; // the first user to compute the similarity
 int itemColumnNumber = 1;
 int itemSearched = 5;
-int numOfNearestNeighbor = 1;
+int numOfNearestNeighbor = 2;
 double predictedItemBasedValue;
 
-System.out.printf("This section test the formula pred(a,p) against the database u1.txt\nWhen the item searched change but  the user searched and the\n numOfNearestNeighbor are constant:\n\n");
+System.out.printf("This section test the formula pred(a,p) against the database u1.txt\nWhen the item searched change but  the user searched and the\nnumOfNearestNeighbor are constant:\n\n");
 for( itemSearched = 1; itemSearched <= 10; itemSearched++) 
 {
 	predictedItemBasedValue = ItemBasedNearestNeighbor.predictionItemBasedValue(secondMatrix, columnOfUsers, firstUser, itemColumnNumber, itemSearched, numOfNearestNeighbor);
-		System.out.printf("PredictionItemvalue: user=%s,item=%s,numOfRating=%s: %6.2f\n", firstUser, itemSearched, numOfNearestNeighbor, predictedItemBasedValue);
+		System.out.printf("PredictionItemValue,user=%3d,item=%3d,numOfRating=%s:%6.2f\n", firstUser, itemSearched, numOfNearestNeighbor, predictedItemBasedValue);
 }
-System.out.println(); // newline
+System.out.println("\n-----End of computation-----"); // newline
 
 	} // end main
-} // end class Test_12_UserBased
+} // end class Test_13_UserBased

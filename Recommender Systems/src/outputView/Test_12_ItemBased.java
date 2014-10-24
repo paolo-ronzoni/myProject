@@ -31,13 +31,13 @@ int itemSearched = 5;
 int numOfNearestNeighbor = 1;
 double predictedItemBasedValue;
 
-System.out.printf("This section test the formula pred(a,p) against the Tadatabase u.txt\nWhere the user change but  the item searched and the numOfNearestNeighbor\n are constant:\n");
+System.out.printf("This section test the formula pred(a,p) against the database u1.txt\nWhen the user change but  the item searched and the numOfNearestNeighbor\nare constant:\n\n");
 for( firstUser = 1; firstUser <= 10; firstUser++) 
 {
 	predictedItemBasedValue = ItemBasedNearestNeighbor.predictionItemBasedValue(secondMatrix, columnOfUsers, firstUser, itemColumnNumber, itemSearched, numOfNearestNeighbor);
-		System.out.printf("PredictionItemvalue: user=%s,item=%s,numOfRating=%s: %6.2f\n", firstUser, itemSearched, numOfNearestNeighbor, predictedItemBasedValue);
+		System.out.printf("PredictionItemValue,user=%s,item=%s,numOfRating=%s: %6.2f\n", firstUser, itemSearched, numOfNearestNeighbor, predictedItemBasedValue);
 }
-System.out.println(); // newline
+System.out.println("\n-----End of computation-----"); // newline
 
 	} // end main
 } // end class Test_12_UserBased

@@ -2,6 +2,7 @@ package outputView;
 
 import recommendationSystem.*;
 import fileIO.IOMethods;
+
 import java.util.Arrays;
 
 /* This class test the formula sim(a,b) against the recommender systems database u.txt: 100,000 ratings (1-5) from 943 users on 1682 movies. 
@@ -31,6 +32,6 @@ for (int secondUser = 1; secondUser <= 300; secondUser++)
 	nearestValue = UserBasedNearestNeighbor.userNearestNeighborValue(secondMatrix, columnOfUsers, firstUser, secondUser);
 		   System.out.printf("Similarity user %s and %s: %6.2f\n", firstUser, secondUser, nearestValue);
 } // end for
-
+System.out.println("\n-----End of computation-----"); // newline
 	} // end main
 } // end class Test_02_UserBased

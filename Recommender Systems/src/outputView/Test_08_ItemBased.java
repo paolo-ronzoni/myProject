@@ -36,7 +36,7 @@ for(secondItem = 345; secondItem <= 367; secondItem++)
 		System.out.printf("CosineSimilarity, firstItem=%s,secondItem=%s: %6.2f\n", firstItem, secondItem, predictedItemBasedValue);
 }
 
-System.out.println(); // newline
+System.out.println("\n-----End of computation-----"); // newline
 
 
 	} // end main

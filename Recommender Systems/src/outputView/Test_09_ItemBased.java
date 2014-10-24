@@ -33,7 +33,7 @@ System.out.printf("This section test the formula 2.7 sim(a,b), called adjusted c
 predictedItemBasedValue = ItemBasedNearestNeighbor.adjustedCosineSimilarity(secondMatrix, columnOfUsers, firstItem, secondItem);
 	System.out.printf("AdjustedCosineSimilarity, firstItem=%s,secondItem=%s: %6.2f\n", firstItem, secondItem, predictedItemBasedValue);
 
-System.out.println(); // newline
+System.out.println("\n-----End of computation-----"); // newline
 
 
 	} // end main

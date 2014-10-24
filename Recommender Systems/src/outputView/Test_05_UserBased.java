@@ -39,7 +39,8 @@ for( firstUser = 100; firstUser <= 200; firstUser++)
 	predictedUserBasedValue = UserBasedNearestNeighbor.predictionUserBasedValue(secondMatrix, columnOfUsers, firstUser, itemColumnNumber, itemSearched, numOfNearestNeighbor);
 		System.out.printf("PredictionUservalue: user=%s,item=%s,numOfRating=%s: %6.2f\n", firstUser, itemSearched, numOfNearestNeighbor, predictedUserBasedValue);
 }
-System.out.println(); // newline
+
+System.out.println("\n-----End of computation-----"); // newline
 
 	} // end main
 } // end class Test_02_UserBased

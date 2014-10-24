@@ -2,6 +2,7 @@ package outputView;
 
 import recommendationSystem.*;
 import fileIO.IOMethods;
+
 import java.util.Arrays;
 
 /* This class test the matrix Table 2.1. Ratings database for collaborative recommendation (pag. 14 from book "Recommender Systems An Introduction by Jannach & al.)
@@ -24,6 +25,8 @@ public class Test_01_UserBased {
 		int[][] secondMatrix = IOMethods.matrixConversion(myMatrix);
 		 int[] matrix1 = IOMethods.columnExtractor(secondMatrix, 0);
 		 IOMethods.printMatrix(matrix1, "%4s\t");
+		 
+		 System.out.println("\n-----End of computation-----"); // newline
 
 
 

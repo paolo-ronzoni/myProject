@@ -2,6 +2,7 @@ package outputView;
 
 import recommendationSystem.*;
 import fileIO.IOMethods;
+
 import java.util.Arrays;
 
 /* This class test the formula pred(a,p) against the recommender systems database u.txt: 100,000 ratings (1-5) from 943 users on 1682 movies.
@@ -28,14 +29,15 @@ int itemSearched = 34;
 int numOfNearestNeighbor = 2;
 double predictedUserBasedValue;
 
-System.out.printf("This section test the formula pred(a,p) against the Tadatabase u.txt\nWhen the user and the numOfNearestNeighbor are constant while the item searched changes:\n");
+System.out.printf("This section test the formula pred(a,p) against the database u.txt\nWhen the user and the numOfNearestNeighbor are constant while the item searched changes:\n");
 
 for( itemSearched = 1; itemSearched <= 40; itemSearched++) 
 {
 	predictedUserBasedValue = UserBasedNearestNeighbor.predictionUserBasedValue(secondMatrix, columnOfUsers, firstUser, itemColumnNumber, itemSearched, numOfNearestNeighbor);
 		System.out.printf("PredictionUservalue: user=%s,item=%s,numOfRating=%s: %6.2f\n", firstUser, itemSearched, numOfNearestNeighbor, predictedUserBasedValue);
 }
-System.out.println(); // newline
+
+System.out.println("\n-----End of computation-----"); // newline
 
 
 	} // end main
