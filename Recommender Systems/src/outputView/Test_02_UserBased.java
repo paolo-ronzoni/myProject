@@ -28,7 +28,7 @@ int columnOfUsers = 0; // the column, in the rectangular input matrix, with the 
 int firstUser = 1; // the first user to compute the similarity
 double nearestValue;
 
-System.out.printf("This section test the correctness of the  result of the method\n\'userNearestNeighborValue\' with the results of the book \'Recommender Systems\'by Jannach \n");
+System.out.printf("This section test the correctness of the  result of the method\n\'userNearestNeighborValue\' with the results of the book \'Recommender Systems\' by Jannach:\n");
 for (int secondUser = 2; secondUser <= 5; secondUser++) 
 {
 	nearestValue = UserBasedNearestNeighbor.userNearestNeighborValue(secondMatrix, columnOfUsers, firstUser, secondUser);
@@ -37,7 +37,7 @@ for (int secondUser = 2; secondUser <= 5; secondUser++)
 System.out.println(); // newline
 
 // test the case of user1 = user2, the similarity must be equal to 1
-firstUser = 1;
+firstUser = 2;
 System.out.printf("This section test the case of user1 = user2, the similarity must be equal to 1:\n");
 for (int secondUser = 1; secondUser <= 5; secondUser++) 
 {
