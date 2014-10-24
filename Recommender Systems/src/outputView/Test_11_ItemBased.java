@@ -40,4 +40,4 @@ predictedUserBasedValue = ItemBasedNearestNeighbor.predictionItemBasedValue(seco
 
 
 	} // end main
-} // end class Test_02_UserBased
+} // end class Test_11_UserBased

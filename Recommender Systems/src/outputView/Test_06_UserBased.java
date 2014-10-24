@@ -41,4 +41,4 @@ System.out.println("\n-----End of computation-----"); // newline
 
 
 	} // end main
-} // end class Test_02_UserBased
+} // end class Test_06_UserBased

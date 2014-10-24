@@ -43,4 +43,4 @@ for( firstUser = 100; firstUser <= 200; firstUser++)
 System.out.println("\n-----End of computation-----"); // newline
 
 	} // end main
-} // end class Test_02_UserBased
+} // end class Test_05_UserBased
