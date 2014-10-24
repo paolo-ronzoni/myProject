@@ -28,27 +28,18 @@ int columnOfUsers = 0; // the column, in the rectangular input matrix, with the 
 int firstUser = 1; // the first user to compute the similarity
 int secondUser = 2;
 int itemColumnNumber = 1;
-int itemSearched = 5;
+int itemSearched = 34;
 int numOfNearestNeighbor = 2;
 double predictedUserBasedValue;
 
 System.out.printf("This section test the formula pred(a,p) against the Tadatabase u.txt\nWhere the user change but  the item searched and the numOfNearestNeighbor\n are constant:\n");
 
-for( firstUser = 1; firstUser <= 200; firstUser++) 
+for( firstUser = 100; firstUser <= 200; firstUser++) 
 {
 	predictedUserBasedValue = UserBasedNearestNeighbor.predictionUserBasedValue(secondMatrix, columnOfUsers, firstUser, itemColumnNumber, itemSearched, numOfNearestNeighbor);
-		System.out.printf("PredictionUservalue: user=%s,item=%s,rating=%s: %6.2f\n", firstUser, itemSearched, numOfNearestNeighbor, predictedUserBasedValue);
+		System.out.printf("PredictionUservalue: user=%s,item=%s,numOfRating=%s: %6.2f\n", firstUser, itemSearched, numOfNearestNeighbor, predictedUserBasedValue);
 }
 System.out.println(); // newline
-
-//// test the case of user1 = user2, the similarity must be equal to 1
-//firstUser = 2;
-//System.out.printf("This section test the case of user1 = user2, the similarity must be equal to 1:\n");
-//for (int secondUser = 1; secondUser <= 5; secondUser++) 
-//{
-//	nearestValue = UserBasedNearestNeighbor.userNearestNeighborValue(secondMatrix, columnOfUsers, firstUser, secondUser);
-//	System.out.printf("Similarity user %s and %s: %6.2f\n", firstUser, secondUser, nearestValue);
-//} // end for
 
 	} // end main
 } // end class Test_02_UserBased
