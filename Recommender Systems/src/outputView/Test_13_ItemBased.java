@@ -8,7 +8,7 @@ import java.util.Arrays;
 /* This class test the formula pred(a,p) against the recommender systems database u1.txt: 20,000 ratings (1-5) from 943 users on 1682 movies.
  */
 
-public class Test_12_ItemBased {
+public class Test_13_ItemBased {
 
 	static String path1 = "DataStore\\u1.txt";
 	static String splitExpression = "\\s+";
@@ -31,8 +31,8 @@ int itemSearched = 5;
 int numOfNearestNeighbor = 1;
 double predictedItemBasedValue;
 
-System.out.printf("This section test the formula pred(a,p) against the Tadatabase u.txt\nWhere the user change but  the item searched and the numOfNearestNeighbor\n are constant:\n");
-for( firstUser = 1; firstUser <= 10; firstUser++) 
+System.out.printf("This section test the formula pred(a,p) against the database u1.txt\nWhen the item searched change but  the user searched and the\n numOfNearestNeighbor are constant:\n\n");
+for( itemSearched = 1; itemSearched <= 10; itemSearched++) 
 {
 	predictedItemBasedValue = ItemBasedNearestNeighbor.predictionItemBasedValue(secondMatrix, columnOfUsers, firstUser, itemColumnNumber, itemSearched, numOfNearestNeighbor);
 		System.out.printf("PredictionItemvalue: user=%s,item=%s,numOfRating=%s: %6.2f\n", firstUser, itemSearched, numOfNearestNeighbor, predictedItemBasedValue);
