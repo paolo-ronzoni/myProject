@@ -5,12 +5,12 @@ import fileIO.IOMethods;
 
 import java.util.Arrays;
 
-/* This class test the formula pred(a,p) against the Table 2.1.  (pag. 16 from book "Recommender Systems An Introduction by Jannach & al.)
+/* This class test the formula pred(a,p) against the recommender systems database u.txt: 100,000 ratings (1-5) from 943 users on 1682 movies.
  */
 
-public class Test_04_UserBased {
+public class Test_05_UserBased {
 
-	static String path1 = "DataStore\\bookDataTab2dot1.txt";
+	static String path1 = "DataStore\\u.txt";
 	static String splitExpression = "\\s+";
 		
 			
@@ -32,10 +32,13 @@ int itemSearched = 5;
 int numOfNearestNeighbor = 2;
 double predictedUserBasedValue;
 
-System.out.printf("This section test the formula pred(a,p) against the Table 2.1.  (pag. 16\n from book \"Recommender Systems An Introduction\" by Jannach & al.)\nWhere \'a\' is the user, \'p\' is the item searched and numOfNearestNeighbor\nare the number of rating to take into account:\n");
-predictedUserBasedValue = UserBasedNearestNeighbor.predictionUserBasedValue(secondMatrix, columnOfUsers, firstUser, itemColumnNumber, itemSearched, numOfNearestNeighbor);
-	System.out.printf("PredictionUserBasedvalue where the user is %s the item searched is %s\n and the neighbor's rating taken into accounts are %s: %6.2f\n", firstUser, itemSearched, numOfNearestNeighbor, predictedUserBasedValue);
+System.out.printf("This section test the formula pred(a,p) against the Tadatabase u.txt\nWhere the user change but  the item searched and the numOfNearestNeighbor\n are constant:\n");
 
+for( firstUser = 1; firstUser <= 200; firstUser++) 
+{
+	predictedUserBasedValue = UserBasedNearestNeighbor.predictionUserBasedValue(secondMatrix, columnOfUsers, firstUser, itemColumnNumber, itemSearched, numOfNearestNeighbor);
+		System.out.printf("PredictionUservalue: user=%s,item=%s,rating=%s: %6.2f\n", firstUser, itemSearched, numOfNearestNeighbor, predictedUserBasedValue);
+}
 System.out.println(); // newline
 
 //// test the case of user1 = user2, the similarity must be equal to 1
