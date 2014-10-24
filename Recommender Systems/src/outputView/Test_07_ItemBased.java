@@ -29,9 +29,9 @@ int firstItem = 1; // the first user to compute the similarity
 int secondItem = 5;
 double predictedItemBasedValue;
 
-System.out.printf("This section test the formula sim(a,b), called cosine similarity,  against the\n Table 2.1.  (pag. 16 from book \"Recommender Systems An Introduction\" by Jannach & al.). Where \'a\' is the firstItem and \'b\' is the secondItem:\n\n");
+System.out.printf("This section test the formula sim(a,b), called cosine similarity,  against the\nTable 2.1.  (pag. 16 from book \"Recommender Systems An Introduction\" by Jannach & al.). Where \'a\' is the firstItem and \'b\' is the secondItem:\n\n");
 predictedItemBasedValue = ItemBasedNearestNeighbor.cosineSimilarity(secondMatrix, columnOfUsers, firstItem, secondItem);
-	System.out.printf("CosineSimilarity, firstItem=%s,secondItem=%s: %6.2f\n", firstItem, secondItem, predictedItemBasedValue);
+	System.out.printf("CosineSimilarity (firstItem=%s,secondItem=%s):%6.2f\n", firstItem, secondItem, predictedItemBasedValue);
 
 System.out.println("\n-----End of computation-----"); // newline
 
