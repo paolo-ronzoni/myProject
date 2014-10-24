@@ -24,14 +24,14 @@ public class Test_03_UserBased {
 // the rectangular matrix of user, items and ratings
 int[][] secondMatrix = IOMethods.matrixConversion(myMatrix);
 int columnOfUsers = 0; // the column, in the rectangular input matrix with the users
-int firstUser = 1; // the first user to compute the similarity
+int firstUser = 301; // the first user to compute the similarity
 
 System.out.printf("This section test the correctness of the  result of the method\n\'userNearestNeighborValue\'  with the results of the book of Recommender Systems\n");
 double nearestValue;
 for (int secondUser = 2; secondUser <= 300; secondUser++) 
 {
 	nearestValue = UserBasedNearestNeighbor.userNearestNeighborValue(secondMatrix, columnOfUsers, 1, secondUser);
-		   System.out.printf("Similarity user 1 and %s: %6.2f\n", secondUser,nearestValue);
+		   System.out.printf("Similarity user %s and %s: %6.2f\n", firstUser, secondUser, nearestValue);
 } // end for
 
 	} // end main
