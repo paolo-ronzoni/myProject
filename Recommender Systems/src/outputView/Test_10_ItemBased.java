@@ -25,7 +25,7 @@ public class Test_10_ItemBased {
 // the rectangular matrix of user, items and ratings
 int[][] secondMatrix = IOMethods.matrixConversion(myMatrix);
 int columnOfUsers = 0; // the column, in the rectangular input matrix, with the users number
-int firstItem = 86; // the first user to compute the similarity
+int firstItem = 23; // the first user to compute the similarity
 int secondItem = 5;
 double predictedItemBasedValue;
 
