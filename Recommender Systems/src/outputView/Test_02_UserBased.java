@@ -33,8 +33,12 @@ int columnOfUsers = 0; // the column, in the rectangular input matrix with the u
 int firstUser = 1; // the first user to compute the similarity
 
  
-double nearestValue = UserBasedNearestNeighbor.userNearestNeighborValue(secondMatrix, columnOfUsers, 1, 2);
-	   System.out.println(nearestValue); 
+double nearestValue;
+for (int secondUser = 2; secondUser <= 5; secondUser++) 
+{
+	nearestValue = UserBasedNearestNeighbor.userNearestNeighborValue(secondMatrix, columnOfUsers, 1, secondUser);
+		   System.out.printf("Similarity user 1 and %s: %6.2f\n", secondUser,nearestValue);
+}
 	 
 	// nearestValue = UserBasedNearestNeighbor.userNearestNeighborValue(secondMatrix, 0, 2, 1);
 	// 
@@ -76,4 +80,4 @@ double nearestValue = UserBasedNearestNeighbor.userNearestNeighborValue(secondMa
 
 	} // end main
 
-} // end class Test_01_UserBased
+} // end class Test_02_UserBased
