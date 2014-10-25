@@ -35,7 +35,7 @@ System.out.printf("This section test the formula pred(a,p) against the database 
 for( firstUser = 1; firstUser <= 10; firstUser++) 
 {
 	predictedItemBasedValue = ItemBasedNearestNeighbor.predictionItemBasedValue(secondMatrix, columnOfUsers, firstUser, itemColumnNumber, itemSearched, numOfNearestNeighbor);
-		System.out.printf("PredictionItemValue,user=%s,item=%s,numOfRating=%s: %6.2f\n", firstUser, itemSearched, numOfNearestNeighbor, predictedItemBasedValue);
+		System.out.printf("PredictionItemValue (user=%s,item=%s,numOfRating=%s):%6.2f\n", firstUser, itemSearched, numOfNearestNeighbor, predictedItemBasedValue);
 }
 System.out.println("\n-----End of computation-----"); // newline
 

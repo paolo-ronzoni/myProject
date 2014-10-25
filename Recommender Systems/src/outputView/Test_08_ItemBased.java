@@ -24,9 +24,9 @@ public class Test_08_ItemBased {
 
 // the rectangular matrix of user, items and ratings
 int[][] secondMatrix = IOMethods.matrixConversion(myMatrix);
-int columnOfUsers = 0; // the column, in the rectangular input matrix, with the users number
-int firstItem = 86; // the first user to compute the similarity
-int secondItem = 5;
+int columnOfUsers = 0; // the users' column in the input matrix 
+int firstItem = 86; // the first item used to compute the similarity
+int secondItem = 5; // the second item used to compute the similarity
 double predictedItemBasedValue;
 
 System.out.printf("This section test the formula sim(a,b), called cosine similarity,\nagainst the recommender systems database u.txt,\n100,000 ratings (1-5) from 943 users on 1682 movies:\n\n");

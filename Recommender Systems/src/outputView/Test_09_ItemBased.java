@@ -29,9 +29,9 @@ int firstItem = 1; // the first user to compute the similarity
 int secondItem = 5;
 double predictedItemBasedValue;
 
-System.out.printf("This section test the formula 2.7 sim(a,b), called adjusted cosine similarity,\nagainst the Table 2.1.  (pag. 16 from book \"Recommender Systems An Introduction\"\n by Jannach & al.). Where \'a\' is the firstItem and \'b\' is the secondItem:\n\n");
+System.out.printf("This section test the formula 2.7 sim(a,b), called adjusted cosine similarity,\nagainst the Table 2.1.  (pag. 16 from book \"Recommender Systems An Introduction\"\nby Jannach & al.). Where \'a\' is the firstItem and \'b\' is the secondItem:\n\n");
 predictedItemBasedValue = ItemBasedNearestNeighbor.adjustedCosineSimilarity(secondMatrix, columnOfUsers, firstItem, secondItem);
-	System.out.printf("AdjustedCosineSimilarity, firstItem=%s,secondItem=%s: %6.2f\n", firstItem, secondItem, predictedItemBasedValue);
+	System.out.printf("AdjustedCosineSimilarity (firstItem=%3d,secondItem=%3d):%6.2f\n", firstItem, secondItem, predictedItemBasedValue);
 
 System.out.println("\n-----End of computation-----"); // newline
 
