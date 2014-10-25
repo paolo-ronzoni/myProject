@@ -69,7 +69,7 @@ public class IOMethods {
 	
 	/**
 	 * @param filePath location of the .txt file
-	 * @param nColumns number of columns int the .cvs file
+	 * @param splitExpression regular expression to separate the data in the .txt file
 	 * @return A matrix of type String[][]
 	 * @author Paolo Ronzoni
 	 */
