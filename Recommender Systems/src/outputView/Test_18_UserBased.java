@@ -5,10 +5,10 @@ import fileIO.IOMethods;
 
 import java.util.Arrays;
 
-/* This class test the formula Mean Absolute Error (MAE) on the recommender systems database u1.txt: 20,000 ratings (1-5) from 943 users on 1682 movies.
+/* This class test the formula normalized Mean Absolute Error (NMAE) on the recommender systems database u1.txt: 20,000 ratings (1-5) from 943 users on 1682 movies.
  */
 
-public class Test_17_ItemBased {
+public class Test_18_UserBased {
 
 	static String path1 = "DataStore\\u1.txt";
 	static String splitExpression = "\\s+";
@@ -32,12 +32,12 @@ int itemSearched = 34;
 int numOfNearestNeighbor = 2;
 double errorPrediction;
 
-System.out.printf("This section test the formula Mean Absolute Error (MAE) on the\ndatabase u1.txt when the user changes and the num of rating used\nare constant:\n\n");
+System.out.printf("This section test the formula normalized Mean Absolute Error (NMAE) on the\ndatabase u1.txt when the user changes and the num of rating used\nare constant:\n\n");
 
-for( firstUser = 100; firstUser <= 105; firstUser++) 
+for( firstUser = 45; firstUser <= 57; firstUser++) 
 {
-	errorPrediction = AccuracyMetricsItemBased.meanAbsoluteErrorItemBasedOneUser(secondMatrix, columnOfUsers, firstUser, itemColumnNumber,numOfNearestNeighbor);
-		System.out.printf("MeanAbsoluteError (user=%3d,numOfRating=%s):%6.2f\n", firstUser, numOfNearestNeighbor, errorPrediction);
+	errorPrediction = AccuracyMetricsUserBased.normalizedMeanAbsoluteErrorUserBasedOneUser(secondMatrix, columnOfUsers, firstUser, itemColumnNumber,numOfNearestNeighbor);
+		System.out.printf("normalizedMeanAbsoluteError (user=%3d,numOfRating=%s):%6.2f\n", firstUser, numOfNearestNeighbor, errorPrediction);
 }
 
 System.out.println("\n-----End of computation-----"); 
