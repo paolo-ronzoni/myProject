@@ -25,7 +25,7 @@ public class Test_16_ItemBased {
 // the rectangular matrix of user, items and ratings
 int[][] secondMatrix = IOMethods.matrixConversion(myMatrix);
 int columnOfUsers = 0; // the column, in the rectangular input matrix, with the users number
-int firstUser = 22; // the first user to compute the similarity
+int firstUser = 1; // the first user to compute the similarity
 int itemColumnNumber = 1;
 int itemSearched = 34;
 int numOfNearestNeighbor = 2;
@@ -33,7 +33,7 @@ double predictedUserBasedValue;
 
 System.out.printf("This section test the formula pred(a,p) against the database u1 .txt\nwhen the item change but the user searched and the num of rating used\nare constant:\n\n");
 
-for( itemSearched = 100; itemSearched <= 105; itemSearched++) 
+for( itemSearched = 10; itemSearched <= 14; itemSearched++) 
 {
 	predictedUserBasedValue = ItemBasedNearestNeighbor.predictionItemBasedValue(secondMatrix, columnOfUsers, firstUser, itemColumnNumber, itemSearched, numOfNearestNeighbor);
 		System.out.printf("PredictionItemValue (user=%3d,item=%3d,numOfRating=%s):%6.2f\n", firstUser, itemSearched, numOfNearestNeighbor, predictedUserBasedValue);
