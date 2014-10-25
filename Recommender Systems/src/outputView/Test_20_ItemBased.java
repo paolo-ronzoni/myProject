@@ -1,4 +1,4 @@
-package outputView;
+ package outputView;
 
 import recommendationSystem.*;
 import fileIO.IOMethods;
