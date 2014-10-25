@@ -5,10 +5,10 @@ import fileIO.IOMethods;
 
 import java.util.Arrays;
 
-/* This class test the formula Mean Absolute Error (MAE) on the recommender systems database u1.txt: 20,000 ratings (1-5) from 943 users on 1682 movies.
+/* This class test the formula Root Mean Squared Error (RMSE) on the recommender systems database u1.txt: 20,000 ratings (1-5) from 943 users on 1682 movies.
  */
 
-public class Test_17_UserBased {
+public class Test_22_ItemBased {
 
 	static String path1 = "DataStore\\u1.txt";
 	static String splitExpression = "\\s+";
@@ -32,15 +32,16 @@ int itemSearched = 34;
 int numOfNearestNeighbor = 2;
 double errorPrediction;
 
-System.out.printf("This section test the formula Mean Absolute Error (MAE) on the\ndatabase u1.txt when the user changes and the num of rating used\nare constant:\n\n");
+System.out.printf("This section test the formula Root Mean Squared Error (RMSE) on the\ndatabase u1.txt when the user changes and the num of rating used\nare constant:\n\n");
 
-for( firstUser = 100; firstUser <= 105; firstUser++) 
+for( firstUser = 45; firstUser <= 57; firstUser++) 
 {
-	errorPrediction = AccuracyMetricsUserBased.meanAbsoluteErrorUserBasedOneUser(secondMatrix, columnOfUsers, firstUser, itemColumnNumber,numOfNearestNeighbor);
-		System.out.printf("MeanAbsoluteErrorUserBased (user=%3d,numOfRating=%s):%6.2f\n", firstUser, numOfNearestNeighbor, errorPrediction);
+	errorPrediction = AccuracyMetricsItemBased.rootMeanSquaredErrorItemBasedOneUser(secondMatrix, columnOfUsers, firstUser, itemColumnNumber,numOfNearestNeighbor);
+		System.out.printf("rootMeanSquaredErrorItemBased (user=%3d,numOfRating=%s):%6.2f\n", firstUser, numOfNearestNeighbor, errorPrediction);
 }
 
 System.out.println("\n-----End of computation-----"); 
 
 	} // end main
-} // end class Test_17_UserBased
+} // end class Test_22_UserBased
+

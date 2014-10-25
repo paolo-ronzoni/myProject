@@ -34,7 +34,7 @@ double errorPrediction;
 
 System.out.printf("This section test the formula Mean Absolute Error (MAE) on the\ndatabase u1.txt when the user changes and the num of rating used\nare constant:\n\n");
 
-for( firstUser = 100; firstUser <= 105; firstUser++) 
+for( firstUser = 101; firstUser <= 105; firstUser++) 
 {
 	errorPrediction = AccuracyMetricsItemBased.meanAbsoluteErrorItemBasedOneUser(secondMatrix, columnOfUsers, firstUser, itemColumnNumber,numOfNearestNeighbor);
 		System.out.printf("MeanAbsoluteErrorItemBased (user=%3d,numOfRating=%s):%6.2f\n", firstUser, numOfNearestNeighbor, errorPrediction);

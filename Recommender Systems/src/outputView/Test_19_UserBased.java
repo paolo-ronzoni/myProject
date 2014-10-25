@@ -37,7 +37,7 @@ System.out.printf("This section test the formula Root Mean Squared Error (RMSE) 
 for( firstUser = 45; firstUser <= 57; firstUser++) 
 {
 	errorPrediction = AccuracyMetricsUserBased.rootMeanSquaredErrorUserBasedOneUser(secondMatrix, columnOfUsers, firstUser, itemColumnNumber,numOfNearestNeighbor);
-		System.out.printf("normalizedMeanAbsoluteError (user=%3d,numOfRating=%s):%6.2f\n", firstUser, numOfNearestNeighbor, errorPrediction);
+		System.out.printf("rootMeanSquaredErrorUserBased (user=%3d,numOfRating=%s):%6.2f\n", firstUser, numOfNearestNeighbor, errorPrediction);
 }
 
 System.out.println("\n-----End of computation-----"); 
