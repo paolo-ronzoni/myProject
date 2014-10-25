@@ -26,9 +26,7 @@ public class Test_19_UserBased {
 int[][] secondMatrix = IOMethods.matrixConversion(myMatrix);
 int columnOfUsers = 0; // the column, in the rectangular input matrix, with the users number
 int firstUser = 1; // the first user to compute the similarity
-int secondUser = 2;
 int itemColumnNumber = 1;
-int itemSearched = 34;
 int numOfNearestNeighbor = 2;
 double errorPrediction;
 
